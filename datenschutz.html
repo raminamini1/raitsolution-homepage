@@ -1,144 +1,109 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutz – RAIT Solution</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .legal-page {
-            padding: 7rem 0 6rem;
-            min-height: 80vh;
-        }
-        .legal-page h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--clr-dark);
-            margin-bottom: 1.5rem;
-        }
-        .legal-page h2 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--clr-teal-light);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin: 2.5rem 0 0.75rem;
-        }
-        .legal-page p, .legal-page li {
-            color: var(--clr-muted);
-            line-height: 1.8;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        .legal-page a {
-            color: var(--clr-teal-light);
-            text-decoration: none;
-        }
-        .legal-page a:hover { text-decoration: underline; }
-        .legal-page ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--clr-teal-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            transition: opacity 0.2s;
-        }
-        .back-link:hover { opacity: 0.7; }
-    </style>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung – RAIT Solution</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://raitsolution.de/datenschutz.html">
+  <link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:70px}
+    .logo{display:flex;align-items:center;gap:14px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:14px;padding:8px 11px;border-radius:6px;letter-spacing:1px}.logo-name{color:#1a1a1a;font-weight:700;font-size:14px;letter-spacing:3px}
+    .nav-links{display:flex;gap:32px;list-style:none;align-items:center}.nav-links a{color:#555;font-size:14px;font-weight:500;border-bottom:1px solid transparent;padding-bottom:1px;transition:color .2s,border-color .2s}.nav-links a:hover{color:#1a1a1a;border-bottom-color:#1a1a1a}
+    .nav-cta{border:1.5px solid #1a1a1a !important;color:#1a1a1a !important;padding:9px 20px;border-radius:6px;font-weight:600 !important;border-bottom:none !important;transition:background .2s,color .2s !important}.nav-cta:hover{background:#1a1a1a !important;color:#fff !important}
+    .page{max-width:780px;margin:0 auto;padding:80px 60px}
+    .sec-label{color:#888;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;margin-bottom:40px;color:#0d0d0d}
+    h2{font-size:18px;font-weight:700;margin:40px 0 10px;color:#0d0d0d}
+    h3{font-size:15px;font-weight:700;margin:24px 0 8px;color:#333}
+    p{color:#555;font-size:15px;line-height:1.8;margin-bottom:10px}
+    ul{color:#555;font-size:15px;line-height:1.8;margin:8px 0 10px 20px}
+    a.link{color:#1a1a1a;text-decoration:underline;text-underline-offset:3px}
+    footer{background:#0d0d0d;padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px;transition:color .2s}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    @media(max-width:700px){nav,.page,footer{padding-left:24px;padding-right:24px}h1{font-size:28px}.nav-links{display:none}}
+  </style>
 </head>
 <body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+</div></nav>
 
-    <nav class="nav" id="nav">
-        <div class="nav__inner container">
-            <a class='nav__logo' href='/'>
-                <span class="nav__logo-mark">RA</span>
-                <span class="nav__logo-text">IT <span>SOLUTION</span></span>
-            </a>
-        </div>
-    </nav>
+<div class="page">
+  <span class="sec-label">Rechtliches</span>
+  <h1>Datenschutzerklärung</h1>
 
-    <main class="legal-page">
-        <div class="container" style="max-width: 720px;">
-            <a class='back-link' href='/'>← Zurück zur Startseite</a>
-            <h1>Datenschutzerklärung</h1>
+  <h2>1. Verantwortlicher</h2>
+  <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG) ist:</p>
+  <p>
+    Ramin Amini – RAIT Solution<br>
+    Neuer Wall 1, 20354 Hamburg<br>
+    E-Mail: <a href="mailto:kontakt@raitsolution.de" class="link">kontakt@raitsolution.de</a><br>
+    Telefon: +49 40 524718000
+  </p>
 
-            <h2>1. Verantwortlicher</h2>
-            <p>
-                Ramin Amini<br>
-                Neuer Wall 1, 20354 Hamburg<br>
-                E-Mail: <a href="mailto:ra@raitsolution.de">ra@raitsolution.de</a>
-            </p>
+  <h2>2. Hosting</h2>
+  <p>Diese Website wird über <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. Beim Aufrufen der Website speichert GitHub automatisch Server-Log-Daten (IP-Adresse, Datum/Uhrzeit, aufgerufene URL, Browser-/Systeminfos). Diese Daten sind technisch notwendig und werden nach kurzer Zeit gelöscht. GitHub verfügt über ein DSGVO-konformes Datenschutzabkommen. Weitere Infos: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener" class="link">GitHub Privacy Statement</a>.</p>
+  <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Website-Betrieb).</p>
 
-            <h2>2. Hosting</h2>
-            <p>
-                Diese Website wird bei Netlify, Inc. (512 Second Street, Suite 200, San Francisco, CA 94107, USA) gehostet.
-                Beim Aufruf der Website werden durch Netlify automatisch Serverlogdaten erfasst (IP-Adresse, Browsertyp,
-                aufgerufene Seiten, Datum/Uhrzeit). Dies erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
-                an einem sicheren und stabilen Betrieb der Website). Weitere Informationen:
-                <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a>.
-            </p>
+  <h2>3. Kontaktformular</h2>
+  <p>Wenn Sie unser Kontaktformular nutzen, übermitteln Sie Name, E-Mail-Adresse und Ihre Nachricht. Diese Daten werden über den Dienst <strong>Formspree</strong> (Formspree, Inc., 462 1st Ave, New York, NY 10016, USA) verarbeitet und an uns weitergeleitet.</p>
+  <p>Formspree speichert Ihre Anfrage vorübergehend auf seinen Servern. Zwischen uns und Formspree besteht ein Datenverarbeitungsvertrag (DPA). Datenschutzinfos von Formspree: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener" class="link">formspree.io/legal/privacy-policy</a>.</p>
+  <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen). Ihre Daten werden nach Abschluss der Bearbeitung gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
 
-            <h2>3. Kontaktformular</h2>
-            <p>
-                Das Kontaktformular dieser Website wird über den Dienst Formspree (Formspree Inc., USA) verarbeitet.
-                Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben (Name, E-Mail, Nachricht) zur Bearbeitung
-                Ihrer Anfrage an uns weitergeleitet. Die Daten werden nicht zu anderen Zwecken verwendet und nicht
-                an Dritte weitergegeben. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw.
-                Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Weitere Informationen:
-                <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a>.
-            </p>
+  <h2>4. Kontaktaufnahme per E-Mail oder Telefon</h2>
+  <p>Bei direkter Kontaktaufnahme per E-Mail oder Telefon werden Ihre übermittelten Daten ausschließlich zur Bearbeitung Ihrer Anfrage gespeichert und nicht ohne Ihre Einwilligung an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
 
-            <h2>4. Cookies & Tracking</h2>
-            <p>
-                Diese Website verwendet keine Cookies und kein Tracking. Es werden keine Analyse- oder
-                Werbedienste (z. B. Google Analytics) eingesetzt.
-            </p>
+  <h2>5. Schriftarten</h2>
+  <p>Diese Website verwendet die Schriftarten <strong>Inter</strong> und <strong>Playfair Display</strong>. Beide Schriftarten werden <strong>lokal von unserem Server</strong> ausgeliefert — es werden keine Daten an externe Dienste wie Google übertragen. Dies entspricht den Anforderungen der DSGVO.</p>
 
-            <h2>5. Ihre Rechte</h2>
-            <p>Sie haben gemäß DSGVO folgende Rechte:</p>
-            <ul>
-                <li>Auskunft über gespeicherte Daten (Art. 15 DSGVO)</li>
-                <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
-                <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
-                <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-                <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
-                <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-            </ul>
-            <p>
-                Zur Ausübung Ihrer Rechte wenden Sie sich an:
-                <a href="mailto:ra@raitsolution.de">ra@raitsolution.de</a>
-            </p>
+  <h2>6. Cookies und lokaler Speicher</h2>
+  <p>Diese Website verwendet <strong>kein externes Tracking</strong> und keine Analyse-Tools (kein Google Analytics, kein Facebook Pixel o. ä.). Es wird ausschließlich ein Eintrag im <strong>localStorage</strong> des Browsers gesetzt, um Ihre Cookie-Entscheidung zu speichern (Schlüssel: <code>cookieConsent</code>). Dieser Eintrag verlässt Ihren Browser nicht und wird nicht an Dritte übermittelt.</p>
 
-            <h2>6. Beschwerderecht</h2>
-            <p>
-                Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
-                Die zuständige Behörde für Hamburg ist der Hamburgische Beauftragte für Datenschutz und
-                Informationsfreiheit: <a href="https://datenschutz.hamburg.de" target="_blank" rel="noopener">datenschutz.hamburg.de</a>.
-            </p>
-        </div>
-    </main>
+  <h2>7. Ihre Rechte</h2>
+  <p>Sie haben gemäß DSGVO folgende Rechte gegenüber uns:</p>
+  <ul>
+    <li><strong>Auskunft</strong> über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+    <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+    <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+    <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+    <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+    <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+  </ul>
+  <p>Zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:kontakt@raitsolution.de" class="link">kontakt@raitsolution.de</a></p>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__bottom">
-                <p>© 2025 RAIT Solution · Ramin Amini · Alle Rechte vorbehalten</p>
-                <div class="footer__legal">
-                    <a href='/impressum'>Impressum</a>
-                    <a href='/datenschutz'>Datenschutz</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <h2>8. Beschwerderecht</h2>
+  <p>Sie haben das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren:</p>
+  <p>
+    Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit<br>
+    Ludwig-Erhard-Str. 22, 20459 Hamburg<br>
+    E-Mail: <a href="mailto:mailbox@datenschutz.hamburg.de" class="link">mailbox@datenschutz.hamburg.de</a><br>
+    Web: <a href="https://datenschutz.hamburg.de" target="_blank" rel="noopener" class="link">datenschutz.hamburg.de</a>
+  </p>
+
+  <h2>9. Aktualität</h2>
+  <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2026. Wir behalten uns vor, diese Erklärung bei Bedarf anzupassen, um sie mit aktuellen Rechtsanforderungen in Einklang zu bringen.</p>
+
+  <p style="margin-top:48px;color:#aaa;font-size:13px">Stand: Juni 2026</p>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
 </body>
 </html>
+
