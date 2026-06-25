@@ -632,8 +632,12 @@
         <div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <div><div class="ci-lbl">Bürozeiten</div><div class="ci-val">Mo – Fr, 9:00 – 18:00 Uhr</div></div>
       </div>
-      <div class="maps-wrap">
-        <iframe src="https://maps.google.com/maps?q=Neuer+Wall+1,+20354+Hamburg&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="RAIT Solution Standort Hamburg"></iframe>
+      <div class="maps-wrap" id="mapsWrap">
+        <div id="mapsPlaceholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#f8f8f8;cursor:pointer" onclick="loadMap()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          <span style="font-size:13px;color:#aaa;font-weight:600">Google Maps laden</span>
+          <span style="font-size:11px;color:#ccc;text-align:center;max-width:180px">Mit dem Klick stimmen Sie der Datenübertragung zu Google zu.</span>
+        </div>
       </div>
     </div>
     <div class="contact-form">
@@ -750,6 +754,16 @@
   if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}
   document.getElementById('cookieAccept').addEventListener('click',()=>{localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});
   document.getElementById('cookieDecline').addEventListener('click',()=>{localStorage.setItem('cookieConsent','declined');cb.style.display='none';});
+
+  // Google Maps lazy load
+  function loadMap(){
+    document.getElementById('mapsPlaceholder').style.display='none';
+    const iframe=document.createElement('iframe');
+    iframe.src='https://maps.google.com/maps?q=Neuer+Wall+1,+20354+Hamburg&t=&z=15&ie=UTF8&iwloc=&output=embed';
+    iframe.style.cssText='width:100%;height:100%;border:none';
+    iframe.title='RAIT Solution Standort Hamburg';
+    document.getElementById('mapsWrap').appendChild(iframe);
+  }
 
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn=>{
