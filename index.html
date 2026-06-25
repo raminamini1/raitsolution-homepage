@@ -23,6 +23,8 @@
   <link rel="alternate" hreflang="de" href="https://raitsolution.de/">
   <link rel="alternate" hreflang="en" href="https://raitsolution.de/index-en.html">
   <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/">
+  <script defer data-domain="raitsolution.de" src="https://plausible.io/js/script.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet eine IT-Beratung bei RAIT Solution?","acceptedAnswer":{"@type":"Answer","text":"Die Vergütung richtet sich nach Projektumfang und Leistungsart. Wir bieten Tages- und Projekthonorare an. Im kostenlosen Erstgespräch erstellen wir ein konkretes Angebot — unverbindlich und transparent."}},{"@type":"Question","name":"Wie schnell kann RAIT Solution einen Auftrag übernehmen?","acceptedAnswer":{"@type":"Answer","text":"In der Regel können wir innerhalb von 1–2 Wochen starten. Bei kurzfristigem Bedarf greifen wir auf unser Expertennetzwerk zurück und stellen Personal schnell bereit."}},{"@type":"Question","name":"Arbeitet RAIT Solution auch remote?","acceptedAnswer":{"@type":"Answer","text":"Ja, die Mehrheit unserer Leistungen erbringen wir remote oder hybrid. Vor-Ort-Einsätze in Hamburg und deutschlandweit sind selbstverständlich ebenfalls möglich."}},{"@type":"Question","name":"Welche Branchen betreut RAIT Solution?","acceptedAnswer":{"@type":"Answer","text":"Unsere Schwerpunkte liegen in Versicherung, öffentlicher Verwaltung und Logistik. Wir arbeiten jedoch branchenübergreifend und bringen externes Know-how aus verschiedenen Sektoren ein."}},{"@type":"Question","name":"Wie läuft ein Erstgespräch ab?","acceptedAnswer":{"@type":"Answer","text":"Das 30-minütige Erstgespräch ist kostenlos und unverbindlich. Wir hören zu, verstehen Ihren Bedarf und geben eine erste Einschätzung. Im Anschluss erhalten Sie ein schriftliches Angebot."}},{"@type":"Question","name":"Bietet RAIT Solution auch Teilprojekte an?","acceptedAnswer":{"@type":"Answer","text":"Ja. Neben längeren Projekten übernehmen wir auch klar abgegrenzte Teilaufgaben — wie eine Anforderungsanalyse, einen Security-Audit oder einzelne Schulungen."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"RAIT Solution","description":"Erfahrenes IT-Team aus Hamburg – Qualitätssicherung, Anforderungsmanagement, Projektmanagement, KI-Consulting und Cybersecurity","url":"https://raitsolution.de","telephone":"+4940524718000","email":"kontakt@raitsolution.de","address":{"@type":"PostalAddress","streetAddress":"Neuer Wall 1","addressLocality":"Hamburg","postalCode":"20354","addressCountry":"DE"},"areaServed":[{"@type":"City","name":"Hamburg"},{"@type":"Country","name":"DE"}],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"ISTQB Certified Tester"},{"@type":"EducationalOccupationalCredential","name":"IREB Certified Professional"},{"@type":"EducationalOccupationalCredential","name":"PMI Project Management Professional"},{"@type":"EducationalOccupationalCredential","name":"Scrum.org Professional Scrum Master"}]}</script>
   <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -166,6 +168,34 @@
     .form-note{text-align:center;color:#aaa;font-size:12px;margin-top:12px}
     .form-success{display:none;background:#f0f0f0;border:1px solid #e0e0e0;border-radius:4px;padding:18px;margin-top:16px;color:#1a1a1a;font-weight:600;text-align:center;font-size:14px}
 
+    /* FAQ */
+    .faq-list{margin-top:44px;max-width:800px}
+    .faq-item{border-bottom:1px solid #ebebeb}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+    .faq-item.open .faq-a{display:block}
+
+    /* BLOG */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+    .blog-card{border:1px solid #ebebeb;border-radius:4px;padding:32px;transition:box-shadow .2s;background:#fff;display:flex;flex-direction:column}
+    .blog-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.07)}
+    .blog-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:14px;display:block}
+    .blog-card h3{font-size:16px;font-weight:700;margin-bottom:10px;color:#0d0d0d;line-height:1.45}
+    .blog-card p{color:#666;font-size:14px;line-height:1.65;margin-bottom:18px;flex:1}
+    .blog-link{font-size:13px;font-weight:600;color:#1a1a1a;border-bottom:1px solid #ddd;padding-bottom:1px;transition:border-color .2s;align-self:flex-start}
+    .blog-link:hover{border-color:#1a1a1a}
+
+    /* SCROLL TOP */
+    .scroll-top{position:fixed;bottom:28px;right:28px;width:40px;height:40px;background:#fff;border:1px solid #e0e0e0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#1a1a1a;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:500;font-family:inherit}
+    .scroll-top.show{display:flex}
+    .scroll-top:hover{background:#f8f8f8}
+
+    /* MAPS */
+    .maps-wrap{margin-top:28px;border-radius:4px;overflow:hidden;border:1px solid #ebebeb;height:200px}
+    .maps-wrap iframe{width:100%;height:100%;border:none}
+
     /* FOOTER */
     footer{background:#0d0d0d;padding:64px 60px 28px}
     .footer-in{max-width:1200px;margin:0 auto}
@@ -190,6 +220,7 @@
 
     /* MOBILE */
     @media(max-width:1024px){
+      .blog-grid{grid-template-columns:1fr 1fr}
       .nav,.hero-content,section,.intro,.team,.process,.references,.contact,footer{padding-left:24px;padding-right:24px}
       .hero h1{font-size:44px}
       .intro-in{grid-template-columns:1fr;gap:40px}
@@ -209,6 +240,7 @@
     @media(max-width:600px){
       .hero h1{font-size:34px}
       h2{font-size:30px}
+      .blog-grid{grid-template-columns:1fr}
       .svc-grid{grid-template-columns:1fr}
       .proc-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr}
@@ -464,6 +496,41 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section style="background:#f8f8f8;padding:100px 60px" id="faq">
+  <div class="sec-in">
+    <span class="sec-label">FAQ</span>
+    <h2>Häufige Fragen</h2>
+    <p class="sec-desc">Antworten auf die wichtigsten Fragen rund um IT-Beratung und unsere Zusammenarbeit.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Was kostet eine IT-Beratung bei RAIT Solution?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Die Vergütung richtet sich nach Projektumfang und Leistungsart. Wir bieten Tages- und Projekthonorare an. Im kostenlosen Erstgespräch erstellen wir ein konkretes Angebot — unverbindlich und transparent.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Wie schnell kann RAIT Solution einen Auftrag übernehmen?<span class="faq-icon">+</span></button>
+        <div class="faq-a">In der Regel können wir innerhalb von 1–2 Wochen starten. Bei kurzfristigem Bedarf greifen wir auf unser Expertennetzwerk zurück und stellen Personal schnell bereit.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Arbeitet RAIT Solution auch remote?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Ja, die Mehrheit unserer Leistungen erbringen wir remote oder hybrid. Vor-Ort-Einsätze in Hamburg und deutschlandweit sind selbstverständlich ebenfalls möglich.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Welche Branchen betreut RAIT Solution?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Unsere Schwerpunkte liegen in Versicherung, öffentlicher Verwaltung und Logistik. Wir arbeiten jedoch branchenübergreifend und bringen externes Know-how aus verschiedenen Sektoren ein.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Wie läuft ein Erstgespräch ab?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Das 30-minütige Erstgespräch ist kostenlos und unverbindlich. Wir hören zu, verstehen Ihren Bedarf und geben eine erste Einschätzung. Im Anschluss erhalten Sie ein schriftliches Angebot.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Bietet RAIT Solution auch Teilprojekte und kurzfristige Einsätze an?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Ja. Neben längeren Projekten übernehmen wir auch klar abgegrenzte Teilaufgaben — wie eine Anforderungsanalyse, einen Security-Audit oder einzelne Schulungen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- REFERENCES -->
 <section class="references" id="references">
   <div style="max-width:1200px;margin:0 auto">
@@ -495,6 +562,53 @@
   </div>
 </section>
 
+<!-- BLOG -->
+<section style="background:#fff;padding:100px 60px" id="blog">
+  <div class="sec-in">
+    <span class="sec-label">Insights</span>
+    <h2>IT-Wissen kompakt</h2>
+    <p class="sec-desc">Praxisnahes Know-how aus unserer Beratungsarbeit — für bessere IT-Projekte.</p>
+    <div class="blog-grid">
+      <div class="blog-card fade-in">
+        <span class="blog-tag">Qualitätssicherung</span>
+        <h3>Warum QA über den Projekterfolg entscheidet</h3>
+        <p>Fehler in Software kosten nach dem Go-Live bis zu zehnmal mehr als während der Entwicklung. Strukturierte Qualitätssicherung ist keine Option — sie ist Pflicht.</p>
+        <a href="blog-qa.html" class="blog-link">Weiterlesen →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <span class="blog-tag">Anforderungsmanagement</span>
+        <h3>Der unterschätzte Erfolgsfaktor: saubere Anforderungen</h3>
+        <p>Die meisten IT-Projekte scheitern nicht an der Technik, sondern an unklaren Anforderungen. Was gutes Requirements Engineering wirklich ausmacht.</p>
+        <a href="blog-anforderungen.html" class="blog-link">Weiterlesen →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <span class="blog-tag">KI-Consulting</span>
+        <h3>KI im Unternehmen: Chancen, Risiken und erste Schritte</h3>
+        <p>KI ist kein Hype mehr — aber auch kein Selbstläufer. Was Unternehmen wirklich brauchen, um KI sinnvoll einzusetzen.</p>
+        <a href="blog-ki.html" class="blog-link">Weiterlesen →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <span class="blog-tag">Agile & Scrum</span>
+        <h3>Agile Transformation: Was Scrum wirklich bedeutet</h3>
+        <p>Viele Unternehmen führen Scrum ein — aber wenige wenden es wirklich an. Der Unterschied zwischen agiler Hülle und agiler Substanz.</p>
+        <a href="blog-scrum.html" class="blog-link">Weiterlesen →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <span class="blog-tag">Cybersecurity</span>
+        <h3>Die 5 größten IT-Sicherheitsrisiken im Mittelstand</h3>
+        <p>Cyberangriffe treffen mittelständische Unternehmen besonders hart. Die häufigsten Schwachstellen — und wie man sie systematisch schließt.</p>
+        <a href="blog-security.html" class="blog-link">Weiterlesen →</a>
+      </div>
+      <div class="blog-card fade-in">
+        <span class="blog-tag">Projektmanagement</span>
+        <h3>IT-Projekte im Zeit- und Budgetplan: So geht's</h3>
+        <p>Überschrittene Budgets und Verzögerungen sind in IT-Projekten fast schon Standard. Welche Methoden wirklich helfen — ohne bürokratischen Overhead.</p>
+        <a href="blog-pm.html" class="blog-link">Weiterlesen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
@@ -517,6 +631,9 @@
       <div class="ci-item">
         <div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <div><div class="ci-lbl">Bürozeiten</div><div class="ci-val">Mo – Fr, 9:00 – 18:00 Uhr</div></div>
+      </div>
+      <div class="maps-wrap">
+        <iframe src="https://maps.google.com/maps?q=Neuer+Wall+1,+20354+Hamburg&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="RAIT Solution Standort Hamburg"></iframe>
       </div>
     </div>
     <div class="contact-form">
@@ -603,12 +720,16 @@
   </div>
 </footer>
 
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben">↑</button>
+
 <script>
-  // Scroll progress
+  // Scroll progress + scroll-to-top
   window.addEventListener('scroll',()=>{
     const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
     document.getElementById('scrollProgress').style.width=Math.min(p,100)+'%';
+    document.getElementById('scrollTop').classList.toggle('show',window.scrollY>400);
   });
+  document.getElementById('scrollTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
   // Mobile nav
   document.getElementById('navToggle').addEventListener('click',()=>{
@@ -629,6 +750,16 @@
   if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}
   document.getElementById('cookieAccept').addEventListener('click',()=>{localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});
   document.getElementById('cookieDecline').addEventListener('click',()=>{localStorage.setItem('cookieConsent','declined');cb.style.display='none';});
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement;
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!isOpen)item.classList.add('open');
+    });
+  });
 
   // Form
   const form=document.getElementById('contactForm');
