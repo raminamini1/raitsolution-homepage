@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAIT Solution – Vorschau neues Design</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, 'Inter', sans-serif; background: #fff; color: #0d1117; overflow-x: hidden; }
+
+    /* PREVIEW BANNER */
+    .banner { background: #0FA89A; color: #fff; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; position: sticky; top: 0; z-index: 9999; }
+
+    /* NAV */
+    nav { background: #fff; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; position: sticky; top: 36px; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-mark { background: #0FA89A; color: #fff; font-weight: 800; font-size: 16px; padding: 8px 11px; border-radius: 10px; letter-spacing: 1px; }
+    .logo-name { color: #0d1117; font-weight: 700; font-size: 15px; letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+    .nav-links a { color: #444; text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: #0FA89A; }
+    .nav-cta { background: #0FA89A; color: #fff !important; padding: 11px 22px; border-radius: 10px; font-weight: 700 !important; transition: background .2s !important; }
+    .nav-cta:hover { background: #0d9a8c !important; }
+
+    /* HERO */
+    .hero { background: #f7fffe; min-height: 92vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 80px 60px; }
+
+    /* Animated blob background */
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25; animation: blobMove 8s ease-in-out infinite; }
+    .blob1 { width: 500px; height: 500px; background: #0FA89A; top: -100px; right: -100px; animation-delay: 0s; }
+    .blob2 { width: 400px; height: 400px; background: #14C4B4; bottom: -80px; left: -80px; animation-delay: 3s; }
+    .blob3 { width: 300px; height: 300px; background: #0FA89A; top: 50%; left: 40%; animation-delay: 5s; }
+    @keyframes blobMove {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(30px,-20px) scale(1.05); }
+      66% { transform: translate(-20px,30px) scale(0.95); }
+    }
+
+    /* Floating cards animation */
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; width: 100%; }
+    .hero-left { animation: fadeSlideIn 0.8s ease both; }
+    .hero-right { animation: fadeSlideIn 0.8s ease 0.3s both; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(15,168,154,0.12); color: #0FA89A; padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 700; margin-bottom: 28px; border: 1px solid rgba(15,168,154,0.2); }
+    .hero h1 { font-size: 58px; font-weight: 800; color: #0d1117; line-height: 1.1; margin-bottom: 22px; letter-spacing: -1px; }
+    .hero h1 em { color: #0FA89A; font-style: normal; }
+    .hero p { color: #555; font-size: 18px; line-height: 1.7; margin-bottom: 40px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; }
+    .btn-teal { background: #0FA89A; color: #fff; padding: 15px 30px; border-radius: 12px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform .2s, box-shadow .2s; display: inline-block; }
+    .btn-teal:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,168,154,0.35); }
+    .btn-ghost { border: 2px solid #e0e0e0; color: #333; padding: 15px 30px; border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-block; transition: border-color .2s; }
+    .btn-ghost:hover { border-color: #0FA89A; color: #0FA89A; }
+    .cert-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cert { background: #fff; color: #333; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+    /* Hero Visual */
+    .hero-visual { position: relative; }
+    .hero-img-wrap { border-radius: 24px; overflow: hidden; position: relative; height: 420px; box-shadow: 0 30px 80px rgba(0,0,0,0.15); animation: floatUp 6s ease-in-out infinite; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-float-card { position: absolute; background: #fff; border-radius: 16px; padding: 16px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; }
+    .hero-float-card1 { top: 32px; left: -40px; animation: floatUp 5s ease-in-out 1s infinite; }
+    .hero-float-card2 { bottom: 32px; right: -30px; animation: floatUp 5s ease-in-out 2.5s infinite; }
+    .fc-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(15,168,154,0.12); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .fc-num { font-size: 22px; font-weight: 800; color: #0FA89A; }
+    .fc-label { font-size: 12px; color: #888; font-weight: 400; }
+
+    /* STATS BAR */
+    .stats-bar { background: #0FA89A; padding: 40px 60px; }
+    .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; text-align: center; }
+    .stat-num { font-size: 42px; font-weight: 800; color: #fff; display: block; }
+    .stat-label { color: rgba(255,255,255,0.8); font-size: 14px; margin-top: 4px; }
+
+    /* SERVICES */
+    .services { padding: 100px 60px; background: #fff; }
+    .sec-inner { max-width: 1200px; margin: 0 auto; }
+    .sec-tag { color: #0FA89A; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .sec-title { font-size: 42px; font-weight: 800; margin: 12px 0 16px; letter-spacing: -1px; }
+    .sec-sub { color: #666; font-size: 17px; margin-bottom: 56px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .svc { background: #f9fafb; border-radius: 20px; padding: 32px; border: 1px solid #ebebeb; transition: all 0.3s; cursor: pointer; }
+    .svc:hover { background: #fff; box-shadow: 0 16px 48px rgba(0,0,0,0.09); transform: translateY(-4px); border-color: #0FA89A33; }
+    .svc-icon { font-size: 32px; margin-bottom: 16px; }
+    .svc-cert { font-size: 11px; font-weight: 700; color: #0FA89A; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+    .svc h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .svc p { color: #666; font-size: 14px; line-height: 1.6; }
+    .svc-new-badge { background: #0FA89A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-left: 8px; }
+
+    /* ABOUT */
+    .about { padding: 100px 60px; background: #f7fffe; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .about-img-wrap { position: relative; border-radius: 24px; overflow: hidden; height: 500px; box-shadow: 0 30px 80px rgba(0,0,0,0.12); }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .about-badge { position: absolute; bottom: 28px; left: 28px; background: #fff; border-radius: 16px; padding: 16px 22px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .about-badge strong { font-size: 28px; font-weight: 800; color: #0FA89A; display: block; }
+    .about-badge span { font-size: 13px; color: #666; }
+    .about-text .vals { list-style: none; margin: 28px 0 36px; display: flex; flex-direction: column; gap: 14px; }
+    .about-text .vals li { display: flex; align-items: flex-start; gap: 12px; color: #333; font-size: 15px; line-height: 1.4; }
+    .val-dot { width: 24px; height: 24px; background: rgba(15,168,154,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+
+    /* TEAM */
+    .team { padding: 100px 60px; background: #fff; }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 56px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .team-card { border-radius: 24px; overflow: hidden; border: 1px solid #ebebeb; transition: transform 0.3s, box-shadow 0.3s; }
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+    .team-photo { height: 240px; overflow: hidden; position: relative; }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .team-card:hover .team-photo img { transform: scale(1.04); }
+    .team-ph { width: 100%; height: 100%; background: linear-gradient(135deg, #0FA89A22, #0FA89A55); display: flex; align-items: center; justify-content: center; font-size: 60px; font-weight: 800; color: #0FA89A; }
+    .team-body { padding: 28px; }
+    .team-body h3 { font-size: 19px; font-weight: 700; margin-bottom: 4px; }
+    .team-role { color: #0FA89A; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+    .team-body p { color: #666; font-size: 14px; line-height: 1.6; }
+    .team-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+    .ttag { background: #f0fffe; color: #0FA89A; border: 1px solid rgba(15,168,154,0.2); font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 600; }
+
+    /* MOVING SECTION */
+    .moving-strip { background: #0d1117; padding: 24px 0; overflow: hidden; white-space: nowrap; }
+    .strip-track { display: inline-block; animation: scrollStrip 20s linear infinite; }
+    .strip-track span { color: rgba(255,255,255,0.4); font-size: 14px; font-weight: 600; letter-spacing: 2px; padding: 0 32px; text-transform: uppercase; }
+    .strip-track span.hl { color: #0FA89A; }
+    @keyframes scrollStrip {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* PARTNERS */
+    .partners { padding: 80px 60px; background: #f9fafb; text-align: center; }
+    .partners-label { color: #aaa; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 36px; }
+    .partner-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .plogo { color: #999; font-size: 15px; font-weight: 800; letter-spacing: 2px; padding: 12px 24px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; transition: all 0.2s; }
+    .plogo:hover { border-color: #0FA89A; color: #0FA89A; transform: translateY(-2px); }
+
+    /* CONTACT */
+    .contact { padding: 100px 60px; background: #fff; }
+    .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .contact-form { background: #f9fafb; border-radius: 24px; padding: 44px; border: 1px solid #ebebeb; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #444; }
+    input, textarea, select { width: 100%; padding: 13px 16px; border: 1.5px solid #e5e5e5; border-radius: 10px; font-size: 15px; font-family: inherit; background: #fff; transition: border-color .2s; margin-bottom: 18px; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #0FA89A; }
+    textarea { height: 120px; resize: none; }
+    .form-btn { background: #0FA89A; color: #fff; width: 100%; padding: 16px; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+    .form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,168,154,0.35); }
+    .contact-info { padding-top: 16px; }
+    .contact-info-item { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .ci-icon { width: 48px; height: 48px; background: rgba(15,168,154,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .ci-label { font-size: 12px; color: #aaa; margin-bottom: 2px; }
+    .ci-val { font-size: 16px; font-weight: 600; color: #0d1117; }
+
+    /* FOOTER */
+    footer { background: #0d1117; color: rgba(255,255,255,0.5); padding: 72px 60px 32px; }
+    .footer-grid { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+    .footer-links h4 { color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 700; margin-bottom: 18px; letter-spacing: 1px; text-transform: uppercase; }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-links a:hover { color: #0FA89A; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; font-size: 13px; }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="banner">👁 VORSCHAU — Neues Design raitsolution.de — Noch nicht live</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-mark">RA</div>
+    <div class="logo-name">IT SOLUTION</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Leistungen</a></li>
+    <li><a href="#">Über uns</a></li>
+    <li><a href="#">Team</a></li>
+    <li><a href="#">Referenzen</a></li>
+    <li><a href="#" class="nav-cta">Erstgespräch →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">🏙 Hamburg · IT-Consulting & Beratung</div>
+      <h1>IT-Projekte.<br><em>Sicher ans Ziel.</em></h1>
+      <p>Ihr zertifiziertes IT-Team aus Hamburg — von der ersten Idee bis zum erfolgreichen Abschluss. ISTQB, IREB, PMI, KI & Cybersecurity.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-teal">Kostenloses Erstgespräch</a>
+        <a href="#" class="btn-ghost">Leistungen ansehen →</a>
+      </div>
+      <div class="cert-row">
+        <span class="cert">ISTQB</span>
+        <span class="cert">IREB</span>
+        <span class="cert">PMI</span>
+        <span class="cert">Scrum.org</span>
+        <span class="cert">🌍 International</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="IT Team Hamburg">
+        </div>
+        <div class="hero-float-card hero-float-card1">
+          <div class="fc-icon">✅</div>
+          <div><span class="fc-num">15+</span><br><span class="fc-label">Jahre Erfahrung</span></div>
+        </div>
+        <div class="hero-float-card hero-float-card2">
+          <div class="fc-icon">⭐</div>
+          <div><span class="fc-num">100%</span><br><span class="fc-label">Direktengagement</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOVING STRIP -->
+<div class="moving-strip">
+  <div class="strip-track">
+    <span>ISTQB Zertifiziert</span><span class="hl">·</span>
+    <span>IREB Zertifiziert</span><span class="hl">·</span>
+    <span>PMI Projektmanagement</span><span class="hl">·</span>
+    <span>Scrum Leadership</span><span class="hl">·</span>
+    <span>KI Consulting</span><span class="hl">·</span>
+    <span>Cybersecurity</span><span class="hl">·</span>
+    <span>Hamburg & International</span><span class="hl">·</span>
+    <span>ISTQB Zertifiziert</span><span class="hl">·</span>
+    <span>IREB Zertifiziert</span><span class="hl">·</span>
+    <span>PMI Projektmanagement</span><span class="hl">·</span>
+    <span>Scrum Leadership</span><span class="hl">·</span>
+    <span>KI Consulting</span><span class="hl">·</span>
+    <span>Cybersecurity</span><span class="hl">·</span>
+    <span>Hamburg & International</span><span class="hl">·</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><span class="stat-num">15+</span><span class="stat-label">Jahre Erfahrung</span></div>
+    <div><span class="stat-num">4</span><span class="stat-label">Zertifizierungen</span></div>
+    <div><span class="stat-num">24h</span><span class="stat-label">Reaktionszeit</span></div>
+    <div><span class="stat-num">100%</span><span class="stat-label">Direktengagement</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="sec-inner">
+    <span class="sec-tag">Leistungen</span>
+    <h2 class="sec-title">Was wir für Sie leisten</h2>
+    <p class="sec-sub">Neun Kompetenzfelder — von der Projektidee bis zur fertigen Lösung. Alles aus einer Hand.</p>
+    <div class="services-grid">
+      <div class="svc"><div class="svc-icon">🔍</div><div class="svc-cert">ISTQB</div><h3>Software-Qualitätssicherung</h3><p>Testplanung, Teststrategie, Abnahmetests — strukturiert, nachweisbar, auditfähig.</p></div>
+      <div class="svc"><div class="svc-icon">📋</div><div class="svc-cert">IREB</div><h3>Anforderungsmanagement</h3><p>Lastenheft, Pflichtenheft, Requirements Engineering — klar und vollständig.</p></div>
+      <div class="svc"><div class="svc-icon">📊</div><div class="svc-cert">PMI</div><h3>IT-Projektmanagement</h3><p>Planung, Steuerung, Risiko- & Budgetkontrolle bis zum erfolgreichen Go-Live.</p></div>
+      <div class="svc"><div class="svc-icon">⚡</div><div class="svc-cert">Scrum.org</div><h3>Scrum & Agile Leadership</h3><p>Scrum Master, Agile Coach, Sprint Planning, Retrospektiven & Transformation.</p></div>
+      <div class="svc"><div class="svc-icon">💡</div><div class="svc-cert">Beratung <span class="svc-new-badge">NEU</span></div><h3>Projekt-Initiierung & Konzeption</h3><p>Von der Idee zur Roadmap — Business Case, Konzeption, Kick-off & Planung.</p></div>
+      <div class="svc"><div class="svc-icon">🤖</div><div class="svc-cert">Technologie <span class="svc-new-badge">NEU</span></div><h3>KI-Consulting</h3><p>KI-Strategie, Use-Case-Analyse & Implementierungsbegleitung für Ihr Unternehmen.</p></div>
+      <div class="svc"><div class="svc-icon">🔐</div><div class="svc-cert">Security <span class="svc-new-badge">NEU</span></div><h3>Cybersecurity</h3><p>IT-Sicherheitsberatung, Risikoanalyse, Security-Audits & Awareness-Schulungen.</p></div>
+      <div class="svc"><div class="svc-icon">🎓</div><div class="svc-cert">Training <span class="svc-new-badge">NEU</span></div><h3>Schulungen & Trainings</h3><p>ISTQB, IREB, Scrum, KI-Grundlagen — Inhouse-Schulungen maßgeschneidert für Ihr Team.</p></div>
+      <div class="svc"><div class="svc-icon">👥</div><div class="svc-cert">Personal <span class="svc-new-badge">NEU</span></div><h3>Kurzfristige Personalbereitstellung</h3><p>Erfahrene IT-Experten aus unserem Netzwerk — kurzfristig & projektbezogen verfügbar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80" alt="RAIT Solution Team">
+      <div class="about-badge">
+        <strong>15+</strong>
+        <span>Jahre IT-Projekterfahrung</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="sec-tag">Über uns</span>
+      <h2 class="sec-title" style="margin-bottom:20px">Kein Konzern.<br>Kein Overhead.</h2>
+      <p style="color:#555;font-size:17px;line-height:1.7;margin-bottom:16px">RAIT Solution steht für ein erfahrenes Netzwerk aus IT-Spezialisten. Wir arbeiten als Team und greifen auf internationale Kooperationspartner zurück — für jeden Projektbedarf die passende Expertise.</p>
+      <p style="color:#555;font-size:17px;line-height:1.7">Von der ersten Projektidee bis zur finalen Abnahme — direkt, pragmatisch, ohne Umwege.</p>
+      <ul class="vals">
+        <li><span class="val-dot">✓</span> Erfahrenes Team — kein Junior-Staffing</li>
+        <li><span class="val-dot">🌍</span> Internationales Partnernetzwerk & Kooperationen</li>
+        <li><span class="val-dot">⚡</span> Kurzfristige Personalbereitstellung möglich</li>
+        <li><span class="val-dot">🎯</span> Projekt-Initiierung bis Abschluss aus einer Hand</li>
+        <li><span class="val-dot">🗓</span> 30 Min. Erstberatung — kostenlos & unverbindlich</li>
+      </ul>
+      <a href="#" class="btn-teal" style="margin-top:8px">Team kennenlernen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+  <div class="sec-inner" style="max-width:1200px;margin:0 auto">
+    <span class="sec-tag">Das Team</span>
+    <h2 class="sec-title">Erfahrene Köpfe. Starkes Netzwerk.</h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo"><div class="team-ph">RA</div></div>
+      <div class="team-body">
+        <h3>Ramin Amini</h3>
+        <div class="team-role">Gründer & Lead Consultant</div>
+        <p>15+ Jahre IT-Erfahrung. Experte für QS, Anforderungsmanagement & Projektsteuerung in Versicherung, Verwaltung und Logistik.</p>
+        <div class="team-tags"><span class="ttag">ISTQB</span><span class="ttag">IREB</span><span class="ttag">PMI</span><span class="ttag">Scrum</span></div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80" alt="IT Expertin"></div>
+      <div class="team-body">
+        <h3>Unser Expertennetzwerk</h3>
+        <div class="team-role">Spezialisierte IT-Freelancer</div>
+        <p>Je nach Projektbedarf greifen wir auf erfahrene Spezialisten aus unserem Netzwerk zurück — deutschlandweit und international verfügbar.</p>
+        <div class="team-tags"><span class="ttag">KI</span><span class="ttag">Security</span><span class="ttag">Agile</span></div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Internationale Partner"></div>
+      <div class="team-body">
+        <h3>Int. Kooperationspartner</h3>
+        <div class="team-role">Globales Expertennetzwerk</div>
+        <p>Unsere internationalen Partner ermöglichen auch komplexe, mehrsprachige Projekte und europaweite IT-Rollouts.</p>
+        <div class="team-tags"><span class="ttag">International</span><span class="ttag">Multilingual</span><span class="ttag">Europa</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS STRIP -->
+<div class="partners">
+  <p class="partners-label">Zertifizierungen & Anerkennungen</p>
+  <div class="partner-logos">
+    <div class="plogo">ISTQB</div>
+    <div class="plogo">IREB</div>
+    <div class="plogo">PMI</div>
+    <div class="plogo">Scrum.org</div>
+    <div class="plogo">🌍 International Network</div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="sec-tag">Kontakt</span>
+      <h2 class="sec-title" style="margin-bottom:20px">Erstgespräch vereinbaren</h2>
+      <p style="color:#666;font-size:17px;line-height:1.7;margin-bottom:40px">30 Minuten kostenlos — wir analysieren Ihren Bedarf und zeigen konkret, wie wir helfen können. Kein Overhead, direkt zum Punkt.</p>
+      <div class="contact-info-item"><div class="ci-icon">📞</div><div><div class="ci-label">Telefon</div><div class="ci-val">+49 152 18903566</div></div></div>
+      <div class="contact-info-item"><div class="ci-icon">✉️</div><div><div class="ci-label">E-Mail</div><div class="ci-val">ra@raitsolution.de</div></div></div>
+      <div class="contact-info-item"><div class="ci-icon">📍</div><div><div class="ci-label">Adresse</div><div class="ci-val">Neuer Wall 1, 20354 Hamburg</div></div></div>
+      <div class="contact-info-item"><div class="ci-icon">⏱</div><div><div class="ci-label">Reaktionszeit</div><div class="ci-val">Innerhalb von 24 Stunden</div></div></div>
+    </div>
+    <div class="contact-form">
+      <label>Name</label><input type="text" placeholder="Ihr vollständiger Name">
+      <label>E-Mail</label><input type="email" placeholder="ihre@email.de">
+      <label>Ich interessiere mich für</label>
+      <select><option>Software-Qualitätssicherung (ISTQB)</option><option>Anforderungsmanagement (IREB)</option><option>IT-Projektmanagement (PMI)</option><option>KI-Consulting</option><option>Cybersecurity</option><option>Schulung / Training</option><option>Personalbereitstellung</option><option>Erstberatung / Sonstiges</option></select>
+      <label>Nachricht</label><textarea placeholder="Kurze Beschreibung Ihres Projekts oder Anliegens..."></textarea>
+      <button class="form-btn">Nachricht senden →</button>
+      <p style="text-align:center;margin-top:14px;color:#aaa;font-size:13px">30 Minuten Erstgespräch — kostenlos & unverbindlich</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:18px"><div class="logo-mark">RA</div><div class="logo-name" style="color:#fff">IT SOLUTION</div></div>
+      <p style="font-size:14px;line-height:1.7;margin-bottom:20px">IT-Projektmanagement, Qualitätssicherung & Consulting aus Hamburg.</p>
+      <div class="cert-row"><span class="cert" style="background:#ffffff12;color:rgba(255,255,255,0.6);border-color:#ffffff1a">ISTQB</span><span class="cert" style="background:#ffffff12;color:rgba(255,255,255,0.6);border-color:#ffffff1a">IREB</span><span class="cert" style="background:#ffffff12;color:rgba(255,255,255,0.6);border-color:#ffffff1a">PMI</span></div>
+    </div>
+    <div class="footer-links"><h4>Leistungen</h4><ul><li><a href="#">Software-QS</a></li><li><a href="#">Anforderungsmgt.</a></li><li><a href="#">Projektmgt.</a></li><li><a href="#">KI-Consulting</a></li><li><a href="#">Cybersecurity</a></li></ul></div>
+    <div class="footer-links"><h4>Unternehmen</h4><ul><li><a href="#">Über uns</a></li><li><a href="#">Team</a></li><li><a href="#">Referenzen</a></li><li><a href="#">Kontakt</a></li></ul></div>
+    <div class="footer-links"><h4>Kontakt</h4><ul><li><a href="#">ra@raitsolution.de</a></li><li><a href="#">+49 152 18903566</a></li><li><a href="#">Neuer Wall 1, Hamburg</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 RAIT Solution · Ramin Amini · Alle Rechte vorbehalten</span>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
