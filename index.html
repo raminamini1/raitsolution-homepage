@@ -844,9 +844,11 @@
 
   // Fade-in on scroll
   const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-  },{threshold:.1});
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  },{threshold:0,rootMargin:'0px 0px 200px 0px'});
   document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  // Safety net: reveal anything still hidden after 2s (covers fast scrolls, bfcache restores, etc.)
+  setTimeout(()=>document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>el.classList.add('visible')),2000);
 
   // Cookie banner
   const cb=document.getElementById('cookieBanner');
