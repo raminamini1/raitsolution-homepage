@@ -78,6 +78,15 @@
     .ticker-track span.sep{color:rgba(255,255,255,0.15)}
     @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+    /* STATS BAR */
+    .stats-bar{background:#fff;border-bottom:1px solid #ebebeb;padding:48px 60px}
+    .stats-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+    .stat-item{text-align:center;padding:0 12px;border-left:1px solid #ebebeb}
+    .stat-item:first-child{border-left:none}
+    .stat-num{font-size:34px;font-weight:800;letter-spacing:-1px;color:#0d0d0d;line-height:1}
+    .stat-lbl{color:#888;font-size:13px;margin-top:8px;line-height:1.4}
+    @media(max-width:900px){.stats-in{grid-template-columns:repeat(2,1fr);gap:24px}.stat-item:nth-child(3){border-left:none}}
+
     /* SECTIONS */
     section{padding:100px 60px}
     .sec-in{max-width:1200px;margin:0 auto}
@@ -339,6 +348,16 @@
     <span>Cybersecurity</span><span class="sep">—</span>
     <span>Schulungen</span><span class="sep">—</span>
     <span>Personalbereitstellung</span><span class="sep">—</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-in">
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-lbl">anerkannte Zertifizierungen<br>(ISTQB, IREB, PMI u.a.)</div></div>
+    <div class="stat-item"><div class="stat-num">1–2</div><div class="stat-lbl">Wochen bis zum<br>Projektstart</div></div>
+    <div class="stat-item"><div class="stat-num">30</div><div class="stat-lbl">Minuten kostenloses<br>Erstgespräch</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">remote- & hybridfähig,<br>deutschlandweit</div></div>
   </div>
 </div>
 

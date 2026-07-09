@@ -146,7 +146,7 @@
     <div class="ci-item"><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><div class="ci-lbl">Bürozeiten</div><div class="ci-val">Mo – Fr, 9:00 – 18:00 Uhr</div></div></div>
   </div>
   <div class="form-wrap">
-    <form action="https://formspree.io/f/xjglqllq" method="POST" enctype="multipart/form-data">
+    <form action="https://formspree.io/f/xjglqllq" method="POST">
       <input type="hidden" name="subject" value="Initiativbewerbung / Karriere">
       <label>Name</label><input type="text" name="name" placeholder="Ihr vollständiger Name" required>
       <label>E-Mail</label><input type="email" name="email" placeholder="ihre@email.de" required>
@@ -166,9 +166,9 @@
       </select>
       <label>Kurzprofil / Nachricht</label>
       <textarea name="message" placeholder="Ein paar Sätze zu Ihrer Erfahrung und Ihren Wünschen..."></textarea>
-      <label>Lebenslauf (PDF)</label>
-      <input type="file" name="cv" accept=".pdf,.doc,.docx">
-      <p class="field-hint">Optional weitere Unterlagen bitte in einer PDF zusammenfassen.</p>
+      <label>Link zu Lebenslauf (optional)</label>
+      <input type="text" name="cv_link" placeholder="z.B. Google Drive, Dropbox, LinkedIn-Profil">
+      <p class="field-hint">Keinen Link zur Hand? Lebenslauf einfach als Anhang an <a href="mailto:kontakt@raitsolution.de" style="color:#1a1a1a;text-decoration:underline">kontakt@raitsolution.de</a> senden.</p>
       <button type="submit" class="form-btn">Bewerbung senden</button>
       <p class="form-note">Geht direkt bei uns ein — wir melden uns zeitnah</p>
     </form>
