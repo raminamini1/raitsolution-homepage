@@ -112,6 +112,54 @@
   </div>
 </div></section>
 
+<!-- FAQ -->
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb" id="faq"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Häufige Fragen</h2>
+  <p class="sub">Antworten auf die wichtigsten Fragen rund um Anforderungsmanagement, Requirements Engineering und unsere Vorgehensweise.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">Was ist der Unterschied zwischen einem Lastenheft und einem Pflichtenheft?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Das Lastenheft beschreibt aus Sicht des Auftraggebers, was erreicht werden soll — die fachlichen Anforderungen, Ziele und Rahmenbedingungen. Das Pflichtenheft ist die Antwort des Auftragnehmers darauf: Es legt detailliert fest, wie die Anforderungen technisch und organisatorisch umgesetzt werden. Wir erstellen beide Dokumente in enger Abstimmung mit Fachbereich und IT, damit keine Lücke zwischen Anspruch und Umsetzung entsteht. Am Ende steht eine Anforderungsdokumentation, die als verbindliche Grundlage für Entwicklung, Abnahme und Vertrag dient.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Wie unterscheiden sich AS-IS-Analyse und TO-BE-Konzept?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Die AS-IS-Analyse hält den Ist-Zustand fest — bestehende Prozesse, Systeme, Schwachstellen und ungenutztes Potenzial, strukturiert und vollständig dokumentiert. Das TO-BE-Konzept beschreibt darauf aufbauend das Zielbild: den gewünschten Soll-Prozess, die Zielarchitektur und den Weg dorthin. Der Blueprint verbindet beide Stufen zu einer konkreten Umsetzungsroadmap. Nur wer den Ist-Zustand wirklich kennt, kann ein realistisches und erreichbares Zielbild entwickeln.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Wie lange dauert eine strukturierte Anforderungsanalyse?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Das hängt stark vom Projektumfang ab — eine fokussierte AS-IS-Analyse für einen einzelnen Prozess kann in 1–2 Wochen abgeschlossen sein, ein vollständiges Blueprint für ein größeres IT-Vorhaben nimmt meist mehrere Wochen in Anspruch. Wir arbeiten mit klaren Meilensteinen und liefern erste Zwischenergebnisse frühzeitig, damit Sie Fortschritt sehen und steuern können. Im kostenlosen Erstgespräch geben wir eine realistische Zeiteinschätzung für Ihr konkretes Vorhaben.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Was bedeutet BAU- und Hypercare-Betreuung nach dem Go-Live?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Nach dem Go-Live ist die Arbeit nicht automatisch beendet — der neue Prozess oder das neue System muss stabil in den regulären Betrieb (Business as Usual, BAU) überführt werden. In der Hypercare-Phase stehen wir unmittelbar nach dem Go-Live als Ansprechpartner bereit, um auftretende Probleme schnell zu lösen und die Nutzer zu unterstützen. Erst wenn Prozesse zuverlässig laufen, übergeben wir vollständig in den Regelbetrieb. Das reduziert das Risiko von Störungen und Akzeptanzproblemen in der kritischen Anfangsphase.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Warum ist eine IREB-Zertifizierung für Requirements Engineering relevant?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">IREB (International Requirements Engineering Board) ist der internationale Standard für professionelles Requirements Engineering. Eine IREB-Zertifizierung stellt sicher, dass Anforderungen nach bewährten, nachvollziehbaren Methoden erhoben, dokumentiert und verwaltet werden — statt nach individuellem Gutdünken. Das schafft Vergleichbarkeit, Nachvollziehbarkeit und reduziert Missverständnisse zwischen Fachbereich, IT und externen Dienstleistern. Als IREB-zertifiziertes Team wenden wir diese Standards in jedem Projekt konsequent an.</div>
+    </div>
+  </div>
+</div></section>
+<style>
+  .faq2-list{margin-top:8px;max-width:800px}
+  .faq2-item{border-bottom:1px solid #ebebeb}
+  .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+  .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+  .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+  .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+  .faq2-item.open .faq2-a{display:block}
+</style>
+<script>
+  document.querySelectorAll('.faq2-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq2-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+</script>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Kontakt</span>

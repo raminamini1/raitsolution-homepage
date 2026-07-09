@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -97,6 +104,35 @@
     <div class="card"><span class="card-n">05</span><h3>Cybersecurity Awareness</h3><p>Employees are the first line of defence — we train practically for digital everyday situations.</p><ul><li>Phishing & attack patterns</li><li>Secure passwords & MFA</li><li>Behaviour in an emergency</li></ul></div>
     <div class="card"><span class="card-n">06</span><h3>Custom Training</h3><p>No suitable topic listed? We develop training tailored to your specific requirements.</p><ul><li>Needs analysis & concept</li><li>Tailored content</li><li>Flexible schedule</li></ul></div></div>
 </div></section>
+<!-- FAQ -->
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about our in-house training and workshops.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">Are the trainings available remotely or on-site?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">All training is delivered in-house — either at your premises or remotely, depending on what works best for your team. We agree the format, schedule and delivery individually with you rather than fitting you into fixed course dates. Especially for distributed teams or hybrid setups, remote delivery has proven just as effective as on-site training.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What's the ideal group size for a training session?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Since we only offer in-house training, group size is shaped by your team rather than a fixed course format. Smaller groups allow more hands-on exercises and individual feedback, while larger teams benefit from a shared knowledge baseline across the whole project. We advise you upfront on the best setup for your topic and number of participants.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Do you also offer certification preparation (e.g. ISTQB, Scrum.org)?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Yes, ISTQB preparation is one of our core offerings, including foundation-level fundamentals, test management and exam simulation. Our IREB training on requirements engineering and our Scrum & Agile training are likewise aligned with the respective certification standards. We prepare your team specifically for exam content without losing the practical, day-to-day relevance.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What if our team has very different levels of prior knowledge?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">That's the normal case in in-house training, which is exactly why we run a needs analysis upfront instead of delivering a standard course. When prior knowledge varies widely, we structure content modularly or add individual deep-dive sessions, so beginners aren't overwhelmed and experienced staff aren't underchallenged. Our custom training is explicitly designed to adapt to your team's actual skill level.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What does the process look like from enquiry to training?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">It starts with a free consultation where we identify your training needs — topic, number of participants and timeframe. Based on that we put together a non-binding proposal with concrete content and format, tailored to your projects and schedule. Only after your approval do we schedule the date and delivery — no hidden extra costs, no fixed contract terms.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -129,6 +165,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

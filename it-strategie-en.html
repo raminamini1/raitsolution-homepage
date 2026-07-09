@@ -45,6 +45,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #ebebeb;border-radius:4px;overflow:hidden;background:#ebebeb}
     .step{background:#fff;padding:32px 24px;position:relative}
     .step-num{font-size:40px;font-weight:800;color:#f0f0f0;line-height:1;margin-bottom:12px}
@@ -176,6 +183,35 @@
   </div>
 </div></section>
 
+<!-- FAQ -->
+<section style="background:#fff"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about IT strategy, digitalization and getting started with your company.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">Where do we start if we don't have an IT strategy at all yet?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">The starting point is always the AS-IS analysis: we capture your current IT landscape, processes and system architecture in a structured, complete way before anything gets planned. From this stocktaking we derive strategic action areas aligned with your business goals. So even without an existing IT strategy, you get a clear, prioritized starting point instead of an unstructured list of tools or projects.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How is your consulting different from a classic management consultancy?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">We don't deliver slide decks — we deliver a roadmap with milestones, resource planning and defined KPIs that is actually implementable. Our strategies are developed in dialogue between IT and business units rather than on a drawing board, so technology decisions genuinely support the business strategy. And because we come from an IT practice background, we assess architecture and make-or-buy questions on solid technical grounds, not purely from a business-management angle.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Do you also deliver the implementation, or just the strategy?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Both: after strategy and roadmap, we actively accompany the implementation, measure progress against the defined KPIs and adapt the strategy when conditions change. Where needed, we also take on vendor management and tenders when external providers or new systems need to be integrated. Strategy without execution is theory to us — so we stay on board through go-live and beyond.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How do you handle budget constraints typical of mid-sized companies?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Every recommendation is prioritized and backed by a business case, so you implement the highest-leverage measures first. The roadmap is deliberately built as realistic, budgetable stages with clear resource planning rather than one large project. That way digitalization stays manageable and measurable even on a limited budget, instead of requiring everything at once.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What if our IT landscape has grown historically and is hard to overview?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">That's exactly what the AS-IS analysis is for: we systematically assess your existing IT architecture, from legacy systems to isolated point solutions, and identify modernization needs. Based on that we develop concrete modernization concepts including make-or-buy recommendations, rather than defaulting to a full rebuild. Historically grown structures are the normal case in our projects, not a barrier to getting started.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -214,6 +250,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

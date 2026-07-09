@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq-list{margin-top:44px;max-width:800px}
+    .faq-item{border-bottom:1px solid #ebebeb}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+    .faq-item.open .faq-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -100,6 +107,34 @@
     <div class="card"><span class="card-n">06</span><h3>Scrum in Organisations</h3><p>Introducing Scrum in traditionally organised companies — pragmatic, stepwise and sustainable.</p><ul><li>Scrum introduction & piloting</li><li>Support through first sprints</li><li>Lessons learned & adaptation</li></ul></div></div>
 </div></section>
 
+<section style="background:#f8f8f8"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about Scrum Master services, Agile Coaching and agile transformation.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">What if our team has never worked in an agile way before?<span class="faq-icon">+</span></button>
+      <div class="faq-a">That's the norm, not the exception. We start with an honest assessment of where you stand, introduce Scrum step by step and closely support the first sprints, rather than imposing a framework "from above". What matters more than perfect ceremonies from day one is that the team understands why it does things — mindset before process.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is it enough to train one of our own people as Scrum Master, instead of bringing in an external one?<span class="faq-icon">+</span></button>
+      <div class="faq-a">In the long run, an internal Scrum Master is almost always the right goal — which is why knowledge transfer is a core part of our work. In the short term, however, an external, Scrum.org-certified Scrum Master or Agile Coach often helps faster, because they can moderate conflicts without being entangled in the team hierarchy and spot typical beginner mistakes from the outside. Many of our engagements deliberately end with a planned handover to an internal team member.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Our retrospectives go nowhere, the same topics come up every time — what do you do differently?<span class="faq-icon">+</span></button>
+      <div class="faq-a">We facilitate retrospectives with varying formats instead of always the same round, so routine blindness doesn't set in, and we document actions with clear owners instead of vague intentions. The decisive factor is follow-up: at the start of the next retro we actively check what became of the last actions. Without this follow-through, any retrospective stays without consequence, no matter how good the format is.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How does Agile Coaching differ from a classic Scrum Master role?<span class="faq-icon">+</span></button>
+      <div class="faq-a">The Scrum Master ensures a functioning Scrum process at team level — sprint planning, daily standups, impediment removal. Agile Coaching goes further and works on mindset and culture, often also with leadership and across several teams, for example during a larger agile transformation. We offer both and switch between the roles depending on the organisation's maturity level.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">We already use SAFe or LeSS — can you support us anyway?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes, we explicitly advise on scaling frameworks such as SAFe and LeSS and support pilot projects and gradual scaling across multiple teams. Scaled agility rarely fails because of the framework itself, but because of details such as dependency management between teams or prioritisation conflicts at programme level — that is exactly where we focus.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -133,6 +168,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

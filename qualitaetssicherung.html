@@ -51,6 +51,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq-list{margin-top:44px;max-width:800px}
+    .faq-item{border-bottom:1px solid #ebebeb}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+    .faq-item.open .faq-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -112,6 +119,34 @@
   </div>
 </div></section>
 
+<section style="background:#f8f8f8"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Häufige Fragen</h2>
+  <p class="sub">Antworten auf die häufigsten Fragen rund um Testmanagement, Testautomatisierung und Abnahmetests.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Ab wann lohnt sich ein dediziertes Testmanagement?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Sobald ein Projekt mehr als eine Handvoll Schnittstellen hat oder mehrere Teams parallel entwickeln, wird Qualitätssicherung schnell zum Vollzeitjob. Erfahrungsgemäß lohnt sich eine dedizierte Testmanagement-Rolle ab einer Projektlaufzeit von wenigen Monaten mit regelmäßigen Releases, bei regulatorisch geprüften Anwendungen (z. B. im Versicherungs- oder Gesundheitswesen) oder wenn Fachbereich und Entwicklung sonst aneinander vorbeitesten. Wir übernehmen diese Rolle punktuell für einzelne Releases oder dauerhaft für die gesamte Projektlaufzeit.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Testen Sie manuell oder automatisiert?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Beides — abhängig davon, was zum Projekt passt. Regressionslastige, stabile Funktionsbereiche automatisieren wir schrittweise, während explorative und UAT-nahe Tests meist manuell bleiben, weil hier fachliches Verständnis zählt. Bevor wir automatisieren, erstellen wir ein Automatisierungskonzept mit Tool-Auswahl und Priorisierung, damit sich die Investition wirklich amortisiert und nicht in wartungsintensiven Testskripten versickert.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Wie läuft eine Testphase bei Ihnen konkret ab?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Wir starten mit Testkonzept und Teststrategie, leiten daraus Testfälle aus den Anforderungen ab und führen die Tests strukturiert mit Protokollierung in Ihrem Tool durch. Gefundene Fehler werden priorisiert, im Fehlermanagement nachverfolgt und vor dem nächsten Test-Zyklus erneut geprüft (Retest). Den Abschluss bildet ein Testbericht mit klarer Freigabeempfehlung, sodass die Entscheidung für den Go-Live auf Fakten basiert und nicht auf Bauchgefühl.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Arbeiten Sie mit unserem bestehenden Testmanagement-Tool?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Ja, wir sind toolagnostisch und arbeiten uns in Ihre bestehende Umgebung ein — ob Jira mit Xray oder Zephyr, TestRail, Azure Test Plans oder ein eigenes internes Tool. Ein Tool-Wechsel wegen uns ist nicht nötig. Falls noch keine Testmanagement-Struktur existiert, schlagen wir auf Wunsch ein schlankes Setup vor, das zu Teamgröße und Budget passt.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Was passiert, wenn während der Abnahme (UAT) kritische Fehler auftauchen?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Kritische Fehler stoppen nicht automatisch den gesamten Zeitplan, sondern werden im Mängelmanagement priorisiert und dem Fachbereich transparent gemeldet. Wir moderieren die Entscheidung, ob ein Fehler vor Go-Live behoben werden muss oder als bekannte Einschränkung dokumentiert und nachgelagert gefixt wird. So bleibt die Abnahme nachvollziehbar und auditfähig, auch wenn nicht jeder Fehler den Termin gefährdet.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Kontakt</span>
@@ -149,6 +184,14 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq-list{margin-top:44px;max-width:800px}
+    .faq-item{border-bottom:1px solid #ebebeb}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+    .faq-item.open .faq-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -100,6 +107,34 @@
     <div class="card"><span class="card-n">06</span><h3>Project Closure</h3><p>Orderly closure with complete documentation, lessons learned and clean handover.</p><ul><li>Closure documentation</li><li>Lessons learned</li><li>Go-live support</li></ul></div></div>
 </div></section>
 
+<section style="background:#f8f8f8"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about methodology, budget and interim project management.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Which project management methodology do you use — classic, agile or hybrid?<span class="faq-icon">+</span></button>
+      <div class="faq-a">We work methodology-agnostic under PMI standards and adapt the approach to the project and organisation — from classic waterfall through hybrid models to agile frameworks. What matters isn't the label but what actually works for your project, your stakeholder landscape and your existing processes. In practice, most of our IT projects are hybrid: a fixed frame for budget and milestones, agile execution at team level.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you take over full project leadership, or only parts of it?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Both. We take on full project management including budget and resource responsibility, but also clearly scoped partial tasks such as risk management, stakeholder communication, or building a work breakdown structure. For internal project managers who need extra capacity, we often work in a supporting role rather than a full takeover.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How quickly can you step in during a bottleneck or crisis?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Interim project management is one of our core services — we're typically ready to start within one to two weeks, faster in acute crises. The start is structured: a stocktake of timeline, budget and open risks, followed by stabilisation and a realistic, transparent replan instead of wishful thinking.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do you keep the budget under control without nasty surprises?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Through seamless budget planning and control with regular cost reporting that surfaces deviations early instead of at project closure. Risks with budget impact are assessed in the risk register and backed with countermeasures before they become a problem. Scope changes run through a defined change management process, so extra effort doesn't just "come along for the ride" but gets an explicit decision.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do you make sure all stakeholders stay on the same page?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Through a communication plan that defines who needs which information, at what depth and frequency — management needs different reports than the development team. Regular status reporting and a clear escalation path make sure problems surface early rather than right before a deadline.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -133,6 +168,14 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

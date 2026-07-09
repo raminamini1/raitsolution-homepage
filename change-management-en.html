@@ -58,6 +58,13 @@
     .arg-ico{width:36px;height:36px;background:#1a1a1a;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
     .arg-item h4{font-size:14px;font-weight:700;margin-bottom:4px;color:#0d0d0d}
     .arg-item p{font-size:13px;color:#666;line-height:1.55}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -176,6 +183,35 @@
   </div>
 </div></section>
 
+<!-- FAQ -->
+<section style="background:#fff"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about change management and guiding IT transformation projects.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">How do you deal with resistance within a team?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">For us, resistance is a signal, not a disruption — it usually points to an unanswered question or an unclear impact on someone's daily work. During the stakeholder analysis we identify resistance and its causes early and address it with targeted communication rather than pressure. We explicitly coach leaders to address resistance openly instead of ignoring or waiting it out.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">From what project size does professional change management pay off?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">As soon as an IT rollout noticeably changes the daily work of several teams or departments, structured change management pays off — regardless of the pure project budget. For smaller projects, a focused stakeholder analysis and a clear communication plan are often enough, without the full programme. We deliberately scale our approach to the actual depth of change, not to project size alone.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How do you measure the success of a change initiative?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">At the start of a project we define concrete change KPIs — such as adoption rates of the new system, training attendance or pulse-check results — and track them throughout the project. Regular surveys show where acceptance is still lacking, so we can adjust course instead of only finding out at the end that something didn't land. We keep monitoring these metrics after go-live too, to ensure the change is sustainably anchored.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Do you work with a fixed model such as Kotter or ADKAR?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">We draw on established models such as Kotter or ADKAR, but we don't apply them dogmatically — our four-phase approach, from stakeholder analysis through communication and enablement to stabilization, picks up the core principles of these models and adapts them to the actual project reality. What matters to us is not the label of the model, but that every phase leads to measurable acceptance within the team.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Does your support end at go-live?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">No — go-live is often where it becomes clear whether a change really sticks. We support the stabilization phase with hypercare, gather feedback from day-to-day operations and run a structured lessons-learned workshop. Only once the new processes have become second nature in everyday work do we consider the change sustainably anchored.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -214,6 +250,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

@@ -45,6 +45,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #ebebeb;border-radius:4px;overflow:hidden;background:#ebebeb}
     .step{background:#fff;padding:32px 24px;position:relative}
     .step-num{font-size:40px;font-weight:800;color:#f0f0f0;line-height:1;margin-bottom:12px}
@@ -176,6 +183,35 @@
   </div>
 </div></section>
 
+<!-- FAQ -->
+<section style="background:#fff"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Häufige Fragen</h2>
+  <p class="sub">Antworten auf die wichtigsten Fragen rund um IT-Strategie, Digitalisierung und den Einstieg in Ihr Unternehmen.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">Wo fangen wir an, wenn wir noch gar keine IT-Strategie haben?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Der Einstieg ist immer die IST-Analyse: Wir erfassen Ihre aktuelle IT-Landschaft, Prozesse und Systemarchitektur strukturiert und vollständig, bevor irgendetwas geplant wird. Aus dieser Bestandsaufnahme leiten wir strategische Handlungsfelder ab, die zu Ihren Unternehmenszielen passen. Sie erhalten damit auch ohne bisherige IT-Strategie einen klaren, priorisierten Startpunkt statt einer unstrukturierten Tool- oder Projektliste.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Wie unterscheidet sich eure Beratung von einer klassischen Unternehmensberatung?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Wir liefern keine reinen Foliensätze, sondern eine Roadmap mit Meilensteinen, Ressourcenplanung und definierten KPIs, die tatsächlich umsetzbar ist. Unsere Strategien entstehen im Dialog zwischen IT und Fachbereichen statt am Reißbrett — damit Technologieentscheidungen die Geschäftsstrategie wirklich unterstützen. Und weil wir aus der IT-Praxis kommen, bewerten wir Architektur- und Make-or-Buy-Fragen technisch fundiert statt rein betriebswirtschaftlich.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Liefert ihr auch die Umsetzung oder nur die Strategie?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Beides: Nach Strategie und Roadmap begleiten wir aktiv die Umsetzung, messen Fortschritte anhand der definierten KPIs und passen die Strategie bei veränderten Rahmenbedingungen an. Bei Bedarf übernehmen wir auch Vendor Management und Ausschreibungen, wenn externe Dienstleister oder neue Systeme eingebunden werden müssen. Strategie ohne Umsetzung ist für uns Theorie — deshalb bleiben wir bis zum Go-Live und darüber hinaus an Bord.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Wie geht ihr mit Budget-Restriktionen im Mittelstand um?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Jede Empfehlung wird priorisiert und mit einem Business Case unterlegt, damit Sie zuerst die Maßnahmen mit dem größten Hebel umsetzen. Die Roadmap ist bewusst in realistische, budgetierbare Etappen mit klarer Ressourcenplanung konzipiert, statt als ein einziges Großprojekt. So lässt sich Digitalisierung auch mit begrenztem Budget steuerbar und in messbaren Schritten vorantreiben, statt alles auf einmal zu stemmen.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Was, wenn unsere IT-Landschaft historisch gewachsen und unübersichtlich ist?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Genau dafür ist die IST-Analyse da: Wir bewerten Ihre bestehende IT-Architektur systematisch, von Legacy-Systemen bis zu Insellösungen, und identifizieren Modernisierungsbedarf. Auf dieser Basis entwickeln wir konkrete Modernisierungskonzepte inklusive Make-or-Buy-Empfehlungen, statt pauschal einen Neuaufbau vorzuschlagen. Historisch gewachsene Strukturen sind der Normalfall unserer Projekte, kein Hindernis für den Einstieg.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Kontakt</span>
@@ -214,6 +250,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

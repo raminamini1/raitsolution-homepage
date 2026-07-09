@@ -51,6 +51,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq-list{margin-top:44px;max-width:800px}
+    .faq-item{border-bottom:1px solid #ebebeb}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+    .faq-item.open .faq-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -109,6 +116,34 @@
     <div class="card"><span class="card-n">04</span><h3>Agile Transformation</h3><p>Begleitung ganzer Organisationen bei der agilen Transformation — von klassischen Strukturen zu agilen Arbeitsweisen.</p><ul><li>Transformations-Roadmap</li><li>Pilotprojekte & Skalierung</li><li>SAFe / LeSS Beratung</li></ul></div>
     <div class="card"><span class="card-n">05</span><h3>Product Owner Support</h3><p>Unterstützung von Product Ownern bei Backlog-Management, Priorisierung und Stakeholder-Kommunikation.</p><ul><li>Backlog-Management</li><li>Priorisierungsmethoden</li><li>Stakeholder-Alignment</li></ul></div>
     <div class="card"><span class="card-n">06</span><h3>Scrum in Unternehmen</h3><p>Einführung von Scrum in klassisch organisierten Unternehmen — pragmatisch, schrittweise und nachhaltig.</p><ul><li>Scrum-Einführung & Pilotierung</li><li>Begleitung der ersten Sprints</li><li>Lessons Learned & Anpassung</li></ul></div>
+  </div>
+</div></section>
+
+<section style="background:#f8f8f8"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Häufige Fragen</h2>
+  <p class="sub">Antworten auf die häufigsten Fragen rund um Scrum Master, Agile Coaching und agile Transformation.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Was, wenn unser Team noch nie agil gearbeitet hat?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Das ist der Normalfall, nicht die Ausnahme. Wir starten mit einer ehrlichen Standortbestimmung, führen Scrum schrittweise ein und begleiten die ersten Sprints eng, statt ein Framework "von oben" überzustülpen. Wichtiger als perfekte Zeremonien ab Tag eins ist, dass das Team versteht, warum es die Dinge tut — Haltung vor Prozess.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Reicht es, wenn wir einen Scrum Master ausbilden, statt einen extern zu holen?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Langfristig ist ein interner Scrum Master fast immer sinnvoll — deshalb ist Wissenstransfer fester Bestandteil unserer Arbeit. Kurzfristig hilft ein externer, Scrum.org-zertifizierter Scrum Master oder Agile Coach aber oft schneller, weil er Konflikte moderiert, ohne in die Teamhierarchie verstrickt zu sein, und typische Anfängerfehler von außen erkennt. Viele unserer Einsätze enden bewusst mit einer geplanten Übergabe an ein internes Teammitglied.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Unsere Retrospektiven verlaufen im Sand, jedes Mal dieselben Themen — was tut ihr anders?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Wir moderieren Retrospektiven mit wechselnden Formaten statt immer derselben Runde, damit sich keine Routine-Blindheit einschleicht, und dokumentieren Maßnahmen mit klaren Verantwortlichkeiten statt vager Absichten. Entscheidend ist das Follow-up: Wir prüfen zu Beginn der nächsten Retro aktiv, was aus den letzten Maßnahmen geworden ist. Ohne diese Nachverfolgung bleibt jede Retrospektive folgenlos, egal wie gut das Format ist.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Wie unterscheidet sich Agile Coaching von klassischem Scrum-Master-Sein?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Der Scrum Master sorgt für einen funktionierenden Scrum-Prozess auf Teamebene — Sprint Planning, Daily, Impediment Removal. Agile Coaching geht darüber hinaus und arbeitet an Mindset und Kultur, oft auch mit Führungskräften und über mehrere Teams hinweg, etwa bei einer größeren agilen Transformation. Wir bieten beides und wechseln je nach Reifegrad der Organisation zwischen den Rollen.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Wir nutzen bereits SAFe oder LeSS — könnt ihr uns trotzdem unterstützen?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Ja, wir beraten explizit auch zu Skalierungs-Frameworks wie SAFe und LeSS und unterstützen bei Pilotprojekten und der schrittweisen Skalierung über mehrere Teams. Skalierte Agilität scheitert in der Praxis selten am Framework selbst, sondern an Feindetails wie Abhängigkeitsmanagement zwischen Teams oder Priorisierungskonflikten auf Programmebene — genau dort setzen wir an.</div>
+    </div>
   </div>
 </div></section>
 

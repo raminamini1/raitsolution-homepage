@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -97,6 +104,36 @@
     <div class="card"><span class="card-n">05</span><h3>GDPR & Compliance</h3><p>IT security and data protection go hand in hand — we ensure legally compliant implementation.</p><ul><li>GDPR compliance</li><li>IT security policies</li><li>Data protection impact assessment</li></ul></div>
     <div class="card"><span class="card-n">06</span><h3>Incident Response</h3><p>In an emergency, respond quickly and in a structured way — we help with preparation and support during incidents.</p><ul><li>Emergency planning</li><li>Incident response plan</li><li>Crisis management</li></ul></div></div>
 </div></section>
+
+<!-- FAQ -->
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about IT security consulting, audits and getting started at your company.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">What does a security audit cost for a mid-sized business?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">It depends on the size of your IT infrastructure, the number of systems involved and the depth of review you need — we deliberately don't quote flat rates, since they rarely reflect your actual situation. During the free initial consultation, we scope the engagement together, and you then receive a transparent, binding quote. That way you only pay for what's actually relevant to your business.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Is a one-off penetration test enough, or do we need ongoing support?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">A one-off test gives you a snapshot — useful as a starting point or after major system changes, but new vulnerabilities keep emerging through updates, new applications and a shifting threat landscape. For sustainable security, we therefore recommend combining an initial audit with regular vulnerability assessments. How often that makes sense for you depends on your company's risk profile, which we assess together.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How quickly can you respond in the event of an active security incident?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">As part of our incident response support, we prepare a concrete emergency plan in advance with clear contacts and escalation paths, so no time is lost coordinating once something goes wrong. Existing clients with a plan on file can reach us at short notice for an initial assessment and immediate mitigation steps. Without preparation, response naturally takes longer — one more reason to address incident response before a crisis, not during one.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Are your recommendations compatible with ISO 27001 / BSI IT-Grundschutz?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Yes, we base our risk assessments, action plans and policy work on recognised frameworks such as ISO 27001 and the German BSI IT-Grundschutz standard. That doesn't automatically mean you need to pursue certification — many mid-sized companies already benefit from the structured processes without taking on the full certification effort. If you decide to certify later, our results already give you a solid foundation.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What does awareness training for our team actually look like?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">We favour hands-on formats over dry theory: simulated phishing emails, concrete everyday examples, and clear rules for passwords, MFA and incident behaviour. Training is tailored to the systems and processes your company actually uses, not generic slides. That way what's learned stays present in daily work, instead of fading once the session ends.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -129,6 +166,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

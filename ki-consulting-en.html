@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -97,6 +104,34 @@
     <div class="card"><span class="card-n">05</span><h3>Change & Enablement</h3><p>AI changes ways of working. We guide your team through the transition and build lasting competencies.</p><ul><li>AI training & workshops</li><li>Stakeholder management</li><li>Governance & ethics</li></ul></div>
     <div class="card"><span class="card-n">06</span><h3>EU AI Act & Compliance</h3><p>Legally compliant AI implementation: EU AI Act, GDPR and ethical guidelines considered from day one.</p><ul><li>EU AI Act compliance</li><li>GDPR & data protection</li><li>Ethics guidelines</li></ul></div></div>
 </div></section>
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about AI strategy, implementation and compliance.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">Do we need our own data infrastructure before starting with AI?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Not necessarily. As part of the data & AI readiness assessment, we first check which data sources are already usable and where gaps exist. Many use cases can be piloted with existing systems and targeted adjustments — a complete data infrastructure is usually only required once you scale. This way you avoid upfront technology investments that later turn out to be the wrong size.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How long does it take from initial AI strategy to the first productive result?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Depending on complexity, we typically see 6 to 12 weeks from potential analysis to the first pilot. The AI roadmap itself is usually ready after 2 to 3 weeks, followed by a prioritised use case as a pilot deployment. We deliberately favour small, measurable steps over big-bang projects so you see real value quickly.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What does AI consulting cost for a mid-sized company?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Costs depend on scope and maturity level — from a focused potential analysis to full implementation support. In the free 30-minute initial consultation, we provide a transparent cost estimate based on your concrete use cases. Many mid-sized companies start with a clearly scoped pilot to make investment and value directly comparable.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What does the EU AI Act mean specifically for our project?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">The EU AI Act classifies AI systems by risk level and sets different requirements for transparency, documentation and human oversight depending on the intended use. We assess early which risk category your planned use case falls into and build the necessary compliance measures directly into the implementation — instead of retrofitting them later. This avoids costly rework and legal uncertainty.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Will AI replace our employees?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">In our experience, AI shifts tasks rather than replacing jobs — repetitive work gets automated while value-adding tasks stay with people. What matters is proper support: without change management and training, uncertainty and resistance build up in the team. That's why enablement is a core part of our AI projects, not an afterthought.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -129,6 +164,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

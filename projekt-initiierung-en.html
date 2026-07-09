@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -97,6 +104,35 @@
     <div class="card"><span class="card-n">05</span><h3>Project Kick-off</h3><p>Structured project start with all stakeholders — clear roles, responsibilities and communication channels from day one.</p><ul><li>Kick-off preparation & facilitation</li><li>Role clarification & responsibilities</li><li>Project handbook</li></ul></div>
     <div class="card"><span class="card-n">06</span><h3>Feasibility Analysis</h3><p>Is the initiative technically, organisationally and economically feasible? We deliver a well-founded assessment.</p><ul><li>Technical feasibility</li><li>Organisational feasibility</li><li>Economic viability</li></ul></div></div>
 </div></section>
+<!-- FAQ -->
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about project initiation, business cases and getting started with us.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">When should we bring you into a project?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">We add the most value before budget and scope are locked in — right after the initial idea or an internal decision in principle. That way we can still assess vision, business case and feasibility with a fresh perspective, before wrong assumptions get baked into contracts or timelines. If a rough framework already exists, we structure the initiation retroactively just as thoroughly.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What do we actually receive at the end of a project initiation phase?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">You get a robust business case with cost-benefit analysis and ROI calculation, a clearly scoped project concept, and a prioritised roadmap with milestones and resource planning. This is complemented by a project handbook that defines roles and responsibilities. That gives every stakeholder clarity from day one on what happens, when, and why.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How does your initiation phase differ from a classic kick-off meeting?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">A classic kick-off usually assumes goals, scope and business case are already fixed — for us, the kick-off is the conclusion of initiation, not the start. Before it come needs analysis, feasibility assessment, business case and roadmap development, so the kick-off happens on solid ground instead of assumptions. That way projects don't start with unresolved goals or unrealistic timelines.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What if the project scope still changes during initiation?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">That's normal, which is why we align scope, milestone planning and roadmap iteratively with all stakeholders rather than fixing them once and for all. Changes to the vision feed directly into the gap analysis, stakeholder alignment, business case and high-level planning. Only once goals, scope and feasibility are consistent do we move into the kick-off together.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">For which project sizes is a structured initiation worthwhile?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">In principle for any IT project with a noticeable budget or resource commitment — from individual business applications to company-wide transformation initiatives. The larger the investment volume and number of stakeholders, the bigger the payoff, because misjudgements otherwise surface late and expensively. For smaller initiatives we streamline the phases accordingly, without skipping the business case or feasibility check.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -129,6 +165,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

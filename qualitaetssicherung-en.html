@@ -41,6 +41,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq-list{margin-top:44px;max-width:800px}
+    .faq-item{border-bottom:1px solid #ebebeb}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+    .faq-item.open .faq-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -100,6 +107,34 @@
     <div class="card"><span class="card-n">06</span><h3>Test Management</h3><p>Taking on the test management role in your project — coordination, reporting, stakeholder communication.</p><ul><li>Test progress reporting</li><li>Stakeholder communication</li><li>Quality gates & sign-offs</li></ul></div></div>
 </div></section>
 
+<section style="background:#f8f8f8"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about test management, test automation and acceptance testing.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">When does dedicated test management make sense?<span class="faq-icon">+</span></button>
+      <div class="faq-a">As soon as a project has more than a handful of interfaces or several teams developing in parallel, quality assurance quickly becomes a full-time job. In our experience, a dedicated test management role pays off from a project with regular releases over several months, for regulated applications (e.g. insurance or healthcare), or whenever business and development teams end up testing past each other. We take on this role selectively for individual releases or continuously for the whole project.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you test manually or with automation?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Both — depending on what fits the project. We gradually automate regression-heavy, stable areas of functionality, while exploratory and UAT-related tests usually stay manual because domain understanding matters most there. Before automating anything, we create an automation concept with tool selection and prioritisation, so the investment actually pays off instead of turning into a pile of high-maintenance test scripts.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What does a test phase with you actually look like?<span class="faq-icon">+</span></button>
+      <div class="faq-a">We start with a test concept and strategy, derive test cases from the requirements, and run tests in a structured way with logging in your tool of choice. Defects are prioritised, tracked through defect management, and re-checked before the next test cycle (retest). We close with a test report and a clear release recommendation, so the go-live decision is based on facts, not gut feeling.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you work with our existing test management tool?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes, we're tool-agnostic and work within your existing environment — whether that's Jira with Xray or Zephyr, TestRail, Azure Test Plans, or an in-house tool. You don't need to switch tools for our sake. If no test management structure exists yet, we're happy to propose a lean setup that fits your team size and budget.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What happens if critical defects turn up during acceptance testing (UAT)?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Critical defects don't automatically halt the whole schedule — they're prioritised through defect tracking and reported transparently to the business side. We facilitate the decision on whether a defect must be fixed before go-live or documented as a known limitation and fixed afterwards. That keeps the acceptance process traceable and audit-ready, even when not every defect threatens the deadline.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
@@ -133,6 +168,14 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

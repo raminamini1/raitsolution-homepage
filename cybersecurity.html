@@ -52,6 +52,13 @@
     .card p{color:#666;font-size:14px;line-height:1.65}
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
+    .faq2-list{margin-top:8px;max-width:800px}
+    .faq2-item{border-bottom:1px solid #ebebeb}
+    .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+    .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+    .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+    .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:700px}
+    .faq2-item.open .faq2-a{display:block}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
     .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
@@ -114,6 +121,35 @@
   </div>
 </div></section>
 
+<!-- FAQ -->
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Häufige Fragen</h2>
+  <p class="sub">Antworten auf die wichtigsten Fragen zu IT-Sicherheitsberatung, Audits und dem Einstieg für Ihr Unternehmen.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">Was kostet ein Security-Audit für den Mittelstand?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Das hängt von der Größe Ihrer IT-Infrastruktur, der Anzahl der Systeme und dem gewünschten Prüftiefe ab — pauschale Preise nennen wir bewusst nicht, weil sie an Ihrer Realität vorbeigehen würden. Im kostenlosen Erstgespräch grenzen wir den Umfang gemeinsam ein und Sie erhalten danach ein transparentes, verbindliches Angebot. So zahlen Sie nur für das, was für Ihr Unternehmen tatsächlich relevant ist.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Reicht ein einmaliger Penetrationstest oder brauchen wir laufende Betreuung?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Ein einmaliger Test liefert eine Momentaufnahme — sinnvoll als Einstieg oder nach größeren Systemänderungen, aber neue Schwachstellen entstehen laufend durch Updates, neue Anwendungen und veränderte Bedrohungslagen. Für nachhaltige Sicherheit empfehlen wir daher eine Kombination aus Erstaudit und regelmäßiger Schwachstellenanalyse. Wie oft sich das für Sie lohnt, hängt vom Risikoprofil Ihres Unternehmens ab, das wir gemeinsam einschätzen.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Wie schnell könnt ihr im Fall eines akuten Sicherheitsvorfalls reagieren?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Im Rahmen unserer Incident-Response-Begleitung erstellen wir vorab einen konkreten Notfallplan mit klaren Ansprechpartnern und Eskalationswegen, damit im Ernstfall keine Zeit mit Abstimmung verloren geht. Bestandskunden mit hinterlegtem Notfallplan erreichen uns kurzfristig für die erste Einschätzung und Sofortmaßnahmen. Ohne Vorbereitung dauert die Reaktion naturgemäß länger — ein weiterer Grund, Incident Response nicht erst im Krisenfall anzugehen.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Sind eure Empfehlungen mit ISO 27001 / BSI-Grundschutz kompatibel?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Ja, wir orientieren unsere Risikobewertung, Maßnahmenpläne und Richtlinienarbeit an anerkannten Standards wie ISO 27001 und dem BSI IT-Grundschutz. Das bedeutet nicht automatisch, dass Sie eine Zertifizierung anstreben müssen — viele Mittelständler profitieren bereits von den strukturierten Prozessen, ohne den vollen Zertifizierungsaufwand zu betreiben. Wer später zertifizieren möchte, hat mit unseren Ergebnissen bereits eine solide Grundlage.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Wie läuft eine Awareness-Schulung für unser Team konkret ab?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Wir setzen auf praxisnahe Formate statt trockener Theorie: simulierte Phishing-Mails, konkrete Beispiele aus dem Arbeitsalltag und klare Verhaltensregeln für Passwörter, MFA und den Notfall. Die Schulung wird auf die tatsächlich genutzten Systeme und Prozesse Ihres Unternehmens zugeschnitten, nicht auf generische Folien. So bleibt das Gelernte im Alltag wirklich präsent, statt nach der Schulung wieder zu verblassen.</div>
+    </div>
+  </div>
+</div></section>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Kontakt</span>
@@ -151,6 +187,7 @@
 <script>
 document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+document.querySelectorAll('.faq2-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq2-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 </script>
   <!-- Cookie Banner -->
   <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">

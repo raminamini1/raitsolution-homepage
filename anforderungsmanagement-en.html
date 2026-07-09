@@ -100,6 +100,54 @@
     <div class="card"><span class="card-n">06</span><h3>BAU & Hypercare Support</h3><p>After go-live comes operations: we support the handover to business-as-usual (BAU) and remain available during the hypercare phase.</p><ul><li>Go-live support</li><li>Hypercare support</li><li>Post-deployment stabilisation</li></ul></div></div>
 </div></section>
 
+<!-- FAQ -->
+<section style="background:#f8f8f8;border-top:1px solid #ebebeb" id="faq"><div class="sec-in">
+  <span class="sec-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="sub">Answers to the most common questions about requirements management and how we work.</p>
+  <div class="faq2-list">
+    <div class="faq2-item">
+      <button class="faq2-q">What is the difference between a functional specification and a technical specification?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">The functional specification describes what needs to be achieved from the client's perspective — the business requirements, goals and constraints. The technical specification is the provider's response: it defines in detail how those requirements will be implemented technically and organisationally. We create both documents in close coordination with business and IT stakeholders so no gap opens up between expectation and delivery. The result is requirements documentation that serves as a binding basis for development, acceptance testing and contracts.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How do AS-IS analysis and TO-BE concept differ?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">The AS-IS analysis captures the current state — existing processes, systems, weaknesses and untapped potential, fully documented and structured. The TO-BE concept builds on this to describe the target picture: the desired target process and architecture, and the path to get there. The blueprint connects both stages into a concrete implementation roadmap. Only once you truly understand the current state can you develop a realistic and achievable target picture.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">How long does a structured requirements analysis take?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">This depends heavily on project scope — a focused AS-IS analysis for a single process can be completed in 1–2 weeks, while a complete blueprint for a larger IT initiative usually takes several weeks. We work with clear milestones and deliver early interim results so you can see and steer progress. In the free initial consultation we give a realistic time estimate for your specific project.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">What does BAU and hypercare support mean after go-live?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">Work doesn't automatically end at go-live — the new process or system needs to be stably transitioned into business-as-usual (BAU) operations. During the hypercare phase we remain directly available right after go-live to quickly resolve issues and support users. Only once processes run reliably do we hand over fully into regular operations. This reduces the risk of disruption and adoption problems during the critical early phase.</div>
+    </div>
+    <div class="faq2-item">
+      <button class="faq2-q">Why does IREB certification matter for requirements engineering?<span class="faq2-icon">+</span></button>
+      <div class="faq2-a">IREB (International Requirements Engineering Board) is the international standard for professional requirements engineering. IREB certification ensures requirements are elicited, documented and managed using proven, traceable methods rather than ad hoc approaches. This creates comparability, traceability and reduces misunderstandings between business, IT and external providers. As an IREB-certified team, we apply these standards consistently in every project.</div>
+    </div>
+  </div>
+</div></section>
+<style>
+  .faq2-list{margin-top:8px;max-width:800px}
+  .faq2-item{border-bottom:1px solid #ebebeb}
+  .faq2-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;gap:16px}
+  .faq2-icon{font-size:20px;font-weight:300;color:#aaa;flex-shrink:0;transition:transform .25s;line-height:1}
+  .faq2-item.open .faq2-icon{transform:rotate(45deg)}
+  .faq2-a{display:none;padding-bottom:22px;color:#666;font-size:15px;line-height:1.8;max-width:680px}
+  .faq2-item.open .faq2-a{display:block}
+</style>
+<script>
+  document.querySelectorAll('.faq2-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq2-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+</script>
+
 <div class="contact-sec"><div class="cg">
   <div>
     <span class="sec-label">Contact</span>
