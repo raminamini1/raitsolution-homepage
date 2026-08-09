@@ -79,13 +79,12 @@
     @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
     /* STATS BAR */
-    .stats-bar{background:#fff;border-bottom:1px solid #ebebeb;padding:48px 60px}
-    .stats-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-    .stat-item{text-align:center;padding:0 12px;border-left:1px solid #ebebeb}
-    .stat-item:first-child{border-left:none}
-    .stat-num{font-size:34px;font-weight:800;letter-spacing:-1px;color:#0d0d0d;line-height:1}
-    .stat-lbl{color:#888;font-size:13px;margin-top:8px;line-height:1.4}
-    @media(max-width:900px){.stats-in{grid-template-columns:repeat(2,1fr);gap:24px}.stat-item:nth-child(3){border-left:none}}
+    .stats-bar{background:#fff;border-bottom:1px solid #ebebeb;padding:66px 60px}
+    .stats-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:56px}
+    .stat-item{text-align:center;padding:0}
+    .stat-head{font-size:21px;font-weight:600;letter-spacing:-.4px;color:#0d0d0d;line-height:1.25}
+    .stat-cap{color:#86868b;font-size:13.5px;margin-top:9px;line-height:1.5}
+    @media(max-width:900px){.stats-bar{padding:52px 32px}.stats-in{grid-template-columns:repeat(2,1fr);gap:44px 28px}}
 
     /* SECTIONS */
     section{padding:100px 60px}
@@ -354,10 +353,10 @@
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-in">
-    <div class="stat-item"><div class="stat-num">✓</div><div class="stat-lbl">anerkannte Zertifizierungen<br>(ISTQB, IREB, PMI u.&nbsp;a.)</div></div>
-    <div class="stat-item"><div class="stat-num">1–2</div><div class="stat-lbl">Wochen bis zum<br>Projektstart</div></div>
-    <div class="stat-item"><div class="stat-num">30</div><div class="stat-lbl">Minuten kostenloses<br>Erstgespräch</div></div>
-    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">remote- & hybridfähig,<br>deutschlandweit</div></div>
+    <div class="stat-item"><div class="stat-head">Zertifizierte Expertise</div><div class="stat-cap">ISTQB · IREB · PMI u.&nbsp;a.</div></div>
+    <div class="stat-item"><div class="stat-head">Schnell startklar</div><div class="stat-cap">im Projekt in 1–2&nbsp;Wochen</div></div>
+    <div class="stat-item"><div class="stat-head">Kostenloses Erstgespräch</div><div class="stat-cap">unverbindlich, 30&nbsp;Minuten</div></div>
+    <div class="stat-item"><div class="stat-head">Deutschlandweit</div><div class="stat-cap">remote &amp; hybrid</div></div>
   </div>
 </div>
 
