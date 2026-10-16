@@ -12,7 +12,7 @@
 - Zweisprachig: DE `name.html`, EN `name-en.html` (Startseite: `index.html` / `index-en.html`). Jede Änderung immer in **beiden** Sprachen machen.
 - Seiten: Startseite, 13 Leistungsseiten (`qualitaetssicherung`, `anforderungsmanagement`, `projektmanagement`, `scrum-leadership`, `projekt-initiierung`, `ki-consulting`, `ki-automatisierung`, `cybersecurity`, `schulungen`, `personalbereitstellung`, `it-strategie`, `change-management`, `google-ads`), `karriere`, 6 Blogartikel `blog-{qa,anforderungen,ki,scrum,security,pm}`, Rechtstexte `impressum`/`datenschutz`/`agb` (noindex, EN = unverbindliche Übersetzung).
 - Fonts: `fonts/inter-400.woff2` (Variable Font, `font-weight: 300 700`) + `playfair-700.woff2`, Preload in jedem `<head>`.
-- Inhaber / Blog-Autor: Ramin Amini, Neuer Wall 1, 20354 Hamburg, kontakt@raitsolution.de, +49 40 65390431, Mobil +49 152 18903566.
+- Inhaber / Blog-Autor: Ramin Amini, Neuer Wall 1, 20354 Hamburg, kontakt@raitsolution.de, +49 40 65390431, Mobil +49 1515 7735046.
 - Einige Dateien beginnen mit UTF-8-BOM – beim Bearbeiten erhalten.
 
 ## SEO-Konventionen (bei jeder neuen/geänderten Seite einhalten)
