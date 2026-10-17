@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testautomatisierung einführen in 6 Schritten | RAIT Solution</title>
+  <meta name="description" content="Testautomatisierung einführen, ohne in Wartung zu versinken: Ziele, Auswahl der Testfälle, Testpyramide, Tools und typische Fehler – praxisnah erklärt.">
+  <link rel="canonical" href="https://raitsolution.de/blog-testautomatisierung.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-testautomatisierung.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-testautomatisierung-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-testautomatisierung.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Testautomatisierung einführen in 6 Schritten | RAIT Solution">
+  <meta property="og:description" content="Testautomatisierung einführen: Ziele, Testfall-Auswahl, Testpyramide, Tools und typische Fehler – ein praxisnaher Leitfaden in 6 Schritten.">
+  <meta property="og:url" content="https://raitsolution.de/blog-testautomatisierung.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Testautomatisierung einführen in 6 Schritten | RAIT Solution">
+  <meta name="twitter:description" content="Testautomatisierung einführen: Ziele, Testfall-Auswahl, Testpyramide, Tools und typische Fehler – ein praxisnaher Leitfaden in 6 Schritten.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Testautomatisierung einführen: Leitfaden in 6 Schritten", "description": "Testautomatisierung einführen, ohne in Wartung zu versinken: Ziele, Auswahl der Testfälle, Testpyramide, Tools und typische Fehler – praxisnah erklärt.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-testautomatisierung.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testautomatisierung.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-17", "dateModified": "2026-10-17", "about": {"@type": "Thing", "name": "Testautomatisierung"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Testautomatisierung einführen: Leitfaden in 6 Schritten", "item": "https://raitsolution.de/blog-testautomatisierung.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ab wann lohnt sich Testautomatisierung?", "acceptedAnswer": {"@type": "Answer", "text": "Testautomatisierung lohnt sich, sobald dieselben Regressionstests regelmäßig wiederholt werden müssen – etwa bei häufigen Releases oder einer langen Produktlaufzeit. Bei einmaligen Projekten mit wenigen Testzyklen ist manuelles Testen oft wirtschaftlicher."}}, {"@type": "Question", "name": "Welche Tests sollte man zuerst automatisieren?", "acceptedAnswer": {"@type": "Answer", "text": "Am besten beginnt man mit häufig ausgeführten Regressionstests für stabile Kernprozesse und mit API-Tests. Sie bringen schnell Nutzen und sind weniger anfällig für Änderungen als Tests über die Benutzeroberfläche."}}, {"@type": "Question", "name": "Ersetzt Testautomatisierung manuelle Tests?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Automatisierte Tests prüfen bekannte Abläufe zuverlässig und schnell. Explorative Tests, Usability-Bewertungen und Abnahmetests durch den Fachbereich bleiben weiterhin manuell, weil hier fachliches Urteilsvermögen gefragt ist."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-testautomatisierung.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-testautomatisierung-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung</span>
+  <h1>Testautomatisierung einführen: Leitfaden in 6 Schritten</h1>
+  <p class="meta"><time datetime="2026-10-17">17. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Viele Teams starten mit Testautomatisierung, weil Regressionstests jedes Release länger aufhalten. Ein halbes Jahr später gibt es Hunderte Skripte, die keiner mehr pflegen will, und die Pipeline ist öfter rot als grün. Wer Testautomatisierung einführen will, braucht deshalb zuerst eine Strategie und erst danach ein Tool.</p>
+
+  <h2>Warum Testautomatisierung so oft enttäuscht</h2>
+  <p>Die Erwartung ist meist hoch: weniger manueller Aufwand, schnellere Releases, mehr Sicherheit. In der Praxis scheitern Automatisierungsinitiativen selten an der Technik, sondern an drei Punkten: Es wird das Falsche automatisiert, die Wartung wird nicht eingeplant, und niemand fühlt sich für die Ergebnisse verantwortlich. Automatisierte Tests sind Software – sie brauchen Architektur, Code-Reviews und Pflege wie jedes andere Produkt.</p>
+  <p>Die gute Nachricht: Diese Fehler lassen sich mit einem schrittweisen Vorgehen vermeiden. Die folgenden sechs Schritte haben sich in Projekten bewährt.</p>
+
+  <h2>Schritt 1: Das Ziel klären</h2>
+  <p>„Wir wollen mehr automatisieren“ ist kein Ziel. Bevor die erste Zeile Testcode entsteht, sollte klar sein, welches Problem gelöst werden soll. Typische Ziele sind:</p>
+  <ul>
+    <li><strong>Regressionen früher finden</strong> – Fehler in bestehender Funktionalität sollen nicht erst im Abnahmetest auffallen.</li>
+    <li><strong>Release-Zyklen verkürzen</strong> – der manuelle Regressionstest ist der Engpass vor jedem Go-Live.</li>
+    <li><strong>Testabdeckung nachweisen</strong> – etwa für Audits in regulierten Branchen.</li>
+  </ul>
+  <p>Das Ziel bestimmt, wo Sie anfangen. Wer Release-Zyklen verkürzen will, beginnt mit den Tests, die heute am meisten manuelle Zeit kosten. Wer Regressionen früher finden will, setzt auf schnelle Tests, die bei jedem Commit laufen.</p>
+
+  <h2>Schritt 2: Die richtigen Testfälle auswählen</h2>
+  <p>Nicht jeder Test eignet sich zur Automatisierung. Ein einfacher Filter: Automatisieren lohnt sich dort, wo ein Test häufig wiederholt wird, das erwartete Ergebnis eindeutig ist und sich die Funktion selten ändert.</p>
+  <h3>Gute Kandidaten</h3>
+  <ul>
+    <li>Regressionstests für stabile Kernprozesse (Login, Bestellung, Vertragsanlage, Abrechnung)</li>
+    <li>Schnittstellentests (APIs) mit klar definierten Ein- und Ausgaben</li>
+    <li>Datengetriebene Tests, bei denen dieselbe Logik mit vielen Varianten geprüft wird</li>
+    <li>Smoke-Tests, die nach jedem Deployment die Grundfunktionen bestätigen</li>
+  </ul>
+  <h3>Schlechte Kandidaten</h3>
+  <ul>
+    <li>Funktionen, deren Oberfläche sich noch im Sprint ständig ändert</li>
+    <li>Explorative Tests und Usability-Bewertungen – hier zählt menschliches Urteilsvermögen</li>
+    <li>Einmalige Prüfungen, etwa bei einer Datenmigration</li>
+    <li>Abnahmetests (UAT), bei denen der Fachbereich bewusst selbst prüfen soll</li>
+  </ul>
+  <p>Praktisch heißt das: Erstellen Sie eine Liste Ihrer manuellen Regressionstests, bewerten Sie jeden nach Ausführungshäufigkeit, Aufwand und Stabilität und beginnen Sie mit den obersten zehn bis zwanzig Fällen. Ein kleiner, verlässlicher Testsatz bringt mehr als eine große, instabile Suite.</p>
+
+  <h2>Schritt 3: Die Testpyramide als Orientierung nutzen</h2>
+  <p>Ein häufiger Fehler ist, fast ausschließlich über die Benutzeroberfläche zu automatisieren. UI-Tests sind langsam, anfällig für Layoutänderungen und schwer zu debuggen. Die Testpyramide schlägt eine andere Verteilung vor:</p>
+  <ul>
+    <li><strong>Unit-Tests</strong> als breite Basis – schnell, günstig, nah am Code und in der Verantwortung der Entwicklung.</li>
+    <li><strong>Integrations- und API-Tests</strong> in der Mitte – sie prüfen Geschäftslogik und Schnittstellen ohne die Fragilität der Oberfläche.</li>
+    <li><strong>End-to-End-Tests über die UI</strong> an der Spitze – wenige, gezielt ausgewählte Szenarien für die wichtigsten Geschäftsprozesse.</li>
+  </ul>
+  <p>Gerade für Teams, die aus dem manuellen Testen kommen, ist die API-Ebene oft der beste Einstieg: Die Tests sind stabiler als UI-Tests und decken trotzdem fachlich relevante Abläufe ab.</p>
+
+  <h2>Schritt 4: Werkzeuge nach Kontext auswählen</h2>
+  <p>Die Tool-Frage wird gern zuerst gestellt, sollte aber erst jetzt beantwortet werden. Entscheidend ist, was zu Ihrem Technologie-Stack und Ihrem Team passt – nicht, was gerade am häufigsten empfohlen wird. Für Weboberflächen sind etwa Playwright, Cypress oder Selenium verbreitet, für API-Tests Werkzeuge wie Postman oder REST Assured, für Unit-Tests die Frameworks der jeweiligen Programmiersprache.</p>
+  <p>Wichtige Auswahlkriterien:</p>
+  <ul>
+    <li>Passt die Programmiersprache zum Entwicklungsteam, damit Tests gemeinsam gepflegt werden können?</li>
+    <li>Lässt sich das Tool in Ihre CI/CD-Pipeline und Ihr Testmanagement-Tool integrieren?</li>
+    <li>Wie gut sind Fehlermeldungen, Screenshots und Logs für die Analyse?</li>
+    <li>Wer pflegt die Tests, wenn das Projektteam wechselt?</li>
+  </ul>
+  <p>Ein kurzer Proof of Concept mit zwei oder drei echten Testfällen aus Ihrem System zeigt schneller als jeder Feature-Vergleich, ob ein Werkzeug trägt.</p>
+
+  <h2>Schritt 5: Wartbarkeit von Anfang an einplanen</h2>
+  <p>Der größte Kostenblock der Testautomatisierung ist nicht das Schreiben der Tests, sondern ihre Pflege. Wer das von Beginn an berücksichtigt, spart später viel Aufwand:</p>
+  <ul>
+    <li><strong>Saubere Struktur:</strong> Muster wie Page Objects trennen Testlogik von Oberflächendetails. Ändert sich ein Button, wird eine Stelle angepasst, nicht fünfzig Tests.</li>
+    <li><strong>Stabile Selektoren:</strong> Eigene Test-IDs im Frontend sind robuster als lange XPath-Ausdrücke.</li>
+    <li><strong>Unabhängige Testdaten:</strong> Jeder Test erzeugt oder setzt seine Daten selbst und hängt nicht vom Ergebnis eines anderen Tests ab.</li>
+    <li><strong>Keine festen Wartezeiten:</strong> Statt „5 Sekunden warten“ auf einen definierten Zustand warten.</li>
+    <li><strong>Instabile Tests sofort behandeln:</strong> Ein Test, der mal grün und mal rot ist, zerstört das Vertrauen in die gesamte Suite. Er wird repariert oder vorübergehend aus dem Pflichtlauf genommen.</li>
+  </ul>
+
+  <h2>Schritt 6: In die Pipeline integrieren und Ergebnisse sichtbar machen</h2>
+  <p>Automatisierte Tests entfalten ihren Wert erst, wenn sie regelmäßig und ohne manuellen Anstoß laufen. Bewährt hat sich eine Staffelung: schnelle Unit- und API-Tests bei jedem Commit, eine umfangreichere Regressionssuite nächtlich oder vor jedem Release.</p>
+  <p>Ebenso wichtig ist die Sichtbarkeit. Testergebnisse gehören in ein gemeinsames Dashboard oder Ihr Testmanagement-Tool, und es muss klar sein, wer einen roten Lauf analysiert. In Scrum-Teams gehört das automatisierte Testen idealerweise zur Definition of Done: Eine Story ist erst fertig, wenn die zugehörigen Tests automatisiert und grün sind.</p>
+
+  <h2>Typische Fehler beim Einführen von Testautomatisierung</h2>
+  <ul>
+    <li><strong>Alles auf einmal:</strong> Der Versuch, den kompletten manuellen Testkatalog zu automatisieren, endet meist in einer halbfertigen, instabilen Suite.</li>
+    <li><strong>Automatisierung als Nebenjob:</strong> Ohne eingeplante Kapazität bleibt die Pflege liegen, sobald es im Projekt eng wird.</li>
+    <li><strong>Testautomatisierung isoliert vom Entwicklungsteam:</strong> Wenn Tester und Entwickler getrennt arbeiten, werden Testbarkeitsprobleme zu spät erkannt.</li>
+    <li><strong>Erfolg an der Anzahl der Tests messen:</strong> Aussagekräftiger ist, wie viele relevante Fehler vor dem Release gefunden werden und wie lange ein Regressionslauf dauert.</li>
+    <li><strong>Manuelles Testen abschaffen wollen:</strong> Automatisierung ergänzt explorative Tests und Abnahmetests, ersetzt sie aber nicht.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Testautomatisierung einzuführen ist ein Projekt mit eigenem Ziel, eigener Architektur und eigenem Pflegeaufwand. Wer mit einem klaren Ziel startet, die richtigen Testfälle auswählt, sich an der Testpyramide orientiert und Wartbarkeit von Anfang an mitdenkt, baut eine Testsuite auf, der das Team vertraut – und die Releases tatsächlich beschleunigt. Welche Rolle Qualitätssicherung insgesamt für den Projekterfolg spielt, lesen Sie in unserem Artikel <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>; wie Testen in agilen Teams funktioniert, in <a href="blog-scrum.html" class="inl">Agile Transformation: Was Scrum wirklich bedeutet</a>.</p>
+
+  <h2>Häufige Fragen zur Testautomatisierung</h2>
+  <h3>Ab wann lohnt sich Testautomatisierung?</h3>
+  <p>Testautomatisierung lohnt sich, sobald dieselben Regressionstests regelmäßig wiederholt werden müssen – etwa bei häufigen Releases oder einer langen Produktlaufzeit. Bei einmaligen Projekten mit wenigen Testzyklen ist manuelles Testen oft wirtschaftlicher.</p>
+  <h3>Welche Tests sollte man zuerst automatisieren?</h3>
+  <p>Am besten beginnt man mit häufig ausgeführten Regressionstests für stabile Kernprozesse und mit API-Tests. Sie bringen schnell Nutzen und sind weniger anfällig für Änderungen als Tests über die Benutzeroberfläche.</p>
+  <h3>Ersetzt Testautomatisierung manuelle Tests?</h3>
+  <p>Nein. Automatisierte Tests prüfen bekannte Abläufe zuverlässig und schnell. Explorative Tests, Usability-Bewertungen und Abnahmetests durch den Fachbereich bleiben weiterhin manuell, weil hier fachliches Urteilsvermögen gefragt ist.</p>
+
+  <div class="cta-box">
+    <h3>Testautomatisierung für Ihr Projekt planen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir prüfen, welche Tests sich bei Ihnen automatisieren lassen und wie Sie sinnvoll starten.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Software-QS</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
