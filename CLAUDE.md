@@ -36,5 +36,5 @@
 
 ## Offen (später mit Inhaber)
 - Unsplash-Bilder lokal hosten (Datenschutz; Unsplash ist in der Cloud-Umgebung gesperrt → Bilder vom Inhaber).
-- Google Search Console: Inhaber legt Property `https://raitsolution.de/` an (Methode HTML-Tag) und schickt den `google-site-verification`-Code → Meta-Tag in `index.html` + `index-en.html` einbauen, pushen, Inhaber klickt „Bestätigen“ und reicht `sitemap.xml` ein. Danach Google-Unternehmensprofil.
+- Google Search Console: **bestätigt 17.10.2026** (Datei `googleea5731aeba6e1495.html` + Meta-Tag auf `index*.html` – beides NIE löschen). Sitemap einreichen durch Inhaber. Danach Google-Unternehmensprofil.
 - Eigene Fotos von Inhaber/Team: **nein, endgültig** – nicht mehr nachfragen, Stock-/neutrale Bilder bleiben.
