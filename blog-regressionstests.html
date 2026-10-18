@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regressionstests: Strategie für stabile Releases | RAIT Solution</title>
+  <meta name="description" content="Regressionstests gezielt planen: Auswirkungsanalyse, risikobasierte Auswahl, Pflege der Suite und Einbindung in Scrum – für stabile Releases ohne Engpass.">
+  <link rel="canonical" href="https://raitsolution.de/blog-regressionstests.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-regressionstests.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-regressionstests-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-regressionstests.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Regressionstests: Strategie für stabile Releases | RAIT Solution">
+  <meta property="og:description" content="Regressionstests risikobasiert planen: Testumfang festlegen, Suite pflegen, automatisieren und in Scrum integrieren – ein praxisnaher Leitfaden.">
+  <meta property="og:url" content="https://raitsolution.de/blog-regressionstests.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Regressionstests: Strategie für stabile Releases | RAIT Solution">
+  <meta name="twitter:description" content="Regressionstests risikobasiert planen: Testumfang festlegen, Suite pflegen, automatisieren und in Scrum integrieren – ein praxisnaher Leitfaden.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Regressionstests: So sichern Sie stabile Releases ab", "description": "Regressionstests gezielt planen: Auswirkungsanalyse, risikobasierte Auswahl, Pflege der Suite und Einbindung in Scrum – für stabile Releases ohne Engpass.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-regressionstests.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-regressionstests.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-18", "dateModified": "2026-10-18", "about": {"@type": "Thing", "name": "Regressionstest"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Regressionstests: So sichern Sie stabile Releases ab", "item": "https://raitsolution.de/blog-regressionstests.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wann sollte ein Regressionstest durchgeführt werden?", "acceptedAnswer": {"@type": "Answer", "text": "Nach jeder Änderung, die bestehende Funktionen beeinflussen kann – also bei neuen Features, Fehlerkorrekturen, Updates von Bibliotheken oder Infrastruktur, Konfigurationsänderungen und Datenmigrationen. Der Umfang richtet sich nach der Auswirkungsanalyse und dem Risiko der Änderung."}}, {"@type": "Question", "name": "Was ist der Unterschied zwischen Regressionstest und Fehlernachtest?", "acceptedAnswer": {"@type": "Answer", "text": "Der Fehlernachtest bestätigt, dass ein konkret gemeldeter Fehler behoben ist. Der Regressionstest prüft, ob die Korrektur oder eine andere Änderung unbeabsichtigt bereits funktionierende Bereiche beschädigt hat. In der Praxis werden beide nacheinander ausgeführt."}}, {"@type": "Question", "name": "Wie wählt man die richtigen Regressionstestfälle aus?", "acceptedAnswer": {"@type": "Answer", "text": "Über eine Kombination aus Auswirkungsanalyse und Risikobewertung: Getestet werden die von der Änderung betroffenen Bereiche sowie alle geschäftskritischen Abläufe mit hoher Priorität. Ergänzt wird die Auswahl um Testfälle zu Fehlern, die früher bereits in Produktion aufgetreten sind."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-regressionstests.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-regressionstests-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung</span>
+  <h1>Regressionstests: So sichern Sie stabile Releases ab</h1>
+  <p class="meta"><time datetime="2026-10-18">18. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Eine kleine Änderung an der Rabattberechnung, und plötzlich funktioniert der Rechnungsversand nicht mehr. Genau solche Nebenwirkungen sollen Regressionstests verhindern. In vielen Projekten sind sie aber entweder zu dünn, um echte Sicherheit zu geben, oder so umfangreich, dass sie jedes Release um Tage verzögern. Dieser Artikel zeigt, wie Sie Regressionstests so planen, dass sie beides leisten: Sicherheit und Tempo.</p>
+
+  <h2>Was Regressionstests sind – und was nicht</h2>
+  <p>Ein Regressionstest prüft, ob bereits funktionierende Software nach einer Änderung weiterhin korrekt arbeitet. Auslöser kann ein neues Feature sein, eine Fehlerkorrektur, ein Update einer Bibliothek, eine geänderte Konfiguration oder eine Migration auf neue Infrastruktur. Das Ziel ist nicht, die Änderung selbst zu testen, sondern ihre unbeabsichtigten Auswirkungen auf den Rest des Systems.</p>
+  <p>Davon zu unterscheiden ist der <strong>Fehlernachtest</strong> (Re-Test): Er bestätigt, dass ein konkret gemeldeter Fehler behoben ist. Beides gehört zusammen – ein behobener Fehler ist erst dann wirklich erledigt, wenn der Nachtest grün ist und der Regressionstest zeigt, dass die Korrektur nichts anderes beschädigt hat.</p>
+
+  <h2>Warum der Regressionstest zum Engpass wird</h2>
+  <p>Mit jedem Release wächst die Funktionalität und damit die Zahl der Abläufe, die erneut geprüft werden müssten. Wer bei jeder Änderung „alles“ testen will, braucht immer länger – bis der Regressionstest zur Phase wird, auf die das ganze Team wartet. Unter Zeitdruck wird dann ungeplant gekürzt: Es wird getestet, was gerade vertraut ist, nicht das, was am meisten Risiko trägt.</p>
+  <p>Die Lösung ist nicht, weniger zu testen, sondern gezielter. Ein guter Regressionstest beantwortet eine klare Frage: Welche Funktionen könnten durch diese Änderung betroffen sein, und welche davon wären für das Unternehmen besonders kritisch?</p>
+
+  <h2>Den Umfang festlegen: risikobasiert statt vollständig</h2>
+  <h3>Auswirkungsanalyse: Was hat sich geändert?</h3>
+  <p>Am Anfang steht die Frage, welche Komponenten, Schnittstellen und Daten von einer Änderung berührt werden. Entwicklung und QA sollten diese Einschätzung gemeinsam treffen – Entwickler kennen die technischen Abhängigkeiten, Tester die fachlichen Abläufe. Hilfreich sind dabei eine Nachverfolgbarkeit von Anforderungen zu Testfällen, die Änderungshistorie im Versionskontrollsystem und das Wissen, welche Module in der Vergangenheit fehleranfällig waren.</p>
+  <h3>Risikobewertung: Was wäre ein Ausfall wert?</h3>
+  <p>Nicht jede Funktion ist gleich wichtig. Bewerten Sie Ihre Geschäftsprozesse nach zwei Kriterien: Wie wahrscheinlich ist ein Fehler in diesem Bereich, und wie groß wäre der Schaden? Ein Fehler in der Zahlungsabwicklung oder bei gesetzlich vorgeschriebenen Meldungen wiegt schwerer als eine falsch formatierte Statusanzeige. Aus dieser Bewertung ergibt sich eine Priorität für jeden Regressionstestfall.</p>
+  <h3>Stufen des Regressionstests</h3>
+  <p>In der Praxis hat sich eine Staffelung bewährt, statt jedes Mal dieselbe Testmenge auszuführen:</p>
+  <ul>
+    <li><strong>Smoke-Test:</strong> Wenige Tests, die nach jedem Deployment bestätigen, dass das System grundsätzlich läuft – Anmeldung, zentrale Navigation, wichtigste Transaktion.</li>
+    <li><strong>Gezielter Regressionstest:</strong> Die Testfälle aus der Auswirkungsanalyse plus alle Tests höchster Priorität. Das ist der Standard für reguläre Releases.</li>
+    <li><strong>Vollständiger Regressionstest:</strong> Die gesamte Suite, vorgesehen für große Releases, Plattformwechsel, Upgrades zentraler Komponenten oder Datenmigrationen.</li>
+  </ul>
+  <p>Wichtig ist, dass diese Auswahl dokumentiert wird. Wer später nachvollziehen muss, warum ein Fehler durchgerutscht ist, braucht die Information, welche Tests bewusst weggelassen wurden.</p>
+
+  <h2>Die Regressionssuite pflegen</h2>
+  <p>Eine Regressionssuite ist kein einmal erstelltes Dokument, sondern ein lebender Bestand. Ohne Pflege sammeln sich veraltete Testfälle für Funktionen, die es nicht mehr gibt, Dubletten und Tests ohne klares erwartetes Ergebnis. Bewährte Regeln:</p>
+  <ul>
+    <li><strong>Jeder Produktionsfehler erzeugt einen Regressionstestfall.</strong> So wird sichergestellt, dass derselbe Fehler nicht ein zweites Mal ausgeliefert wird.</li>
+    <li><strong>Neue Features wandern nach der Abnahme in die Suite</strong> – mit der passenden Priorität, nicht pauschal mit „hoch“.</li>
+    <li><strong>Regelmäßig aufräumen:</strong> Testfälle für entfernte Funktionen löschen, ähnliche zusammenfassen, unklare Beschreibungen präzisieren.</li>
+    <li><strong>Testdaten mitdenken:</strong> Regressionstests brauchen reproduzierbare Ausgangsdaten. Wenn jeder Lauf mit anderen Daten startet, lassen sich Ergebnisse kaum vergleichen.</li>
+  </ul>
+  <p>Ein Testmanagement-Tool, in dem Testfälle, Prioritäten und Ergebnisse zentral verwaltet werden, erleichtert diese Pflege erheblich – vor allem, wenn mehrere Teams an derselben Anwendung arbeiten.</p>
+
+  <h2>Manuell oder automatisiert?</h2>
+  <p>Regressionstests sind der klassische Kandidat für Testautomatisierung, weil sie immer wieder mit denselben erwarteten Ergebnissen ausgeführt werden. Das heißt aber nicht, dass alles automatisiert werden sollte. Stabile, häufig benötigte Abläufe auf API- und Oberflächenebene profitieren am meisten. Selten genutzte Sonderfälle, Abläufe mit hoher fachlicher Bewertung oder Bereiche, die sich gerade stark verändern, bleiben oft wirtschaftlicher manuell.</p>
+  <p>Ein pragmatischer Weg: Beginnen Sie mit den Regressionstests höchster Priorität, die bei jedem Release ausgeführt werden. Wie Sie dabei vorgehen und typische Fallen vermeiden, beschreibt unser Leitfaden <a href="blog-testautomatisierung.html" class="inl">Testautomatisierung einführen in 6 Schritten</a>.</p>
+
+  <h2>Regressionstests in Scrum und bei häufigen Releases</h2>
+  <p>In agilen Teams gibt es keine lange Testphase am Ende, in der in Ruhe regressiv getestet werden könnte. Regressionstests müssen deshalb in den Sprint integriert werden. Bewährt hat sich:</p>
+  <ul>
+    <li>Automatisierte Regressionstests laufen in der CI/CD-Pipeline – schnelle Tests bei jedem Commit, die umfangreichere Suite nächtlich.</li>
+    <li>Die Definition of Done enthält, dass die betroffenen Regressionstests grün sind und neue Tests für die Story ergänzt wurden.</li>
+    <li>Manuelle Regressionstests werden pro Sprint geplant und geschätzt, statt sie am Sprintende „nebenbei“ zu erledigen.</li>
+    <li>Vor einem größeren Release gibt es einen kurzen, klar abgegrenzten Regressionslauf über alle Sprints hinweg.</li>
+  </ul>
+
+  <h2>Ergebnisse auswerten und das Release entscheiden</h2>
+  <p>Ein Regressionstest ist erst dann nützlich, wenn aus seinen Ergebnissen eine Entscheidung folgt. Legen Sie vorab fest, unter welchen Bedingungen ein Release freigegeben wird – etwa: keine offenen Fehler der höchsten Schwere, alle Tests höchster Priorität ausgeführt, bekannte Einschränkungen dokumentiert und mit dem Fachbereich abgestimmt. Diese Kriterien gehören in die Teststrategie, nicht in eine spontane Diskussion am Release-Tag.</p>
+  <p>Ebenso wichtig ist ein ehrlicher Bericht: Was wurde getestet, was bewusst nicht, welche Risiken bleiben? Damit treffen Projektleitung und Fachbereich eine informierte Entscheidung, statt sich auf ein grünes Ampelsymbol zu verlassen.</p>
+
+  <h2>Typische Fehler bei Regressionstests</h2>
+  <ul>
+    <li><strong>Immer alles testen wollen:</strong> Der vollständige Lauf bei jeder Kleinigkeit kostet Zeit, die an anderer Stelle fehlt.</li>
+    <li><strong>Immer dasselbe testen:</strong> Eine starre Testmenge ignoriert, wo sich das System tatsächlich verändert hat.</li>
+    <li><strong>Keine Rückkopplung aus der Produktion:</strong> Fehler aus dem Betrieb fließen nicht in die Suite zurück.</li>
+    <li><strong>Instabile automatisierte Tests tolerieren:</strong> Wenn rote Läufe regelmäßig als „Fehlalarm“ abgetan werden, übersieht das Team irgendwann einen echten Fehler.</li>
+    <li><strong>Regressionstest als reine Aufgabe der QA sehen:</strong> Ohne die Einschätzung der Entwicklung zur Auswirkung einer Änderung bleibt die Auswahl der Tests ein Ratespiel.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Gute Regressionstests sind keine Frage der Menge, sondern der Auswahl. Wer Änderungen systematisch analysiert, Testfälle nach Risiko priorisiert, die Suite konsequent pflegt und klare Freigabekriterien definiert, bekommt stabile Releases, ohne dass der Test zum Engpass wird. Warum eine strukturierte Qualitätssicherung insgesamt über den Projekterfolg entscheidet, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</p>
+
+  <h2>Häufige Fragen zu Regressionstests</h2>
+  <h3>Wann sollte ein Regressionstest durchgeführt werden?</h3>
+  <p>Nach jeder Änderung, die bestehende Funktionen beeinflussen kann – also bei neuen Features, Fehlerkorrekturen, Updates von Bibliotheken oder Infrastruktur, Konfigurationsänderungen und Datenmigrationen. Der Umfang richtet sich nach der Auswirkungsanalyse und dem Risiko der Änderung.</p>
+  <h3>Was ist der Unterschied zwischen Regressionstest und Fehlernachtest?</h3>
+  <p>Der Fehlernachtest bestätigt, dass ein konkret gemeldeter Fehler behoben ist. Der Regressionstest prüft, ob die Korrektur oder eine andere Änderung unbeabsichtigt bereits funktionierende Bereiche beschädigt hat. In der Praxis werden beide nacheinander ausgeführt.</p>
+  <h3>Wie wählt man die richtigen Regressionstestfälle aus?</h3>
+  <p>Über eine Kombination aus Auswirkungsanalyse und Risikobewertung: Getestet werden die von der Änderung betroffenen Bereiche sowie alle geschäftskritischen Abläufe mit hoher Priorität. Ergänzt wird die Auswahl um Testfälle zu Fehlern, die früher bereits in Produktion aufgetreten sind.</p>
+
+  <div class="cta-box">
+    <h3>Regressionstests für Ihr Projekt aufsetzen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihre Release-Praxis und zeigen, wie Sie Regressionstests gezielter planen.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="blog-testautomatisierung.html">Testautomatisierung einführen in 6 Schritten →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Software-QS</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
