@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load Testing: Securing Performance Before Go-Live | RAIT Solution</title>
+  <meta name="description" content="Plan load tests properly: measurable targets, a realistic load profile, a production-like environment and sound analysis – find bottlenecks before go-live.">
+  <link rel="canonical" href="https://raitsolution.de/blog-lasttests-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-lasttests.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-lasttests-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-lasttests.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Load Testing: Securing Performance Before Go-Live | RAIT Solution">
+  <meta property="og:description" content="Plan and evaluate load tests in practice: performance requirements, load profile, test environment, monitoring and common mistakes – a guide.">
+  <meta property="og:url" content="https://raitsolution.de/blog-lasttests-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Load Testing: Securing Performance Before Go-Live | RAIT Solution">
+  <meta name="twitter:description" content="Plan and evaluate load tests in practice: performance requirements, load profile, test environment, monitoring and common mistakes – a guide.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Load Testing: Securing Performance Before Go-Live", "description": "Plan load tests properly: measurable targets, a realistic load profile, a production-like environment and sound analysis – find bottlenecks before go-live.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-lasttests-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-lasttests-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-19", "dateModified": "2026-10-19", "about": {"@type": "Thing", "name": "Load testing"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "Load Testing: Securing Performance Before Go-Live", "item": "https://raitsolution.de/blog-lasttests-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a load test and a stress test?", "acceptedAnswer": {"@type": "Answer", "text": "A load test checks whether a system meets the agreed response times under expected normal and peak load. A stress test deliberately pushes load beyond that to find the breaking point and to check whether the system behaves in a controlled way there."}}, {"@type": "Question", "name": "When should a load test be carried out?", "acceptedAnswer": {"@type": "Answer", "text": "Before the go-live of a new application, before expected load peaks and after major changes to architecture, infrastructure or the database. In agile projects, smaller automated performance tests in the CI/CD pipeline complement the large load tests."}}, {"@type": "Question", "name": "Which tools are suitable for load testing?", "acceptedAnswer": {"@type": "Answer", "text": "Widely used tools include JMeter, Gatling, k6 and Locust. More important than the tool are a realistic load profile, a production-like test environment and accompanying monitoring that reveals bottlenecks."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-lasttests.html" class="lang-btn">DE</a>
+    <a href="blog-lasttests-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Quality Assurance</span>
+  <h1>Load Testing: Securing Performance Before Go-Live</h1>
+  <p class="meta"><time datetime="2026-10-19">19 October 2026</time> · Ramin Amini</p>
+  <p class="lead">Everything works in testing, the business department has signed off – and on the first day after go-live the new customer portal becomes painfully slow. Functionally the software was correct, but it could not cope with real load. Load testing closes exactly this gap. This article shows how to plan and evaluate load tests so that they deliver reliable answers rather than impressive but useless charts.</p>
+
+  <h2>What a load test checks</h2>
+  <p>A load test examines how a system behaves under a defined, realistic number of concurrent users or transactions. The main measurements are response times, throughput, error rates and the utilisation of resources such as CPU, memory, database connections or network. The central question is: does the application meet its requirements when as many people work at the same time as expected in real operation?</p>
+  <p>Load tests are part of performance testing and therefore of non-functional testing. They do not replace functional tests but complement them: a function that calculates correctly for one user can slow down under a hundred concurrent requests because of database locks, exhausted connection pools or inefficient queries.</p>
+
+  <h2>Load, stress, soak: the main variants</h2>
+  <p>In day-to-day projects these terms are often mixed up. A clear distinction pays off in planning because each variant answers a different question:</p>
+  <ul>
+    <li><strong>Load test:</strong> behaviour under expected normal and peak load. Does the system meet the agreed response times?</li>
+    <li><strong>Stress test:</strong> deliberately pushing load beyond the expected peak. Where is the breaking point, and how does the system behave there – in a controlled way with error messages, or with data loss?</li>
+    <li><strong>Soak test (endurance test):</strong> moderate load over many hours. Typical findings are memory leaks, log files filling up or slowly growing queues.</li>
+    <li><strong>Spike test:</strong> sudden, short load peaks, for example after a newsletter goes out or at the deadline of an application process.</li>
+  </ul>
+  <p>Not every project needs every variant. An internal business application with a predictable number of users often gets by with load and soak tests; an online shop running promotions also needs spike and stress tests.</p>
+
+  <h2>Step 1: Define measurable performance requirements</h2>
+  <p>The most common reason for worthless load tests is a missing target. “The system should be fast” cannot be tested. Formulate performance requirements as precisely as functional requirements: which transaction, under which load, with which maximum response time and which acceptable error rate. Use percentiles rather than averages – for example “95 percent of all search requests are answered within a defined time” – because a good average can hide long waiting times for individual users.</p>
+  <p>The figures should not come from gut feeling but from the business side and existing data: access statistics from the legacy system, expected user numbers, seasonal peaks, contractual service levels. Capturing requirements properly avoids later debates about whether a test result is “good enough”. Our article <a href="blog-anforderungen-en.html" class="inl">The Underrated Success Factor: Clean Requirements</a> explains how to get there.</p>
+
+  <h2>Step 2: Build a realistic load profile</h2>
+  <p>A load test is only as meaningful as the usage behaviour it simulates. A thousand users opening the same start page at the same moment tell you little about real operation. A good load profile describes:</p>
+  <ul>
+    <li><strong>The most important use cases</strong> and their share of the total load – for example searching, viewing, ordering, exporting.</li>
+    <li><strong>Think times</strong> between actions, because real users do not click every millisecond.</li>
+    <li><strong>The timeline:</strong> gradual ramp-up, a plateau at peak load, a controlled ramp-down.</li>
+    <li><strong>Background load</strong> such as batch jobs, interface imports or reports running alongside interactive use.</li>
+  </ul>
+  <p>Focus on the flows that are business-critical or generate a lot of load. A handful of well-chosen scenarios yields more insight than a script for every screen of the application.</p>
+
+  <h2>Step 3: Prepare the test environment and test data</h2>
+  <p>Results from an environment that is much smaller than production can only be transferred to a limited extent. Ideally, the load test environment matches production in architecture, configuration and scale. Where this is not possible, document the differences and take them into account when assessing results.</p>
+  <p>Test data matters just as much. A database with a few hundred records behaves differently from one holding several years of data. Plan for realistic data volumes and make sure personal data is anonymised or generated synthetically. Also clarify early how external interfaces are handled: real third-party systems usually must not be put under load and are therefore replaced by simulations.</p>
+
+  <h2>Step 4: Execute and monitor</h2>
+  <p>Tools such as JMeter, Gatling, k6 or Locust generate the load, but what you measure in parallel is decisive. Without monitoring at server, database and application level you only see <em>that</em> response times rise, not <em>why</em>. A proven approach:</p>
+  <ul>
+    <li>First measure a <strong>baseline</strong> under low load to have a point of comparison.</li>
+    <li><strong>Increase load in stages</strong> and observe response times, errors and resources at each stage.</li>
+    <li><strong>Document</strong> every run with version, configuration and data state so results remain comparable.</li>
+    <li>After every optimisation, <strong>repeat the same test</strong> – this is the only way to prove that a change actually works.</li>
+  </ul>
+
+  <h2>Step 5: Analyse results and fix bottlenecks</h2>
+  <p>A load test delivers measurements, not solutions. The real work starts with the analysis: do response times rise evenly or jump from a certain point? Which resource is saturated at that moment? Common causes are inefficient database queries, missing indexes, connection pools that are too small, missing caching, synchronous calls to slow interfaces or lock contention during concurrent writes.</p>
+  <p>The analysis should be done together with development and operations. The result is a report that clearly answers: which requirements are met, which are not, what risks exist for go-live, and which measures are recommended? This statement is the basis for the release decision by project management and the business department.</p>
+
+  <h2>Load testing in agile projects</h2>
+  <p>If you only run load tests a few days before go-live, there is hardly any time left to fix fundamental architecture problems. In agile projects, performance requirements should therefore be part of the backlog and the Definition of Done. Smaller automated performance tests of individual interfaces can be integrated into the CI/CD pipeline and reveal degradation as soon as it appears. The comprehensive load test with a realistic load profile remains a fixed milestone before major releases. Our article on <a href="blog-regressionstests-en.html" class="inl">regression testing</a> describes how quality assurance fits into sprints in general.</p>
+
+  <h2>Common load testing mistakes</h2>
+  <ul>
+    <li><strong>Testing too late:</strong> shortly before go-live you can only ease symptoms, not fix causes.</li>
+    <li><strong>Unrealistic scenarios:</strong> all virtual users do the same thing, without think times and with identical data – caches then make the results look too good.</li>
+    <li><strong>Overlooking the load generator:</strong> if the machine generating the load is itself overloaded, the test measures its bottleneck instead of the application’s.</li>
+    <li><strong>Reporting only averages:</strong> averages hide the long waiting times users actually complain about.</li>
+    <li><strong>Test once and forget:</strong> every major change can shift load behaviour. Load tests need repeatable scripts and a fixed place in the release process.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Load testing is not a box to tick at the end of a project but a tool to make risks visible early. With measurable performance requirements, a realistic load profile, a reliable test environment and a joint analysis, load tests provide a clear basis for the go-live decision. Read <a href="blog-qa-en.html" class="inl">Why Quality Assurance Decides Project Success</a> to see the role structured quality assurance plays overall.</p>
+
+  <h2>Frequently asked questions about load testing</h2>
+  <h3>What is the difference between a load test and a stress test?</h3>
+  <p>A load test checks whether a system meets the agreed response times under expected normal and peak load. A stress test deliberately pushes load beyond that to find the breaking point and to check whether the system behaves in a controlled way there.</p>
+  <h3>When should a load test be carried out?</h3>
+  <p>Before the go-live of a new application, before expected load peaks and after major changes to architecture, infrastructure or the database. In agile projects, smaller automated performance tests in the CI/CD pipeline complement the large load tests.</p>
+  <h3>Which tools are suitable for load testing?</h3>
+  <p>Widely used tools include JMeter, Gatling, k6 and Locust. More important than the tool are a realistic load profile, a production-like test environment and accompanying monitoring that reveals bottlenecks.</p>
+
+  <div class="cta-box">
+    <h3>Plan load tests for your project</h3>
+    <p>30-minute initial consultation — free and without obligation. Together we look at your performance requirements and show what a meaningful load test for your system looks like.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="qualitaetssicherung-en.html">Software Quality Assurance in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="blog-testautomatisierung-en.html">Introducing Test Automation: A 6-Step Guide →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="qualitaetssicherung-en.html">Software QA</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website uses cookies and similar technologies. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
