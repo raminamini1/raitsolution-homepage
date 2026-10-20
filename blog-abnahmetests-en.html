@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceptance Testing: Software Sign-Off Done Right | RAIT Solution</title>
+  <meta name="description" content="Plan acceptance testing properly: measurable acceptance criteria, test cases from real processes, prepared business users and a documented sign-off decision.">
+  <link rel="canonical" href="https://raitsolution.de/blog-abnahmetests-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-abnahmetests.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-abnahmetests-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-abnahmetests.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Acceptance Testing: Software Sign-Off Done Right | RAIT Solution">
+  <meta property="og:description" content="Prepare and run acceptance tests in practice: UAT, operational acceptance, acceptance criteria, defect classes and the acceptance report – a guide.">
+  <meta property="og:url" content="https://raitsolution.de/blog-abnahmetests-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Acceptance Testing: Software Sign-Off Done Right | RAIT Solution">
+  <meta name="twitter:description" content="Prepare and run acceptance tests in practice: UAT, operational acceptance, acceptance criteria, defect classes and the acceptance report – a guide.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Acceptance Testing: How to Get Software Sign-Off Right", "description": "Plan acceptance testing properly: measurable acceptance criteria, test cases from real processes, prepared business users and a documented sign-off decision.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-abnahmetests-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-abnahmetests-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-20", "dateModified": "2026-10-20", "about": {"@type": "Thing", "name": "Acceptance testing"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "Acceptance Testing: How to Get Software Sign-Off Right", "item": "https://raitsolution.de/blog-abnahmetests-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who performs acceptance testing?", "acceptedAnswer": {"@type": "Answer", "text": "Primarily the future users from the business department, supported by test management, which organises test cases, environment and defect reporting. Operational acceptance tests are carried out by IT operations or administration."}}, {"@type": "Question", "name": "What is the difference between system testing and acceptance testing?", "acceptedAnswer": {"@type": "Answer", "text": "System testing checks whether the overall system implements the specified requirements in a technically correct way and is usually carried out by the development or test team. Acceptance testing checks whether the system is fit for its intended use and is owned by the business and operations."}}, {"@type": "Question", "name": "What happens if defects are found during acceptance?", "acceptedAnswer": {"@type": "Answer", "text": "The deviations are documented and rated by severity. Depending on the defect situation, acceptance is granted, granted with conditions including defined fixes, or refused with a justification. Fixed defects are then retested."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-abnahmetests.html" class="lang-btn">DE</a>
+    <a href="blog-abnahmetests-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Quality Assurance</span>
+  <h1>Acceptance Testing: How to Get Software Sign-Off Right</h1>
+  <p class="meta"><time datetime="2026-10-20">20 October 2026</time> · Ramin Amini</p>
+  <p class="lead">Development is finished, the system tests are green – and still the business department refuses to sign off. Or worse: it signs off, and only in production does it become clear that key workflows do not work the way they are needed. Acceptance testing is meant to prevent exactly that. This article shows how to prepare and run acceptance tests so that they end in a sound decision – not an argument about expectations.</p>
+
+  <h2>What acceptance testing does – and what it doesn't</h2>
+  <p>Acceptance testing is the last test level before software goes into production. Unlike component, integration and system testing, its main question is not whether the software is technically built correctly, but whether it is fit for purpose: can future users do their jobs with the system, and are the agreed requirements met?</p>
+  <p>That leads to an important distinction. Acceptance tests do not replace thorough testing at the earlier levels. If acceptance testing still uncovers fundamental technical defects, the problem lies in the test strategy, not in acceptance. The goal is confidence in the overall system – defects found here should be the exception, not the rule.</p>
+
+  <h2>The main types of acceptance testing</h2>
+  <p>The term is often equated with business users testing the software. In practice – and in the ISTQB syllabus – several forms are distinguished, and their importance varies from project to project:</p>
+  <ul>
+    <li><strong>User acceptance testing (UAT):</strong> business users check whether the software supports their real-world workflows.</li>
+    <li><strong>Operational acceptance testing:</strong> operations and IT check backup and restore, user administration, maintainability, monitoring and emergency procedures.</li>
+    <li><strong>Contractual and regulatory acceptance testing:</strong> evidence that contractually agreed criteria and legal or industry-specific requirements are met.</li>
+    <li><strong>Alpha and beta testing:</strong> for off-the-shelf software and products, selected users give feedback in their own or a real environment before a broad rollout.</li>
+  </ul>
+  <p>Operational acceptance testing in particular is often forgotten. An application that convinces the business but cannot be properly backed up, monitored or updated is not ready for operation.</p>
+
+  <h2>Step 1: Define acceptance criteria early and measurably</h2>
+  <p>The most common source of conflict at sign-off is criteria that are only discussed at the end. Different expectations then collide, and each side feels it is right. Acceptance criteria therefore belong at the beginning – in the requirements, the user stories or the specification.</p>
+  <p>Good acceptance criteria are unambiguous, testable and agreed with the business. "The search should be user-friendly" is not a basis for testing; "clerks can find a case by reference number, name or date" is. Our article <a href="blog-anforderungen-en.html" class="inl">The Underrated Success Factor: Clean Requirements</a> explains how to write requirements that can be tested later.</p>
+  <p>Also define what happens to the deviations you find. A proven approach is to classify defects – for example "blocks acceptance", "acceptance with conditions" and "can be fixed in operation" – together with a clear rule on which defect situation still allows sign-off.</p>
+
+  <h2>Step 2: Derive test cases from real business processes</h2>
+  <p>Acceptance test cases should not work through individual screens but cover complete workflows from the user's perspective: from receiving an application through review and approval to the decision, from quotation through order to invoice. Only then does it become clear whether interfaces, permissions and data flows work together.</p>
+  <ul>
+    <li><strong>Business-critical processes first:</strong> what happens most often in daily work or causes the greatest damage if it fails is tested most thoroughly.</li>
+    <li><strong>Plan special cases deliberately:</strong> expiring deadlines, cancellations, deputy rules or incorrect input are more common in practice than expected.</li>
+    <li><strong>Consider roles:</strong> each workflow is tested with the permissions the respective role actually has in production – not with an administrator account.</li>
+  </ul>
+  <p>Test cases should be clear enough for business users to run them without testing experience, and precise enough that a result can be clearly rated as passed or failed.</p>
+
+  <h2>Step 3: Prepare environment, data and people</h2>
+  <p>Acceptance testing needs an environment that comes as close as possible to production in configuration, interfaces and authorisation concept. Test data should reflect realistic cases; personal data is anonymised or generated synthetically.</p>
+  <p>Organisational preparation is at least as important. The business users who are supposed to test usually have a full workload. Their time must therefore be agreed with their managers early and firmly scheduled. A short introduction to the application, the test cases and defect reporting prevents valuable test time from being lost to questions.</p>
+
+  <h2>Step 4: Execute, document, retest</h2>
+  <p>During the test phase, clear coordination is essential: who tests which cases by when? Where are deviations recorded, and who assesses them? A short daily check-in between the business, test management and development keeps the defect situation transparent and speeds up decisions.</p>
+  <ul>
+    <li><strong>Record deviations reproducibly:</strong> steps, expected and actual result, data, role and screenshot.</li>
+    <li><strong>Separate defects from change requests:</strong> not every piece of feedback is a defect. New wishes go through change management, otherwise scope grows uncontrolled.</li>
+    <li><strong>Retest fixes:</strong> fixed defects are checked again, and affected workflows are secured with <a href="blog-regressionstests-en.html" class="inl">regression tests</a>.</li>
+  </ul>
+
+  <h2>Step 5: Make the acceptance decision</h2>
+  <p>At the end there is a decision, not a mood. It is based on an acceptance report summarising which test cases were run, which deviations remain open, how they are classified and which risks exist for operation. This leads to one of three recommendations: acceptance, acceptance with conditions including defined fixes and deadlines, or refusal of acceptance with a concrete justification.</p>
+  <p>For externally commissioned software, acceptance often has contractual significance as well – for example for payments or the start of warranty periods. That makes careful documentation of test results, open issues and conditions all the more important. The contractual consequences in each individual case should be clarified with your legal department or legal counsel.</p>
+
+  <h2>Acceptance testing in agile projects</h2>
+  <p>In Scrum there is no single big sign-off at the end of the project but many small ones: acceptance criteria belong to every user story, and the product owner assesses increments in the sprint review. However, this does not fully replace acceptance testing before go-live. Before a larger release, a bundled business acceptance test of end-to-end processes is still worthwhile, especially when several teams or systems are involved. Recurring acceptance scenarios can be partly automated – our guide <a href="blog-testautomatisierung-en.html" class="inl">Introducing Test Automation: A 6-Step Guide</a> shows how.</p>
+
+  <h2>Common mistakes in acceptance testing</h2>
+  <ul>
+    <li><strong>Clarifying criteria only at the end:</strong> sign-off then becomes a negotiation rather than a test.</li>
+    <li><strong>Involving the business too late:</strong> anyone who sees the software for the first time in acceptance testing discovers fundamental misunderstandings too late.</li>
+    <li><strong>Planning too little time:</strong> acceptance is often misused as a buffer and shrinks when development takes longer.</li>
+    <li><strong>Forgetting operations:</strong> backup, permissions and monitoring are not checked.</li>
+    <li><strong>Signing off without documentation:</strong> verbal approvals help no one when questions about open issues arise later.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Acceptance testing is the moment that shows whether an IT project fulfils its purpose. With acceptance criteria agreed early and made measurable, test cases drawn from real business processes, well-prepared business users and a documented decision, a point of conflict becomes a plannable milestone. Read <a href="blog-qa-en.html" class="inl">Why Quality Assurance Decides Project Success</a> to see how quality assurance contributes to success across the whole project.</p>
+
+  <h2>Frequently asked questions about acceptance testing</h2>
+  <h3>Who performs acceptance testing?</h3>
+  <p>Primarily the future users from the business department, supported by test management, which organises test cases, environment and defect reporting. Operational acceptance tests are carried out by IT operations or administration.</p>
+  <h3>What is the difference between system testing and acceptance testing?</h3>
+  <p>System testing checks whether the overall system implements the specified requirements in a technically correct way and is usually carried out by the development or test team. Acceptance testing checks whether the system is fit for its intended use and is owned by the business and operations.</p>
+  <h3>What happens if defects are found during acceptance?</h3>
+  <p>The deviations are documented and rated by severity. Depending on the defect situation, acceptance is granted, granted with conditions including defined fixes, or refused with a justification. Fixed defects are then retested.</p>
+
+  <div class="cta-box">
+    <h3>Plan acceptance testing for your project</h3>
+    <p>30-minute initial consultation — free and without obligation. Together we look at your project and show what a structured acceptance process for your system looks like.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="qualitaetssicherung-en.html">Software Quality Assurance in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="projektmanagement-en.html">IT Project Management in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="qualitaetssicherung-en.html">Software QA</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website uses cookies and similar technologies. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>

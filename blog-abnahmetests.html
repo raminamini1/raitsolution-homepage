@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abnahmetests: So gelingt die Softwareabnahme | RAIT Solution</title>
+  <meta name="description" content="Abnahmetests richtig planen: messbare Abnahmekriterien, Testfälle aus echten Prozessen, vorbereitete Fachanwender und eine dokumentierte Abnahmeentscheidung.">
+  <link rel="canonical" href="https://raitsolution.de/blog-abnahmetests.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-abnahmetests.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-abnahmetests-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-abnahmetests.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Abnahmetests: So gelingt die Softwareabnahme | RAIT Solution">
+  <meta property="og:description" content="Abnahmetests praxisnah vorbereiten und durchführen: UAT, betriebliche Abnahme, Abnahmekriterien, Fehlerklassen und Abnahmebericht – ein Leitfaden.">
+  <meta property="og:url" content="https://raitsolution.de/blog-abnahmetests.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abnahmetests: So gelingt die Softwareabnahme | RAIT Solution">
+  <meta name="twitter:description" content="Abnahmetests praxisnah vorbereiten und durchführen: UAT, betriebliche Abnahme, Abnahmekriterien, Fehlerklassen und Abnahmebericht – ein Leitfaden.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Abnahmetests: So gelingt die Softwareabnahme sicher", "description": "Abnahmetests richtig planen: messbare Abnahmekriterien, Testfälle aus echten Prozessen, vorbereitete Fachanwender und eine dokumentierte Abnahmeentscheidung.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-abnahmetests.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-abnahmetests.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-20", "dateModified": "2026-10-20", "about": {"@type": "Thing", "name": "Abnahmetest"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Abnahmetests: So gelingt die Softwareabnahme sicher", "item": "https://raitsolution.de/blog-abnahmetests.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wer führt Abnahmetests durch?", "acceptedAnswer": {"@type": "Answer", "text": "In erster Linie die späteren Anwender aus dem Fachbereich, unterstützt durch das Testmanagement, das Testfälle, Umgebung und Fehlererfassung organisiert. Betriebliche Abnahmetests übernehmen IT-Betrieb oder Administration."}}, {"@type": "Question", "name": "Was ist der Unterschied zwischen Systemtest und Abnahmetest?", "acceptedAnswer": {"@type": "Answer", "text": "Der Systemtest prüft, ob das Gesamtsystem die spezifizierten Anforderungen technisch korrekt umsetzt, und wird meist vom Entwicklungs- oder Testteam durchgeführt. Der Abnahmetest prüft, ob das System für den vorgesehenen Einsatz geeignet ist, und wird von Fachbereich und Betrieb verantwortet."}}, {"@type": "Question", "name": "Was passiert, wenn bei der Abnahme Fehler gefunden werden?", "acceptedAnswer": {"@type": "Answer", "text": "Die Abweichungen werden dokumentiert und nach Schwere bewertet. Je nach Fehlerlage wird die Abnahme erteilt, unter Auflagen mit festgelegten Nachbesserungen erteilt oder mit Begründung verweigert. Behobene Fehler werden anschließend erneut getestet."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-abnahmetests.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-abnahmetests-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung</span>
+  <h1>Abnahmetests: So gelingt die Softwareabnahme sicher</h1>
+  <p class="meta"><time datetime="2026-10-20">20. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Die Software ist fertig entwickelt, die Systemtests sind grün – und trotzdem verweigert der Fachbereich die Abnahme. Oder schlimmer: Er nimmt ab, und erst im Betrieb zeigt sich, dass zentrale Abläufe nicht so funktionieren, wie sie gebraucht werden. Abnahmetests sollen genau das verhindern. Dieser Artikel zeigt, wie Sie Abnahmetests so vorbereiten und durchführen, dass am Ende eine belastbare Entscheidung steht – und kein Streit über Erwartungen.</p>
+
+  <h2>Was Abnahmetests leisten – und was nicht</h2>
+  <p>Abnahmetests sind die letzte Teststufe vor dem produktiven Einsatz. Anders als Komponenten-, Integrations- und Systemtests fragen sie nicht in erster Linie, ob die Software technisch korrekt gebaut ist, sondern ob sie für ihren Zweck geeignet ist: Können die späteren Anwender ihre Aufgaben mit dem System erledigen, und sind die vereinbarten Anforderungen erfüllt?</p>
+  <p>Daraus folgt eine wichtige Abgrenzung. Abnahmetests sind kein Ersatz für gründliche Tests in den vorherigen Stufen. Wer in der Abnahme noch grundlegende technische Fehler findet, hat ein Problem in der Teststrategie, nicht in der Abnahme. Das Ziel ist Vertrauen in das Gesamtsystem – Fehler sollen hier die Ausnahme sein, nicht der Normalfall.</p>
+
+  <h2>Die wichtigsten Arten von Abnahmetests</h2>
+  <p>Der Begriff wird oft gleichgesetzt mit dem fachlichen Test durch die Anwender. In der Praxis – und auch im ISTQB-Lehrplan – werden mehrere Formen unterschieden, die je nach Projekt unterschiedlich wichtig sind:</p>
+  <ul>
+    <li><strong>Benutzerabnahmetest (User Acceptance Test, UAT):</strong> Fachanwender prüfen, ob die Software ihre realen Arbeitsabläufe unterstützt.</li>
+    <li><strong>Betrieblicher Abnahmetest:</strong> Betrieb und IT prüfen Datensicherung und Wiederherstellung, Benutzerverwaltung, Wartbarkeit, Überwachung und Notfallabläufe.</li>
+    <li><strong>Vertragliche und regulatorische Abnahme:</strong> Nachweis, dass vertraglich vereinbarte Kriterien sowie gesetzliche oder branchenspezifische Vorgaben erfüllt sind.</li>
+    <li><strong>Alpha- und Betatests:</strong> Bei Standardsoftware und Produkten geben ausgewählte Anwender in eigener oder realer Umgebung Rückmeldung, bevor das Produkt breit ausgerollt wird.</li>
+  </ul>
+  <p>Gerade der betriebliche Abnahmetest wird häufig vergessen. Eine Anwendung, die fachlich überzeugt, sich aber nicht sauber sichern, überwachen oder aktualisieren lässt, ist nicht betriebsbereit.</p>
+
+  <h2>Schritt 1: Abnahmekriterien früh und messbar festlegen</h2>
+  <p>Der häufigste Grund für Konflikte bei der Abnahme sind Kriterien, die erst am Ende diskutiert werden. Dann prallen unterschiedliche Erwartungen aufeinander, und jede Seite fühlt sich im Recht. Abnahmekriterien gehören deshalb an den Anfang – in die Anforderungen, in die User Stories oder in das Pflichtenheft.</p>
+  <p>Gute Abnahmekriterien sind eindeutig, prüfbar und mit dem Fachbereich abgestimmt. „Die Suche soll benutzerfreundlich sein“ ist keine Prüfgrundlage, „Sachbearbeiter finden einen Vorgang über Aktenzeichen, Name oder Datum“ schon. Wie Sie Anforderungen so formulieren, dass sie später testbar sind, beschreibt unser Artikel <a href="blog-anforderungen.html" class="inl">Der unterschätzte Erfolgsfaktor: saubere Anforderungen</a>.</p>
+  <p>Legen Sie außerdem fest, was mit gefundenen Abweichungen passiert. Bewährt hat sich eine Einteilung in Fehlerklassen – etwa „verhindert die Abnahme“, „Abnahme unter Auflagen“ und „kann im Betrieb behoben werden“ – zusammen mit einer klaren Regel, ab welcher Fehlerlage abgenommen wird.</p>
+
+  <h2>Schritt 2: Testfälle aus echten Geschäftsprozessen ableiten</h2>
+  <p>Abnahmetestfälle sollten nicht einzelne Masken abarbeiten, sondern vollständige Abläufe aus Sicht der Anwender abbilden: vom Eingang eines Antrags über Prüfung und Freigabe bis zum Bescheid, vom Angebot über den Auftrag bis zur Rechnung. Nur so zeigt sich, ob Schnittstellen, Berechtigungen und Datenflüsse im Zusammenspiel funktionieren.</p>
+  <ul>
+    <li><strong>Geschäftskritische Prozesse zuerst:</strong> Was im Alltag am häufigsten vorkommt oder bei Ausfall den größten Schaden verursacht, wird am gründlichsten geprüft.</li>
+    <li><strong>Sonderfälle bewusst einplanen:</strong> Fristabläufe, Stornierungen, Vertretungsregeln oder fehlerhafte Eingaben sind in der Praxis häufiger als gedacht.</li>
+    <li><strong>Rollen berücksichtigen:</strong> Jeder Ablauf wird mit den Berechtigungen getestet, die die jeweilige Rolle im Betrieb tatsächlich hat – nicht mit einem Administrator-Konto.</li>
+  </ul>
+  <p>Testfälle sollten verständlich genug sein, dass Fachanwender sie ohne Testerfahrung ausführen können, und präzise genug, dass ein Ergebnis eindeutig als bestanden oder nicht bestanden bewertet werden kann.</p>
+
+  <h2>Schritt 3: Umgebung, Daten und Beteiligte vorbereiten</h2>
+  <p>Abnahmetests brauchen eine Umgebung, die der Produktion in Konfiguration, Schnittstellen und Berechtigungskonzept möglichst nahekommt. Testdaten sollten realistische Fälle abbilden; personenbezogene Daten werden anonymisiert oder synthetisch erzeugt.</p>
+  <p>Mindestens so wichtig ist die organisatorische Vorbereitung. Die Fachanwender, die testen sollen, haben in der Regel ein volles Tagesgeschäft. Ihre Zeit muss deshalb früh mit den Führungskräften abgestimmt und verbindlich eingeplant werden. Eine kurze Einführung in die Anwendung, in die Testfälle und in die Fehlererfassung verhindert, dass wertvolle Testzeit mit Rückfragen verloren geht.</p>
+
+  <h2>Schritt 4: Durchführen, dokumentieren, nachtesten</h2>
+  <p>Während der Testphase braucht es eine klare Koordination: Wer testet welche Fälle bis wann? Wo werden Abweichungen erfasst, und wer bewertet sie? Ein tägliches kurzes Abstimmungstreffen zwischen Fachbereich, Testmanagement und Entwicklung hält die Fehlerlage transparent und beschleunigt Entscheidungen.</p>
+  <ul>
+    <li><strong>Abweichungen nachvollziehbar erfassen:</strong> Schritte, erwartetes und tatsächliches Ergebnis, Daten, Rolle und Screenshot.</li>
+    <li><strong>Fehler von Änderungswünschen trennen:</strong> Nicht jede Rückmeldung ist ein Fehler. Neue Wünsche laufen über das Änderungsmanagement, sonst wächst der Umfang unkontrolliert.</li>
+    <li><strong>Korrekturen nachtesten:</strong> Behobene Fehler werden erneut geprüft, betroffene Abläufe durch <a href="blog-regressionstests.html" class="inl">Regressionstests</a> abgesichert.</li>
+  </ul>
+
+  <h2>Schritt 5: Die Abnahmeentscheidung treffen</h2>
+  <p>Am Ende steht eine Entscheidung, keine Stimmung. Grundlage ist ein Abnahmebericht, der zusammenfasst, welche Testfälle durchgeführt wurden, welche Abweichungen offen sind, wie sie eingestuft werden und welche Risiken für den Betrieb bestehen. Daraus ergibt sich eine von drei Empfehlungen: Abnahme, Abnahme unter Auflagen mit festgelegten Nachbesserungen und Fristen, oder Verweigerung der Abnahme mit konkreter Begründung.</p>
+  <p>Bei extern beauftragter Software hat die Abnahme oft auch vertragliche Bedeutung – etwa für Zahlungen oder den Beginn von Gewährleistungsfristen. Umso wichtiger ist eine sorgfältige Dokumentation von Testergebnissen, offenen Punkten und Auflagen. Die vertraglichen Folgen im Einzelfall sollten mit der Rechtsabteilung oder juristischer Beratung geklärt werden.</p>
+
+  <h2>Abnahmetests in agilen Projekten</h2>
+  <p>In Scrum gibt es keine große Abnahme am Projektende, sondern viele kleine: Akzeptanzkriterien gehören zu jeder User Story, und der Product Owner bewertet Inkremente im Sprint Review. Das ersetzt den Abnahmetest vor dem Go-live jedoch nicht vollständig. Vor einem größeren Release lohnt sich weiterhin eine gebündelte fachliche Abnahme der End-to-End-Prozesse, insbesondere wenn mehrere Teams oder Systeme beteiligt sind. Wiederkehrende Abnahmeszenarien lassen sich teilweise automatisieren – wie das gelingt, zeigt unser Leitfaden <a href="blog-testautomatisierung.html" class="inl">Testautomatisierung einführen in 6 Schritten</a>.</p>
+
+  <h2>Typische Fehler bei Abnahmetests</h2>
+  <ul>
+    <li><strong>Kriterien erst am Ende klären:</strong> Dann wird die Abnahme zur Verhandlung statt zur Prüfung.</li>
+    <li><strong>Fachbereich zu spät einbinden:</strong> Wer die Software erst im Abnahmetest zum ersten Mal sieht, entdeckt grundsätzliche Missverständnisse zu spät.</li>
+    <li><strong>Zu wenig Zeit einplanen:</strong> Die Abnahme wird oft als Puffer missbraucht und schrumpft, wenn die Entwicklung länger dauert.</li>
+    <li><strong>Den Betrieb vergessen:</strong> Datensicherung, Berechtigungen und Monitoring werden nicht geprüft.</li>
+    <li><strong>Ohne Dokumentation abnehmen:</strong> Mündliche Freigaben helfen niemandem, wenn später Fragen zu offenen Punkten auftauchen.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Abnahmetests sind der Moment, in dem sich zeigt, ob ein IT-Projekt seinen Zweck erfüllt. Mit früh vereinbarten, messbaren Abnahmekriterien, Testfällen aus echten Geschäftsprozessen, gut vorbereiteten Fachanwendern und einer dokumentierten Entscheidung wird aus einem Konfliktpunkt ein planbarer Meilenstein. Wie Qualitätssicherung über das gesamte Projekt hinweg zum Erfolg beiträgt, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</p>
+
+  <h2>Häufige Fragen zu Abnahmetests</h2>
+  <h3>Wer führt Abnahmetests durch?</h3>
+  <p>In erster Linie die späteren Anwender aus dem Fachbereich, unterstützt durch das Testmanagement, das Testfälle, Umgebung und Fehlererfassung organisiert. Betriebliche Abnahmetests übernehmen IT-Betrieb oder Administration.</p>
+  <h3>Was ist der Unterschied zwischen Systemtest und Abnahmetest?</h3>
+  <p>Der Systemtest prüft, ob das Gesamtsystem die spezifizierten Anforderungen technisch korrekt umsetzt, und wird meist vom Entwicklungs- oder Testteam durchgeführt. Der Abnahmetest prüft, ob das System für den vorgesehenen Einsatz geeignet ist, und wird von Fachbereich und Betrieb verantwortet.</p>
+  <h3>Was passiert, wenn bei der Abnahme Fehler gefunden werden?</h3>
+  <p>Die Abweichungen werden dokumentiert und nach Schwere bewertet. Je nach Fehlerlage wird die Abnahme erteilt, unter Auflagen mit festgelegten Nachbesserungen erteilt oder mit Begründung verweigert. Behobene Fehler werden anschließend erneut getestet.</p>
+
+  <div class="cta-box">
+    <h3>Abnahmetests für Ihr Projekt planen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Vorhaben und zeigen, wie eine strukturierte Abnahme für Ihr System aussieht.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Software-QS</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>

@@ -36,6 +36,7 @@
 
 ## Offen (später mit Inhaber)
 - Unsplash-Bilder lokal hosten (Datenschutz; Unsplash ist in der Cloud-Umgebung gesperrt → Bilder vom Inhaber).
+- Bing Webmaster Tools: angelegt (19.10.2026). Verifizierung (BingSiteAuth.xml / msvalidate.01) nie löschen. IndexNow-Schlüssel: `2b1943ad9f47bd576b5f3d124505a502` (Datei `2b1943ad9f47bd576b5f3d124505a502.txt` im Root, NIE löschen) – nach jedem Push geänderte URLs per POST an https://api.indexnow.org/indexnow melden.
 - Google Search Console: **bestätigt 17.10.2026** (Datei `googleea5731aeba6e1495.html` + Meta-Tag auf `index*.html` – beides NIE löschen). Sitemap eingereicht 17.10.2026.
 - Google-Unternehmensprofil: Inhaber macht es nicht selbst (braucht seinen Login + Google-Verifizierung) → gestrichen, nicht mehr nachfragen.
 - Eigene Fotos von Inhaber/Team: **nein, endgültig** – nicht mehr nachfragen, Stock-/neutrale Bilder bleiben.
