@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KI im Softwaretest: Nutzen, Grenzen und Einstieg | RAIT Solution</title>
+  <meta name="description" content="KI im Softwaretest sinnvoll nutzen: Testfälle, Testdaten, Automatisierung und Fehleranalyse mit KI – plus klare Grenzen und 5 Schritte für den Einstieg.">
+  <link rel="canonical" href="https://raitsolution.de/blog-ki-softwaretest.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-ki-softwaretest.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-ki-softwaretest-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-ki-softwaretest.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="KI im Softwaretest: Nutzen, Grenzen und Einstieg | RAIT Solution">
+  <meta property="og:description" content="Wo KI im Softwaretest wirklich hilft, wo ihre Grenzen liegen und wie Teams kontrolliert mit KI-gestütztem Testen starten – ein Praxisleitfaden.">
+  <meta property="og:url" content="https://raitsolution.de/blog-ki-softwaretest.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KI im Softwaretest: Nutzen, Grenzen und Einstieg | RAIT Solution">
+  <meta name="twitter:description" content="Wo KI im Softwaretest wirklich hilft, wo ihre Grenzen liegen und wie Teams kontrolliert mit KI-gestütztem Testen starten – ein Praxisleitfaden.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "KI im Softwaretest: Nutzen, Grenzen und der richtige Einstieg", "description": "KI im Softwaretest sinnvoll nutzen: Testfälle, Testdaten, Automatisierung und Fehleranalyse mit KI – plus klare Grenzen und 5 Schritte für den Einstieg.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-ki-softwaretest.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-ki-softwaretest.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "about": {"@type": "Thing", "name": "KI im Softwaretest"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "KI im Softwaretest: Nutzen, Grenzen und der richtige Einstieg", "item": "https://raitsolution.de/blog-ki-softwaretest.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kann KI Softwaretester ersetzen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. KI unterstützt bei Routinearbeiten wie dem Formulieren von Testfällen, dem Erzeugen von Testdaten oder der Auswertung von Testläufen. Teststrategie, fachliche Bewertung und die Verantwortung für die Freigabe bleiben beim Menschen."}}, {"@type": "Question", "name": "Welche Aufgaben im Test eignen sich für den Einstieg mit KI?", "acceptedAnswer": {"@type": "Answer", "text": "Gut geeignet sind Aufgaben, die viel Zeit kosten und deren Ergebnis sich leicht prüfen lässt: Testideen aus User Stories ableiten, Anforderungen auf Lücken prüfen, synthetische Testdaten erzeugen und Fehlerprotokolle zusammenfassen."}}, {"@type": "Question", "name": "Dürfen vertrauliche Daten in KI-Testwerkzeuge eingegeben werden?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt vom Werkzeug, vom Vertrag mit dem Anbieter und von den internen Regeln ab. Vor dem Einsatz sollte mit Datenschutz und Informationssicherheit geklärt werden, welche Daten verwendet werden dürfen. Personenbezogene Produktionsdaten gehören grundsätzlich nicht in Testwerkzeuge."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-ki-softwaretest.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-ki-softwaretest-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung · KI</span>
+  <h1>KI im Softwaretest: Nutzen, Grenzen und der richtige Einstieg</h1>
+  <p class="meta"><time datetime="2026-10-21">21. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Kaum ein Testtool kommt heute noch ohne den Zusatz „KI-gestützt“ aus. Gleichzeitig fragen sich viele Teams, was davon im Projektalltag tatsächlich trägt: Kann KI Testfälle schreiben? Ersetzt sie Tester? Und wie behält man die Kontrolle über Ergebnisse, die man nicht selbst erzeugt hat? Dieser Artikel ordnet ein, wo KI im Softwaretest heute sinnvoll hilft, wo ihre Grenzen liegen und wie ein kontrollierter Einstieg gelingt.</p>
+
+  <h2>Was „KI im Softwaretest“ konkret bedeutet</h2>
+  <p>Unter dem Begriff werden sehr unterschiedliche Dinge zusammengefasst. Für eine nüchterne Bewertung hilft es, drei Gruppen zu unterscheiden:</p>
+  <ul>
+    <li><strong>Generative KI als Assistent:</strong> Sprachmodelle unterstützen beim Formulieren von Testfällen, Testdaten, Skripten oder Fehlerberichten. Der Mensch gibt den Rahmen vor und prüft das Ergebnis.</li>
+    <li><strong>KI-Funktionen in Testwerkzeugen:</strong> Etwa robustere Erkennung von Oberflächenelementen, visuelle Vergleiche von Bildschirmen oder Vorschläge, welche Tests nach einer Änderung laufen sollten.</li>
+    <li><strong>Das Testen von KI-Systemen:</strong> Hier ist KI nicht das Werkzeug, sondern das Testobjekt – mit eigenen Herausforderungen wie nicht deterministischen Ausgaben.</li>
+  </ul>
+  <p>Dieser Artikel konzentriert sich auf die ersten beiden Gruppen: KI als Hilfsmittel, um Software besser und effizienter zu testen.</p>
+
+  <h2>Wo KI im Testprozess heute sinnvoll hilft</h2>
+  <h3>Testfälle aus Anforderungen ableiten</h3>
+  <p>Aus einer gut beschriebenen User Story mit Akzeptanzkriterien kann ein Sprachmodell in kurzer Zeit einen ersten Satz an Testideen erzeugen – inklusive Grenzwerten, Negativfällen und Kombinationen, die im Zeitdruck gern übersehen werden. Das ersetzt keine Testanalyse, ist aber ein guter Startpunkt für die Diskussion im Team. Die Qualität des Ergebnisses hängt dabei unmittelbar von der Qualität der Anforderung ab. Wie Anforderungen testbar formuliert werden, zeigt unser Artikel <a href="blog-anforderungen.html" class="inl">Der unterschätzte Erfolgsfaktor: saubere Anforderungen</a>.</p>
+  <h3>Anforderungen auf Lücken prüfen</h3>
+  <p>Ebenso nützlich ist der umgekehrte Weg: KI kann Anforderungen auf Mehrdeutigkeiten, fehlende Fehlerfälle oder widersprüchliche Regeln hinweisen. Solche Hinweise früh im Projekt sind wertvoll, weil jeder Fehler, der schon in der Anforderung auffällt, später keinen Testzyklus kostet.</p>
+  <h3>Testdaten erzeugen</h3>
+  <p>Realistische, aber synthetische Testdaten sind in vielen Projekten ein Engpass – gerade wenn Produktionsdaten aus Datenschutzgründen nicht verwendet werden dürfen. KI-Werkzeuge können plausible Datensätze nach vorgegebenen Regeln erzeugen, etwa Adressen, Vertragskonstellationen oder Sonderfälle. Wichtig ist, die erzeugten Daten gegen die fachlichen Regeln zu prüfen, bevor sie in Tests verwendet werden.</p>
+  <h3>Testautomatisierung beschleunigen</h3>
+  <p>Beim Schreiben von Testskripten arbeiten Code-Assistenten ähnlich wie in der Entwicklung: Sie schlagen Gerüste, Selektoren oder Prüfungen vor und erklären bestehenden Code. Einige Werkzeuge versuchen zudem, Tests automatisch anzupassen, wenn sich Oberflächenelemente ändern. Das kann den Wartungsaufwand senken, verlangt aber Aufmerksamkeit: Ein Test, der sich „selbst repariert“, darf keine echten Fehler überdecken. Wie eine tragfähige Automatisierung aufgebaut wird, beschreibt unser Leitfaden <a href="blog-testautomatisierung.html" class="inl">Testautomatisierung einführen in 6 Schritten</a>.</p>
+  <h3>Fehler analysieren und Testergebnisse auswerten</h3>
+  <p>Bei großen Testläufen kann KI helfen, fehlgeschlagene Tests zu gruppieren, wiederkehrende Ursachen zu erkennen und Logdateien zusammenzufassen. Auch beim Formulieren nachvollziehbarer Fehlerberichte ist sie ein guter Helfer. Bei <a href="blog-regressionstests.html" class="inl">Regressionstests</a> mit vielen Testfällen spart das Zeit in der Auswertung.</p>
+
+  <h2>Die Grenzen: Wo KI im Test nicht übernehmen darf</h2>
+  <p>So hilfreich die Werkzeuge sind – sie haben Eigenschaften, die man im Test besonders ernst nehmen muss:</p>
+  <ul>
+    <li><strong>Plausibel ist nicht korrekt:</strong> Sprachmodelle erzeugen überzeugend klingende Ergebnisse, die fachlich falsch sein können. Ein generierter Testfall mit falschem erwarteten Ergebnis ist schlimmer als gar keiner, weil er Fehler bestätigt statt aufdeckt.</li>
+    <li><strong>Fehlendes Domänenwissen:</strong> Was ein Sonderfall im Versicherungs-, Logistik- oder Verwaltungsprozess bedeutet, weiß das Fachteam – nicht das Modell. Die Testbasis bleibt die abgestimmte Anforderung.</li>
+    <li><strong>Vertraulichkeit:</strong> Quellcode, Anforderungen und Testdaten sind oft vertraulich. Welche Daten in welches Werkzeug gegeben werden dürfen, muss vorab mit Datenschutz und Informationssicherheit geklärt sein.</li>
+    <li><strong>Nachvollziehbarkeit:</strong> Testergebnisse müssen belastbar dokumentiert sein, gerade bei Abnahmen oder regulatorischen Anforderungen. Wer einen Test verantwortet, muss erklären können, was er prüft und warum.</li>
+  </ul>
+  <p>Daraus folgt eine einfache Regel: KI liefert Vorschläge, Menschen treffen Entscheidungen. Die Verantwortung für Teststrategie, Testabdeckung und Freigabe bleibt im Team.</p>
+
+  <h2>So gelingt der Einstieg in KI-gestütztes Testen</h2>
+  <h3>1. Mit einem klar umrissenen Anwendungsfall beginnen</h3>
+  <p>Statt „KI im Test einführen“ besser eine konkrete Aufgabe wählen, die heute viel Zeit kostet und gut überprüfbar ist – etwa das Ableiten von Testideen aus User Stories oder das Zusammenfassen von Fehlerprotokollen.</p>
+  <h3>2. Rahmenbedingungen festlegen</h3>
+  <p>Vor dem ersten Einsatz klären: Welche Werkzeuge sind freigegeben? Welche Daten dürfen verwendet werden? Wie werden KI-erzeugte Artefakte gekennzeichnet und geprüft? Für viele Unternehmen gehören dazu auch Fragen zum EU AI Act und zur internen KI-Richtlinie. Einen Überblick über diese Themen gibt unser Artikel <a href="blog-ki.html" class="inl">KI im Unternehmen: Chancen, Risiken und erste Schritte</a>.</p>
+  <h3>3. Ergebnisse systematisch prüfen</h3>
+  <p>Jeder KI-erzeugte Testfall durchläuft dieselbe Prüfung wie ein manuell geschriebener: Ist er nachvollziehbar, auf eine Anforderung rückführbar und ist das erwartete Ergebnis fachlich korrekt? Ein Vier-Augen-Prinzip für generierte Testartefakte hat sich bewährt.</p>
+  <h3>4. Nutzen ehrlich messen</h3>
+  <p>Legen Sie vorher fest, woran Sie den Erfolg erkennen: eingesparte Zeit bei der Testfallerstellung, gefundene Fehler, Wartungsaufwand der Automatisierung. Vergleichen Sie mit dem bisherigen Vorgehen und entscheiden Sie dann, ob und wie der Einsatz ausgeweitet wird.</p>
+  <h3>5. Das Team mitnehmen</h3>
+  <p>KI verändert die Arbeit von Testerinnen und Testern, macht sie aber nicht überflüssig. Gefragt sind mehr denn je Testanalyse, Fachverständnis und kritisches Prüfen. Schulungen zu Möglichkeiten und Grenzen der Werkzeuge sorgen dafür, dass das Team sie sicher und bewusst einsetzt.</p>
+
+  <h2>Fazit</h2>
+  <p>KI im Softwaretest ist weder Wundermittel noch Hype ohne Substanz. Richtig eingesetzt beschleunigt sie Testanalyse, Testdatenerzeugung, Automatisierung und Fehleranalyse spürbar. Voraussetzung sind klare Regeln, saubere Anforderungen und Menschen, die Ergebnisse fachlich prüfen und verantworten. Wer klein und messbar beginnt, findet schnell heraus, wo sich der Einsatz im eigenen Projekt lohnt. Warum gute Qualitätssicherung insgesamt über den Projekterfolg entscheidet, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</p>
+
+  <h2>Häufige Fragen zu KI im Softwaretest</h2>
+  <h3>Kann KI Softwaretester ersetzen?</h3>
+  <p>Nein. KI unterstützt bei Routinearbeiten wie dem Formulieren von Testfällen, dem Erzeugen von Testdaten oder der Auswertung von Testläufen. Teststrategie, fachliche Bewertung und die Verantwortung für die Freigabe bleiben beim Menschen.</p>
+  <h3>Welche Aufgaben im Test eignen sich für den Einstieg mit KI?</h3>
+  <p>Gut geeignet sind Aufgaben, die viel Zeit kosten und deren Ergebnis sich leicht prüfen lässt: Testideen aus User Stories ableiten, Anforderungen auf Lücken prüfen, synthetische Testdaten erzeugen und Fehlerprotokolle zusammenfassen.</p>
+  <h3>Dürfen vertrauliche Daten in KI-Testwerkzeuge eingegeben werden?</h3>
+  <p>Das hängt vom Werkzeug, vom Vertrag mit dem Anbieter und von den internen Regeln ab. Vor dem Einsatz sollte mit Datenschutz und Informationssicherheit geklärt werden, welche Daten verwendet werden dürfen. Personenbezogene Produktionsdaten gehören grundsätzlich nicht in Testwerkzeuge.</p>
+
+  <div class="cta-box">
+    <h3>KI im Softwaretest gezielt einsetzen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihren Testprozess und zeigen, wo KI-Unterstützung für Ihr Team sinnvoll ist.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="ki-consulting.html">KI-Consulting in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Software-QS</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
