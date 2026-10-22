@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risikomanagement in IT-Projekten: 5 Schritte | RAIT Solution</title>
+  <meta name="description" content="Risikomanagement in IT-Projekten praxisnah: Risiken erkennen, bewerten, Maßnahmen festlegen und nachhalten – in 5 Schritten, klassisch und agil.">
+  <link rel="canonical" href="https://raitsolution.de/blog-risikomanagement.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-risikomanagement.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-risikomanagement-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-risikomanagement.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Risikomanagement in IT-Projekten: 5 Schritte | RAIT Solution">
+  <meta property="og:description" content="Wie Risikomanagement in IT-Projekten wirklich funktioniert: Risiken konkret formulieren, bewerten, mit Maßnahmen hinterlegen und nachhalten – klassisch und agil.">
+  <meta property="og:url" content="https://raitsolution.de/blog-risikomanagement.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Risikomanagement in IT-Projekten: 5 Schritte | RAIT Solution">
+  <meta name="twitter:description" content="Wie Risikomanagement in IT-Projekten wirklich funktioniert: Risiken konkret formulieren, bewerten, mit Maßnahmen hinterlegen und nachhalten – klassisch und agil.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Risikomanagement in IT-Projekten: In 5 Schritten zum wirksamen Frühwarnsystem", "description": "Risikomanagement in IT-Projekten praxisnah: Risiken erkennen, bewerten, Maßnahmen festlegen und nachhalten – in 5 Schritten, klassisch und agil.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-risikomanagement.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-risikomanagement.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-22", "dateModified": "2026-10-22", "about": {"@type": "Thing", "name": "Risikomanagement in IT-Projekten"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Risikomanagement in IT-Projekten: In 5 Schritten zum wirksamen Frühwarnsystem", "item": "https://raitsolution.de/blog-risikomanagement.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie oft sollte das Risikoregister aktualisiert werden?", "acceptedAnswer": {"@type": "Answer", "text": "Regelmäßig und mit festem Rhythmus – in vielen Projekten wöchentlich im Projektmeeting oder einmal pro Sprint. Zusätzlich immer dann, wenn sich wesentliche Rahmenbedingungen ändern, etwa Scope, Budget, Termine oder Personal."}}, {"@type": "Question", "name": "Wer ist für das Risikomanagement im Projekt verantwortlich?", "acceptedAnswer": {"@type": "Answer", "text": "Die Projektleitung verantwortet den Prozess und sorgt dafür, dass Risiken erfasst, bewertet und nachgehalten werden. Jedes einzelne Risiko hat zusätzlich eine verantwortliche Person, die es beobachtet und die vereinbarten Maßnahmen umsetzt."}}, {"@type": "Question", "name": "Brauchen agile Projekte ein Risikoregister?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht zwingend in klassischer Form. Viele Risiken werden über kurze Iterationen, Reviews und Impediments behandelt. Für übergreifende Risiken wie Abhängigkeiten zu anderen Teams, Lieferanten oder Terminen ist eine schlanke, sichtbare Risikoliste dennoch sinnvoll."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-risikomanagement.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-risikomanagement-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Projektmanagement · Risikomanagement</span>
+  <h1>Risikomanagement in IT-Projekten: In 5 Schritten zum wirksamen Frühwarnsystem</h1>
+  <p class="meta"><time datetime="2026-10-22">22. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Fast jedes IT-Projekt hat ein Risikoregister. Trotzdem werden viele Teams von Problemen überrascht, die man hätte kommen sehen können: eine Schnittstelle, die erst im Integrationstest nicht funktioniert, ein Schlüsselentwickler, der ausfällt, oder ein Fachbereich, der zur Abnahme keine Zeit hat. Der Grund ist selten fehlendes Wissen, sondern ein Risikomanagement, das nur auf dem Papier existiert. Dieser Artikel zeigt, wie Risikomanagement in IT-Projekten praktisch funktioniert – in fünf Schritten, für klassische und agile Projekte.</p>
+
+  <h2>Warum Risikomanagement in IT-Projekten oft wirkungslos bleibt</h2>
+  <p>In der Praxis begegnen uns immer wieder dieselben Muster:</p>
+  <ul>
+    <li><strong>Pflichtübung zum Projektstart:</strong> Das Risikoregister wird im Kick-off befüllt und danach nicht mehr angesehen.</li>
+    <li><strong>Zu allgemeine Formulierungen:</strong> „Termine könnten sich verschieben“ ist kein Risiko, mit dem man arbeiten kann. Es fehlen Ursache, Auswirkung und ein Ansatzpunkt für Maßnahmen.</li>
+    <li><strong>Keine Verantwortlichen:</strong> Risiken, die „dem Projekt“ gehören, gehören niemandem. Entsprechend passiert nichts.</li>
+    <li><strong>Unbequeme Risiken werden nicht ausgesprochen:</strong> Etwa die Abhängigkeit von einem Lieferanten oder fehlende Kapazität im Fachbereich – weil niemand als Bedenkenträger gelten will.</li>
+  </ul>
+  <p>Wirksames Risikomanagement ist deshalb weniger eine Frage der Methode als der Disziplin: Risiken konkret beschreiben, klar zuordnen und regelmäßig nachhalten.</p>
+
+  <h2>Risiko, Problem, Annahme: Begriffe sauber trennen</h2>
+  <p>Ein <strong>Risiko</strong> ist ein unsicheres Ereignis, das eintreten kann und dann Auswirkungen auf Ziele, Termine, Kosten oder Qualität hat. Ein <strong>Problem</strong> (Issue) ist bereits eingetreten und muss gelöst werden. Eine <strong>Annahme</strong> ist etwas, das man für die Planung als gegeben voraussetzt – und das sich als falsch herausstellen kann. Diese Trennung ist hilfreich: Probleme gehören in die Steuerung des Tagesgeschäfts, Risiken in die Vorsorge. Und jede wichtige Annahme im Projektplan ist ein Kandidat für das Risikoregister.</p>
+  <p>Bewährt hat sich eine einheitliche Formulierung nach dem Muster <em>Ursache – Risiko – Auswirkung</em>: „Weil die Schnittstellenspezifikation des Drittsystems noch nicht vorliegt (Ursache), kann sich die Integration verzögern (Risiko), wodurch der Systemtest später beginnt und der Go-live gefährdet ist (Auswirkung).“ So wird sofort sichtbar, wo Maßnahmen ansetzen können.</p>
+
+  <h2>Risikomanagement in 5 Schritten</h2>
+  <h3>1. Risiken systematisch identifizieren</h3>
+  <p>Risiken findet man am besten gemeinsam: in einem kurzen Workshop mit Projektteam, Fachbereich, Betrieb und gegebenenfalls Lieferanten. Eine Liste typischer Risikokategorien hilft, nichts zu übersehen:</p>
+  <ul>
+    <li>Anforderungen und Scope (Unklarheit, häufige Änderungen)</li>
+    <li>Technik, Schnittstellen und Altsysteme</li>
+    <li>Ressourcen und Schlüsselpersonen</li>
+    <li>Lieferanten und externe Abhängigkeiten</li>
+    <li>Stakeholder, Entscheidungen und Akzeptanz</li>
+    <li>Qualität, Test und Abnahme</li>
+    <li>Datenschutz, Informationssicherheit und Compliance</li>
+  </ul>
+  <p>Zusätzlich lohnt der Blick in Lessons Learned früherer Projekte und in die Annahmen des Projektplans. Risikoidentifikation ist kein einmaliger Termin: Neue Risiken entstehen in jeder Projektphase.</p>
+
+  <h3>2. Risiken bewerten und priorisieren</h3>
+  <p>Jedes Risiko wird nach zwei Kriterien eingeschätzt: Eintrittswahrscheinlichkeit und Auswirkung. Für die meisten IT-Projekte reicht eine einfache Skala, etwa niedrig, mittel und hoch. Das Produkt aus beiden ergibt die Priorität und lässt sich übersichtlich in einer Risikomatrix darstellen. Wichtig ist nicht die Scheingenauigkeit einzelner Werte, sondern dass das Team sich auf eine gemeinsame Einschätzung einigt und die wenigen kritischen Risiken klar erkennbar sind. Auf diese konzentrieren sich Zeit und Aufmerksamkeit.</p>
+
+  <h3>3. Gegenmaßnahmen festlegen</h3>
+  <p>Für jedes relevante Risiko wird eine Strategie gewählt:</p>
+  <ul>
+    <li><strong>Vermeiden:</strong> Die Ursache beseitigen, etwa durch eine Änderung des Vorgehens oder des Umfangs.</li>
+    <li><strong>Vermindern:</strong> Wahrscheinlichkeit oder Auswirkung senken, zum Beispiel durch einen frühen technischen Prototyp, zusätzliche Tests oder eine Vertretungsregelung.</li>
+    <li><strong>Übertragen:</strong> Das Risiko vertraglich oder organisatorisch an einen Partner geben, der es besser beherrschen kann.</li>
+    <li><strong>Akzeptieren:</strong> Bewusst tragen – mit einem vorbereiteten Notfallplan für den Fall des Eintritts.</li>
+  </ul>
+  <p>Hilfreich sind außerdem <strong>Frühindikatoren</strong>: Woran merken wir rechtzeitig, dass ein Risiko eintritt? Etwa wenn eine zugesagte Spezifikation zum vereinbarten Termin nicht vorliegt. Mit einem solchen Auslöser wird aus einem abstrakten Risiko ein konkreter Entscheidungspunkt.</p>
+
+  <h3>4. Verantwortliche benennen und das Risikoregister pflegen</h3>
+  <p>Jedes Risiko bekommt eine verantwortliche Person, die es beobachtet und die Maßnahmen vorantreibt. Das Risikoregister selbst muss nicht kompliziert sein. Bewährt haben sich wenige Spalten: Beschreibung (Ursache – Risiko – Auswirkung), Kategorie, Wahrscheinlichkeit, Auswirkung, Priorität, Maßnahmen, Frühindikator, verantwortliche Person, Status und Datum der letzten Prüfung. Ob das Register in einer Tabelle, im Ticketsystem oder im Projektmanagement-Tool steht, ist zweitrangig – entscheidend ist, dass alle Beteiligten es kennen und nutzen.</p>
+
+  <h3>5. Risiken überwachen, berichten und eskalieren</h3>
+  <p>Ein Risikoregister lebt nur, wenn es regelmäßig besprochen wird – zum Beispiel als fester Punkt im wöchentlichen Projektmeeting und im Statusbericht an den Lenkungskreis. Dabei werden Bewertungen aktualisiert, erledigte Risiken geschlossen und neue aufgenommen. Für kritische Risiken braucht es klare Eskalationswege: Wer entscheidet, wenn eine Maßnahme Budget oder Scope verändert? Am Projektende fließen die Erfahrungen in die Lessons Learned ein und machen das nächste Projekt besser.</p>
+
+  <h2>Risikomanagement in agilen Projekten</h2>
+  <p>Auch in Scrum-Projekten gibt es Risiken – sie werden nur anders behandelt. Viele agile Praktiken sind im Kern Risikomanagement: Kurze Sprints und regelmäßige Reviews machen Fehlentwicklungen früh sichtbar, Impediments im Daily Scrum sind eingetretene oder drohende Risiken, und die Retrospektive ist ein festes Format für Verbesserungen. Ergänzend bewährt sich:</p>
+  <ul>
+    <li><strong>Risikobasierte Priorisierung:</strong> Backlog-Einträge mit hoher Unsicherheit früh angehen, statt sie ans Ende zu schieben.</li>
+    <li><strong>Spikes:</strong> Zeitlich begrenzte Untersuchungen, um technische Fragen zu klären, bevor viel Aufwand investiert wird.</li>
+    <li><strong>Ein schlankes Risiko-Board:</strong> Übergreifende Risiken – etwa Abhängigkeiten zu anderen Teams oder Lieferanten – sichtbar machen und in der Sprint-Planung berücksichtigen.</li>
+  </ul>
+  <p>Wie agile Arbeitsweisen in Organisationen wirksam eingeführt werden, beschreibt unser Artikel <a href="blog-scrum.html" class="inl">Agile Transformation: Was Scrum wirklich bedeutet</a>.</p>
+
+  <h2>Typische Risiken in IT-Projekten – und wie Sie gegensteuern</h2>
+  <ul>
+    <li><strong>Unklare oder wechselnde Anforderungen:</strong> Anforderungen früh abstimmen, Akzeptanzkriterien festlegen und Änderungen über ein geregeltes Änderungsmanagement steuern. Mehr dazu in <a href="blog-anforderungen.html" class="inl">Der unterschätzte Erfolgsfaktor: saubere Anforderungen</a>.</li>
+    <li><strong>Integrationsprobleme mit Schnittstellen:</strong> Kritische Schnittstellen früh mit einem technischen Durchstich prüfen, statt auf den Integrationstest am Ende zu warten.</li>
+    <li><strong>Zu spät oder zu knapp geplante Tests:</strong> Testaktivitäten von Beginn an mitplanen und Qualitätssicherung nicht als Puffer am Projektende behandeln. Warum das entscheidend ist, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</li>
+    <li><strong>Abhängigkeit von Schlüsselpersonen:</strong> Wissen dokumentieren, Vertretungen benennen und kritische Aufgaben auf mehrere Schultern verteilen.</li>
+    <li><strong>Fehlende Verfügbarkeit des Fachbereichs:</strong> Zeiten für Workshops, Tests und Abnahme frühzeitig mit den Führungskräften vereinbaren.</li>
+    <li><strong>Performance-Probleme im Betrieb:</strong> Last- und Performanceanforderungen früh definieren und vor dem Go-live prüfen, etwa mit <a href="blog-lasttests.html" class="inl">Lasttests</a>.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Risikomanagement in IT-Projekten muss weder aufwendig noch bürokratisch sein. Entscheidend ist, Risiken konkret zu formulieren, ehrlich zu bewerten, mit Maßnahmen und Verantwortlichen zu hinterlegen und regelmäßig nachzuhalten. Dann wird das Risikoregister vom Pflichtdokument zum Frühwarnsystem, das Termine, Budget und Qualität schützt. Wie Risikomanagement mit realistischer Planung und guter Kommunikation zusammenspielt, zeigt unser Artikel <a href="blog-pm.html" class="inl">IT-Projekte im Zeit- und Budgetplan halten</a>.</p>
+
+  <h2>Häufige Fragen zum Risikomanagement in IT-Projekten</h2>
+  <h3>Wie oft sollte das Risikoregister aktualisiert werden?</h3>
+  <p>Regelmäßig und mit festem Rhythmus – in vielen Projekten wöchentlich im Projektmeeting oder einmal pro Sprint. Zusätzlich immer dann, wenn sich wesentliche Rahmenbedingungen ändern, etwa Scope, Budget, Termine oder Personal.</p>
+  <h3>Wer ist für das Risikomanagement im Projekt verantwortlich?</h3>
+  <p>Die Projektleitung verantwortet den Prozess und sorgt dafür, dass Risiken erfasst, bewertet und nachgehalten werden. Jedes einzelne Risiko hat zusätzlich eine verantwortliche Person, die es beobachtet und die vereinbarten Maßnahmen umsetzt.</p>
+  <h3>Brauchen agile Projekte ein Risikoregister?</h3>
+  <p>Nicht zwingend in klassischer Form. Viele Risiken werden über kurze Iterationen, Reviews und Impediments behandelt. Für übergreifende Risiken wie Abhängigkeiten zu anderen Teams, Lieferanten oder Terminen ist eine schlanke, sichtbare Risikoliste dennoch sinnvoll.</p>
+
+  <div class="cta-box">
+    <h3>Risiken im IT-Projekt im Griff behalten</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Projekt und zeigen, wo ein strukturiertes Risikomanagement ansetzen sollte.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="projektmanagement.html">Projektmanagement</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
