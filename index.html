@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="6YmAzy85w8DTp8JmlHamDK0yVDQ3YmoymdHVxOqx1IY" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>IT-Beratung Hamburg: QA, Projektmanagement & KI | RAIT Solution</title>
   <meta name="description" content="IT-Beratung in Hamburg & deutschlandweit: Software-Qualitätssicherung, Anforderungs- & Projektmanagement, KI und Cybersecurity. Jetzt Erstgespräch vereinbaren.">
   <link rel="canonical" href="https://raitsolution.de/">
@@ -796,6 +798,7 @@
     </div>
     <div class="contact-form">
       <form id="contactForm" action="https://formspree.io/f/xjglqllq" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label>Name</label>
         <input type="text" name="name" placeholder="Ihr vollständiger Name" required>
         <label>E-Mail</label>

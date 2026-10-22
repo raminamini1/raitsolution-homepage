@@ -2,6 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>IT-Personalbereitstellung Hamburg – IT-Experten | RAIT Solution</title>
   <meta name="description" content="IT-Personalbereitstellung aus Hamburg: erfahrene IT-Experten aus unserem Netzwerk – kurzfristig, projektbezogen und flexibel. ☎ +49 1515 7735046">
   <link rel="canonical" href="https://raitsolution.de/personalbereitstellung.html">
@@ -50,7 +52,7 @@
     .btn-dk{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:opacity .2s;display:inline-block}.btn-dk:hover{opacity:.85}
     .btn-ol{border:1.5px solid #ccc;color:#1a1a1a;padding:13px 28px;border-radius:6px;font-weight:600;font-size:14px;display:inline-block;transition:border-color .2s}.btn-ol:hover{border-color:#1a1a1a}
     section{padding:80px 60px}.sec-in{max-width:1200px;margin:0 auto}
-    h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin:10px 0 14px;color:#0d0d0d}
+    h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin:10px 0 14px;color:#0d0d0d;overflow-wrap:break-word;hyphens:auto}
     .sub{color:#666;font-size:16px;margin-bottom:44px;max-width:560px}
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ebebeb;border:1px solid #ebebeb;border-radius:4px;overflow:hidden}
     .card{background:#fff;padding:32px 28px;transition:background .2s}.card:hover{background:#f8f8f8}
@@ -184,6 +186,7 @@
   </div>
   <div class="form-wrap">
     <form action="https://formspree.io/f/xjglqllq" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="subject" value="Anfrage: IT-Personalbereitstellung">
       <label>Name</label><input type="text" name="name" placeholder="Ihr vollständiger Name" required>
       <label>E-Mail</label><input type="email" name="email" placeholder="ihre@email.de" required>

@@ -2,6 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Karriere &amp; Initiativbewerbung Hamburg | RAIT Solution</title>
   <meta name="description" content="Werden Sie Teil unseres Netzwerks: IT-Berater, Testmanager, Scrum Master, KI- &amp; Security-Experten gesucht. Jetzt initiativ bewerben.">
   <link rel="canonical" href="https://raitsolution.de/karriere.html">
@@ -152,6 +154,7 @@
   </div>
   <div class="form-wrap">
     <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="access_key" value="07ddc93f-cc5f-450c-b641-65876da4870b">
       <input type="hidden" name="subject" value="Neue Initiativbewerbung – raitsolution.de/karriere">
       <input type="hidden" name="redirect" value="https://raitsolution.de/karriere.html?sent=1">

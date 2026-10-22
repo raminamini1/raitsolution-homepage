@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Requirements Management Hamburg – IREB | RAIT Solution</title>
   <meta name="description" content="Requirements management from Hamburg: AS-IS/TO-BE analysis, blueprint, requirements engineering, functional specs. IREB-certified. ☎ +49 40 65390431">
   <link rel="canonical" href="https://raitsolution.de/anforderungsmanagement-en.html">
@@ -49,7 +51,7 @@
     .btn-dk{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:opacity .2s;display:inline-block}.btn-dk:hover{opacity:.85}
     .btn-ol{border:1.5px solid #ccc;color:#1a1a1a;padding:13px 28px;border-radius:6px;font-weight:600;font-size:14px;display:inline-block;transition:border-color .2s}.btn-ol:hover{border-color:#1a1a1a}
     section{padding:80px 60px}.sec-in{max-width:1200px;margin:0 auto}
-    h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin:10px 0 14px;color:#0d0d0d}
+    h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin:10px 0 14px;color:#0d0d0d;overflow-wrap:break-word;hyphens:auto}
     .sub{color:#666;font-size:16px;margin-bottom:44px;max-width:560px}
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ebebeb;border:1px solid #ebebeb;border-radius:4px;overflow:hidden}
     .card{background:#fff;padding:32px 28px;transition:background .2s}.card:hover{background:#f8f8f8}
@@ -59,7 +61,7 @@
     .card ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:6px}
     .card ul li{color:#666;font-size:13px;padding-left:18px;position:relative}.card ul li::before{content:'•';position:absolute;left:0;color:#999;font-size:11px;top:1px;line-height:1}
     .contact-sec{background:#f8f8f8;padding:80px 60px;border-top:1px solid #ebebeb}
-    .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}
+    .cg{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:start}.cg>*{min-width:0}
     .ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
     .ci-ico{width:40px;height:40px;border:1px solid #ebebeb;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff}
     .ci-ico svg{width:17px;height:17px;stroke:#1a1a1a;stroke-width:1.5;fill:none}
@@ -193,6 +195,7 @@
   </div>
   <div class="form-wrap">
     <form action="https://formspree.io/f/xjglqllq" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="subject" value="Enquiry: Requirements Management Hamburg">
       <label>Name</label><input type="text" name="name" placeholder="Your full name" required>
       <label>Email</label><input type="email" name="email" placeholder="your@email.com" required>

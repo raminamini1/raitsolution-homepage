@@ -14,6 +14,7 @@
 - Fonts: `fonts/inter-400.woff2` (Variable Font, `font-weight: 300 700`) + `playfair-700.woff2`, Preload in jedem `<head>`.
 - Inhaber / Blog-Autor: Ramin Amini, Neuer Wall 1, 20354 Hamburg, kontakt@raitsolution.de, +49 40 65390431, Mobil +49 1515 7735046.
 - Einige Dateien beginnen mit UTF-8-BOM – beim Bearbeiten erhalten.
+- Sicherheit (22.10.2026): jede Seite hat `<meta http-equiv="Content-Security-Policy">` + `<meta name="referrer">` direkt nach dem viewport-Meta – auf neuen Seiten mitkopieren. Neue externe Quellen (Skripte, Bilder, Formular-Ziele, iframes) müssen in die CSP aller Seiten, sonst blockiert der Browser sie. Formulare haben Honeypot (`_gotcha` bei Formspree, `botcheck` bei Web3Forms) – nicht entfernen. Kein PHP/Server-Code (GitHub Pages).
 
 ## SEO-Konventionen (bei jeder neuen/geänderten Seite einhalten)
 - `<title>` ≤ 65 Zeichen, endet auf ` | RAIT Solution`; Description ≤ 160 Zeichen.

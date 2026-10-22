@@ -2,6 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Cybersecurity-Beratung Hamburg – Security Audit | RAIT Solution</title>
   <meta name="description" content="Cybersecurity-Beratung aus Hamburg: IT-Sicherheitsberatung, Risikoanalyse, Security-Audits &amp; Awareness-Schulungen – deutschlandweit. ☎ +49 1515 7735046">
   <link rel="canonical" href="https://raitsolution.de/cybersecurity.html">
@@ -186,6 +188,7 @@
   </div>
   <div class="form-wrap">
     <form action="https://formspree.io/f/xjglqllq" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="subject" value="Anfrage: Cybersecurity">
       <label>Name</label><input type="text" name="name" placeholder="Ihr vollständiger Name" required>
       <label>E-Mail</label><input type="email" name="email" placeholder="ihre@email.de" required>
