@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Testkonzept erstellen: Aufbau und Inhalte | RAIT Solution</title>
+  <meta name="description" content="Testkonzept erstellen: Welche Inhalte hineingehören, wie Sie Schritt für Schritt vorgehen und wie das Testkonzept auch in agilen Projekten schlank bleibt.">
+  <link rel="canonical" href="https://raitsolution.de/blog-testkonzept.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-testkonzept.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-testkonzept-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-testkonzept.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Testkonzept erstellen: Aufbau und Inhalte | RAIT Solution">
+  <meta property="og:description" content="Testkonzept erstellen in der Praxis: Ziele, Umfang, Teststufen, Testumgebung, Rollen und Endekriterien – plus Vorgehen in 5 Schritten und Tipps für agile Projekte.">
+  <meta property="og:url" content="https://raitsolution.de/blog-testkonzept.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Testkonzept erstellen: Aufbau und Inhalte | RAIT Solution">
+  <meta name="twitter:description" content="Testkonzept erstellen in der Praxis: Ziele, Umfang, Teststufen, Testumgebung, Rollen und Endekriterien – plus Vorgehen in 5 Schritten und Tipps für agile Projekte.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Testkonzept erstellen: Aufbau, Inhalte und Vorgehen in der Praxis", "description": "Testkonzept erstellen: Welche Inhalte hineingehören, wie Sie Schritt für Schritt vorgehen und wie das Testkonzept auch in agilen Projekten schlank bleibt.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-testkonzept.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testkonzept.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-23", "dateModified": "2026-10-23", "about": {"@type": "Thing", "name": "Testkonzept"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Testkonzept erstellen: Aufbau, Inhalte und Vorgehen in der Praxis", "item": "https://raitsolution.de/blog-testkonzept.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist der Unterschied zwischen Testkonzept und Teststrategie?", "acceptedAnswer": {"@type": "Answer", "text": "Die Teststrategie legt übergreifend fest, wie eine Organisation oder ein Programm grundsätzlich testet. Das Testkonzept setzt diese Vorgaben für ein konkretes Projekt oder Release um und beschreibt Umfang, Vorgehen, Ressourcen, Zeitplan und Freigabekriterien."}}, {"@type": "Question", "name": "Wer erstellt das Testkonzept?", "acceptedAnswer": {"@type": "Answer", "text": "In der Regel der Testmanager oder die verantwortliche Person für die Qualitätssicherung. Erarbeitet wird es gemeinsam mit Projektleitung, Entwicklung, Fachbereich und Betrieb, und es wird von den Beteiligten geprüft und freigegeben."}}, {"@type": "Question", "name": "Braucht man in Scrum ein Testkonzept?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, aber in schlanker Form. Ein übergreifendes Testkonzept regelt Teststufen, Umgebungen, Automatisierung und Qualitätskriterien. Die Details stehen in den Akzeptanzkriterien der User Stories und in der Definition of Done."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-testkonzept.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-testkonzept-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung · Testmanagement</span>
+  <h1>Testkonzept erstellen: Aufbau, Inhalte und Vorgehen in der Praxis</h1>
+  <p class="meta"><time datetime="2026-10-23">23. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">„Wir testen am Ende, wenn alles fertig ist“ – dieser Satz steht am Anfang vieler schwieriger Go-lives. Ohne Testkonzept ist unklar, was getestet wird, wer testet, auf welcher Umgebung und wann eine Software als ausreichend geprüft gilt. Die Folge sind Diskussionen kurz vor dem Release, fehlende Testdaten und eine Freigabe nach Bauchgefühl. Ein gutes Testkonzept beantwortet diese Fragen, bevor sie zum Problem werden. Dieser Artikel zeigt, welche Inhalte hineingehören, wie Sie ein Testkonzept Schritt für Schritt erstellen und wie es auch in agilen Projekten schlank bleibt.</p>
+
+  <h2>Was ist ein Testkonzept?</h2>
+  <p>Ein <strong>Testkonzept</strong> beschreibt, wie in einem konkreten Projekt oder Release getestet wird: Ziele, Umfang, Vorgehen, Ressourcen, Zeitplan und die Kriterien, nach denen über die Freigabe entschieden wird. Im ISTQB-Vokabular entspricht es dem <em>Testplan</em>; als Orientierung für Aufbau und Inhalte dient häufig die Norm ISO/IEC/IEEE 29119-3, die den früheren Standard IEEE 829 abgelöst hat.</p>
+  <p>Wichtig ist die Abgrenzung zu zwei verwandten Begriffen:</p>
+  <ul>
+    <li><strong>Teststrategie:</strong> Sie legt übergreifend fest, wie eine Organisation oder ein Programm grundsätzlich testet – etwa welche Teststufen Standard sind oder welcher Automatisierungsgrad angestrebt wird. Das Testkonzept setzt diese Vorgaben für ein konkretes Projekt um.</li>
+    <li><strong>Testfälle:</strong> Sie beschreiben einzelne Prüfungen mit Vorbedingungen, Schritten und erwartetem Ergebnis. Das Testkonzept definiert den Rahmen, aus dem die Testfälle später abgeleitet werden.</li>
+  </ul>
+
+  <h2>Wann lohnt sich ein Testkonzept – und wie umfangreich sollte es sein?</h2>
+  <p>Ein Testkonzept lohnt sich immer dann, wenn mehrere Beteiligte zusammenarbeiten: Entwicklung, Fachbereich, Betrieb, externe Dienstleister. Spätestens bei Schnittstellen zu anderen Systemen, regulatorischen Anforderungen oder einer formalen Abnahme ist es unverzichtbar. Der Umfang richtet sich nach dem Risiko, nicht nach einer Vorlage. Für eine überschaubare Anwendung genügen oft wenige Seiten; bei einer Kernsystem-Migration mit vielen Schnittstellen darf es deutlich detaillierter sein. Entscheidend ist, dass das Dokument gelesen und genutzt wird – ein 60-seitiges Konzept, das niemand kennt, hilft nicht.</p>
+
+  <h2>Aufbau: Diese Inhalte gehören in ein Testkonzept</h2>
+  <h3>1. Ziele, Testobjekte und Abgrenzung</h3>
+  <p>Was soll der Test nachweisen, und was wird getestet? Hier werden Systeme, Module, Schnittstellen und Release-Umfang benannt. Ebenso wichtig ist, was ausdrücklich <em>nicht</em> getestet wird – etwa Fremdsysteme, die der Lieferant verantwortet. Eine klare Abgrenzung verhindert spätere Missverständnisse über Zuständigkeiten.</p>
+
+  <h3>2. Teststufen und Testarten</h3>
+  <p>Welche Teststufen gibt es im Projekt – Komponententest, Integrationstest, Systemtest, Abnahmetest – und wer ist jeweils verantwortlich? Dazu kommen die Testarten: funktionale Tests, Regressionstests und nicht-funktionale Tests wie Performance, Sicherheit oder Usability. Für die letzte Stufe vor dem Go-live lohnt ein Blick in unseren Artikel <a href="blog-abnahmetests.html" class="inl">Abnahmetests: So gelingt die Softwareabnahme sicher</a>.</p>
+
+  <h3>3. Risikobasierte Priorisierung</h3>
+  <p>Nicht alles lässt sich gleich gründlich testen. Ein gutes Testkonzept bewertet die Funktionen nach Geschäftskritikalität und Fehlerwahrscheinlichkeit und leitet daraus die Testtiefe ab. Kritische Kernprozesse werden intensiv geprüft, Randfunktionen mit geringerem Aufwand. Die Projektrisiken aus dem <a href="blog-risikomanagement.html" class="inl">Risikomanagement in IT-Projekten</a> sind dafür eine wertvolle Quelle.</p>
+
+  <h3>4. Testumgebung und Testdaten</h3>
+  <p>Auf welchen Umgebungen wird getestet, wer stellt sie bereit, und wie nah sind sie an der Produktion? Testdaten sind ein häufig unterschätzter Engpass: Werden anonymisierte Produktionsdaten verwendet oder synthetische Daten erzeugt? Bei personenbezogenen Daten muss der Datenschutz von Anfang an mitgedacht werden.</p>
+
+  <h3>5. Rollen, Verantwortlichkeiten und Zeitplan</h3>
+  <p>Wer erstellt Testfälle, wer führt sie aus, wer bewertet Fehler und wer gibt frei? Ein Zeitplan mit Testphasen und Meilensteinen gehört ebenso dazu wie die Abstimmung mit dem Projektplan. Besonders wichtig: Die Verfügbarkeit des Fachbereichs für Tests und Abnahme muss früh eingeplant werden.</p>
+
+  <h3>6. Eingangs-, Ende- und Abbruchkriterien</h3>
+  <p>Wann kann eine Testphase beginnen (etwa: Build installiert, Smoke-Test bestanden, Testdaten vorhanden)? Wann ist sie abgeschlossen (etwa: alle priorisierten Testfälle durchgeführt, keine offenen kritischen Fehler)? Und wann wird sie unterbrochen, weil ein sinnvolles Testen nicht möglich ist? Messbare Kriterien machen die Freigabeentscheidung nachvollziehbar.</p>
+
+  <h3>7. Fehlermanagement und Reporting</h3>
+  <p>Wie werden Fehler erfasst, klassifiziert und nachverfolgt? Welche Schweregrade gibt es, und wer entscheidet über deren Behebung? Dazu kommt das Reporting: Welche Kennzahlen – etwa Testfortschritt, offene Fehler nach Schweregrad, Anforderungsabdeckung – werden wann an wen berichtet? Am Ende steht ein Testabschlussbericht mit einer klaren Freigabeempfehlung.</p>
+
+  <h2>Testkonzept erstellen: Vorgehen in fünf Schritten</h2>
+  <ul>
+    <li><strong>Grundlagen sammeln:</strong> Anforderungen, Architektur, Projektplan und Risiken sichten. Unklare Anforderungen sind ein Warnsignal – testbare Anforderungen sind die Basis jedes Tests, wie unser Artikel <a href="blog-anforderungen.html" class="inl">Der unterschätzte Erfolgsfaktor: saubere Anforderungen</a> zeigt.</li>
+    <li><strong>Mit den Beteiligten abstimmen:</strong> In einem kurzen Workshop mit Projektleitung, Entwicklung, Fachbereich und Betrieb Umfang, Prioritäten und Verantwortlichkeiten klären.</li>
+    <li><strong>Erste Fassung schreiben:</strong> Die Gliederung oben als Leitfaden nutzen und jeden Abschnitt so knapp wie möglich, aber so konkret wie nötig füllen.</li>
+    <li><strong>Review und Freigabe:</strong> Das Konzept von den Beteiligten prüfen lassen und formal freigeben – damit wird es zur verbindlichen Grundlage.</li>
+    <li><strong>Lebendig halten:</strong> Ändern sich Umfang, Termine oder Risiken, wird das Testkonzept angepasst. Eine Versionshistorie macht Änderungen nachvollziehbar.</li>
+  </ul>
+
+  <h2>Testkonzept in agilen Projekten</h2>
+  <p>Auch in Scrum-Teams braucht es Klarheit über das Testvorgehen – nur in anderer Form. Statt eines umfangreichen Dokuments zu Projektbeginn bewährt sich ein schlankes, übergreifendes Testkonzept, das Teststufen, Umgebungen, Automatisierungsansatz und Qualitätskriterien festlegt. Die Details wandern in die Arbeitsweise des Teams: Akzeptanzkriterien in jeder User Story, Testaspekte in der Definition of Done und Regressionstests, die mit jedem Sprint mitwachsen. Wie Sie diese Regressionstests sinnvoll planen, lesen Sie in <a href="blog-regressionstests.html" class="inl">Regressionstests: So sichern Sie stabile Releases ab</a>; den Weg zur automatisierten Ausführung beschreibt <a href="blog-testautomatisierung.html" class="inl">Testautomatisierung einführen in 6 Schritten</a>.</p>
+
+  <h2>Typische Fehler beim Testkonzept</h2>
+  <ul>
+    <li><strong>Copy-and-paste aus dem letzten Projekt:</strong> Vorlagen sind hilfreich, aber Risiken, Systeme und Beteiligte sind jedes Mal andere.</li>
+    <li><strong>Zu spät erstellt:</strong> Wird das Testkonzept erst kurz vor der Testphase geschrieben, fehlen Testumgebungen, Testdaten und Kapazitäten, die man hätte rechtzeitig einplanen müssen.</li>
+    <li><strong>Keine messbaren Endekriterien:</strong> Ohne sie wird die Freigabe zur Verhandlungssache.</li>
+    <li><strong>Nicht-funktionale Anforderungen vergessen:</strong> Performance, Sicherheit und Betriebsfähigkeit fallen sonst erst in der Produktion auf – etwa ohne rechtzeitige <a href="blog-lasttests.html" class="inl">Lasttests</a>.</li>
+    <li><strong>Dokument ohne Leser:</strong> Ein Testkonzept, das nicht abgestimmt und freigegeben wurde, wird im Projektalltag ignoriert.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Ein Testkonzept ist kein Selbstzweck, sondern das gemeinsame Verständnis darüber, wie Qualität im Projekt nachgewiesen wird. Wer Ziele, Umfang, Prioritäten, Umgebungen, Verantwortlichkeiten und Freigabekriterien früh klärt, vermeidet Diskussionen kurz vor dem Go-live und schafft eine belastbare Grundlage für die Release-Entscheidung. Warum Qualitätssicherung insgesamt über den Projekterfolg entscheidet, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</p>
+
+  <h2>Häufige Fragen zum Testkonzept</h2>
+  <h3>Was ist der Unterschied zwischen Testkonzept und Teststrategie?</h3>
+  <p>Die Teststrategie legt übergreifend fest, wie eine Organisation oder ein Programm grundsätzlich testet. Das Testkonzept setzt diese Vorgaben für ein konkretes Projekt oder Release um und beschreibt Umfang, Vorgehen, Ressourcen, Zeitplan und Freigabekriterien.</p>
+  <h3>Wer erstellt das Testkonzept?</h3>
+  <p>In der Regel der Testmanager oder die verantwortliche Person für die Qualitätssicherung. Erarbeitet wird es gemeinsam mit Projektleitung, Entwicklung, Fachbereich und Betrieb, und es wird von den Beteiligten geprüft und freigegeben.</p>
+  <h3>Braucht man in Scrum ein Testkonzept?</h3>
+  <p>Ja, aber in schlanker Form. Ein übergreifendes Testkonzept regelt Teststufen, Umgebungen, Automatisierung und Qualitätskriterien. Die Details stehen in den Akzeptanzkriterien der User Stories und in der Definition of Done.</p>
+
+  <div class="cta-box">
+    <h3>Ihr Testkonzept mit Erfahrung aufsetzen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Projekt und zeigen, wie ein passendes Testkonzept für Ihre Anforderungen aussieht.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Qualitätssicherung</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
