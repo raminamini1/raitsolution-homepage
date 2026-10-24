@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Agiles vs. klassisches Projektmanagement | RAIT Solution</title>
+  <meta name="description" content="Agiles vs. klassisches Projektmanagement: Unterschiede, Entscheidungskriterien und wann ein hybrides Vorgehen in IT-Projekten sinnvoll ist – praxisnah erklärt.">
+  <link rel="canonical" href="https://raitsolution.de/blog-agil-klassisch.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-agil-klassisch.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-agil-klassisch-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-agil-klassisch.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Agiles vs. klassisches Projektmanagement | RAIT Solution">
+  <meta property="og:description" content="Agil, klassisch oder hybrid? Die wichtigsten Unterschiede, klare Entscheidungskriterien für IT-Projekte und typische Fehler bei der Methodenwahl.">
+  <meta property="og:url" content="https://raitsolution.de/blog-agil-klassisch.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agiles vs. klassisches Projektmanagement | RAIT Solution">
+  <meta name="twitter:description" content="Agil, klassisch oder hybrid? Die wichtigsten Unterschiede, klare Entscheidungskriterien für IT-Projekte und typische Fehler bei der Methodenwahl.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Agiles vs. klassisches Projektmanagement: Welcher Ansatz passt zu Ihrem IT-Projekt?", "description": "Agiles vs. klassisches Projektmanagement: Unterschiede, Entscheidungskriterien und wann ein hybrides Vorgehen in IT-Projekten sinnvoll ist – praxisnah erklärt.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-agil-klassisch.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-agil-klassisch.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-24", "dateModified": "2026-10-24", "about": {"@type": "Thing", "name": "Agiles Projektmanagement"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Agiles vs. klassisches Projektmanagement: Welcher Ansatz passt zu Ihrem IT-Projekt?", "item": "https://raitsolution.de/blog-agil-klassisch.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ist agiles Projektmanagement besser als klassisches?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht grundsätzlich. Agiles Projektmanagement eignet sich besonders, wenn Anforderungen unklar sind oder sich häufig ändern. Klassisches Projektmanagement ist im Vorteil, wenn Umfang, Vorgaben und Abhängigkeiten früh feststehen. Entscheidend ist, welcher Ansatz zum konkreten Projekt und zur Organisation passt."}}, {"@type": "Question", "name": "Was ist hybrides Projektmanagement?", "acceptedAnswer": {"@type": "Answer", "text": "Hybrides Projektmanagement kombiniert Elemente beider Ansätze, zum Beispiel einen klassischen Rahmenplan mit Meilensteinen und Budget und eine agile Umsetzung der Softwareentwicklung in Sprints. Damit das funktioniert, müssen Entscheidungswege und Schnittstellen zwischen beiden Ebenen klar geregelt sein."}}, {"@type": "Question", "name": "Kann man ein Festpreisprojekt agil umsetzen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, aber nicht mit einem fest definierten Leistungsumfang. Bewährt haben sich Verträge mit festem Budget- und Zeitrahmen, in denen der Umfang über Priorisierung gesteuert wird. Ein Festpreis mit fixem Umfang und agiler Umsetzung führt dagegen häufig zu Konflikten über Änderungen."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-agil-klassisch.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-agil-klassisch-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Projektmanagement · Methoden</span>
+  <h1>Agiles vs. klassisches Projektmanagement: Welcher Ansatz passt zu Ihrem IT-Projekt?</h1>
+  <p class="meta"><time datetime="2026-10-24">24. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">„Wir machen das jetzt agil“ – oder: „Bei uns geht nur Wasserfall.“ In vielen Unternehmen wird die Frage nach dem richtigen Vorgehen wie eine Glaubensfrage behandelt. Dabei ist die Wahl zwischen agilem und klassischem Projektmanagement vor allem eine Sachfrage: Wie klar sind die Anforderungen, wie groß ist die technische Unsicherheit, welche Vorgaben gelten, und wie arbeitet die Organisation? Dieser Artikel zeigt die wesentlichen Unterschiede, nennt konkrete Entscheidungskriterien und erklärt, wann ein hybrides Vorgehen sinnvoll ist – und wann nicht.</p>
+
+  <h2>Klassisches Projektmanagement: erst planen, dann umsetzen</h2>
+  <p>Beim <strong>klassischen Projektmanagement</strong> – oft als Wasserfall oder plangetriebenes Vorgehen bezeichnet – wird das Projekt in aufeinanderfolgende Phasen gegliedert: Initiierung, Analyse, Konzeption, Umsetzung, Test, Einführung und Abschluss. Umfang, Termine und Budget werden zu Beginn möglichst vollständig geplant; Lasten- und Pflichtenheft beschreiben, was geliefert wird. Meilensteine und Phasenfreigaben (Quality Gates) machen den Fortschritt messbar. Im öffentlichen Bereich ist das V-Modell XT verbreitet, das jeder Entwicklungsstufe eine passende Teststufe gegenüberstellt.</p>
+  <p>Die Stärke des klassischen Ansatzes ist Planbarkeit: Alle Beteiligten wissen früh, was wann geliefert wird und was es kostet. Die Schwäche zeigt sich, wenn sich Anforderungen während des Projekts ändern. Dann wird jede Änderung zum formalen Change Request, und Fehlentwicklungen werden oft erst im Test sichtbar – zu einem Zeitpunkt, an dem Korrekturen teuer sind.</p>
+
+  <h2>Agiles Projektmanagement: in kurzen Zyklen lernen</h2>
+  <p><strong>Agiles Projektmanagement</strong> geht davon aus, dass sich nicht alles im Voraus planen lässt. Statt eines vollständigen Plans gibt es ein Produktziel und ein priorisiertes Backlog. Das Team liefert in kurzen Iterationen – in Scrum sind das Sprints von höchstens einem Monat – jeweils ein nutzbares Inkrement, holt Feedback ein und passt die Planung an. Grundlage ist das Agile Manifest von 2001, das unter anderem funktionierende Software und Reaktion auf Veränderung höher bewertet als umfassende Dokumentation und das Befolgen eines Plans.</p>
+  <p>Die bekanntesten Frameworks sind Scrum und Kanban; für mehrere Teams gibt es Skalierungsansätze wie SAFe oder LeSS. Agilität ist dabei mehr als ein Satz Meetings. Ohne echte Entscheidungskompetenz beim Product Owner und ohne eine Organisation, die Ergebnisse statt Pläne bewertet, bleibt es bei agilen Ritualen in einem klassischen Rahmen – mehr dazu in unserem Artikel <a href="blog-scrum.html" class="inl">Agile Transformation: Was Scrum wirklich bedeutet</a>.</p>
+
+  <h2>Die wichtigsten Unterschiede im Überblick</h2>
+  <ul>
+    <li><strong>Planung:</strong> Klassisch wird der Gesamtumfang vorab detailliert geplant. Agil wird grob für das Produktziel und detailliert nur für die nächsten Iterationen geplant.</li>
+    <li><strong>Was ist fest, was ist variabel?</strong> Klassisch ist der Umfang fixiert, Zeit und Kosten ergeben sich daraus. Agil sind Zeit und Team meist fest, der Umfang wird über Priorisierung gesteuert.</li>
+    <li><strong>Rollen:</strong> Klassisch steuert eine Projektleitung mit Gesamtverantwortung. In Scrum teilen sich Product Owner, Scrum Master und Entwicklungsteam die Verantwortung; eine Projektleiterrolle sieht das Framework nicht vor.</li>
+    <li><strong>Einbindung des Fachbereichs:</strong> Klassisch vor allem zu Beginn (Anforderungen) und am Ende (Abnahme). Agil laufend, etwa in jedem Sprint Review.</li>
+    <li><strong>Fortschrittsmessung:</strong> Klassisch über Meilensteine und Plan-Ist-Vergleiche. Agil über ausgelieferte, getestete Funktionalität.</li>
+    <li><strong>Dokumentation:</strong> Klassisch umfangreich und formal freigegeben. Agil so viel wie nötig, oft eng an der Software – etwa Akzeptanzkriterien und Definition of Done.</li>
+  </ul>
+
+  <h2>Entscheidungskriterien: Wann passt welcher Ansatz?</h2>
+  <p>Eine hilfreiche Orientierung bietet die Frage nach Klarheit und Unsicherheit, wie sie auch die Stacey-Matrix beschreibt: Je klarer die Anforderungen und je bekannter die Technologie, desto besser funktioniert ein plangetriebenes Vorgehen. Je unklarer das Ziel und je neuer die Technik, desto mehr spricht für iteratives Arbeiten. In der Praxis kommen weitere Kriterien hinzu:</p>
+  <h3>Eher klassisch, wenn …</h3>
+  <ul>
+    <li>Anforderungen stabil und gut beschreibbar sind, etwa bei einer gesetzlich vorgegebenen Änderung oder einem Infrastruktur-Rollout,</li>
+    <li>regulatorische Vorgaben formale Phasen, Freigaben und Nachweise verlangen,</li>
+    <li>viele externe Abhängigkeiten mit festen Terminen bestehen, etwa Hardware-Lieferungen oder Stichtage,</li>
+    <li>der Fachbereich nur punktuell verfügbar ist.</li>
+  </ul>
+  <h3>Eher agil, wenn …</h3>
+  <ul>
+    <li>das Ergebnis erst im Lauf des Projekts klarer wird, etwa bei neuen digitalen Produkten oder KI-Anwendungen,</li>
+    <li>frühes Nutzerfeedback den Wert des Produkts entscheidend erhöht,</li>
+    <li>ein stabiles Team über längere Zeit an einem Produkt arbeitet,</li>
+    <li>Fachbereich und Management bereit sind, regelmäßig zu priorisieren und Entscheidungen zu treffen.</li>
+  </ul>
+  <p>Ein Kriterium wird oft übersehen: die Vertragsform. Ein klassischer Festpreis mit fixem Leistungsumfang passt schlecht zu einem Vorgehen, bei dem sich der Umfang bewusst verändert. Wer agil arbeiten will, sollte das schon in Ausschreibung und Vertrag berücksichtigen, etwa mit einem festen Budgetrahmen und variablem Umfang.</p>
+
+  <h2>Hybrides Projektmanagement: sinnvoll kombinieren</h2>
+  <p>Viele IT-Projekte in mittelständischen Unternehmen und Konzernen arbeiten heute hybrid. Ein typisches Muster: Ein klassischer Rahmenplan mit Meilensteinen, Budget und Phasenfreigaben gibt dem Management Planungssicherheit, während die Softwareentwicklung innerhalb dieses Rahmens in Sprints organisiert ist. Ein anderes Muster kombiniert agile Entwicklungsteams mit klassisch geplanten Gewerken wie Infrastruktur, Datenmigration oder Schulung.</p>
+  <p>Hybrid funktioniert, wenn die Schnittstellen bewusst gestaltet werden: Wie fließen Erkenntnisse aus den Sprints in den Rahmenplan zurück? Wer entscheidet über Umfangsänderungen? Wie wird ein Meilenstein bewertet, wenn der Umfang variabel ist? Bleiben diese Fragen offen, entsteht das Schlechteste aus beiden Welten: ein starrer Plan, der regelmäßig verfehlt wird, plus agile Meetings ohne echten Entscheidungsspielraum. Auch der PMI-Standard trägt dem Rechnung: Der PMBOK Guide beschreibt seit der siebten Ausgabe ausdrücklich prädiktive, adaptive und hybride Vorgehensweisen.</p>
+
+  <h2>Qualitätssicherung: klassisch und agil unterschiedlich organisiert</h2>
+  <p>Besonders deutlich wird der Unterschied beim Testen. Im klassischen Vorgehen gibt es eigene Testphasen mit Systemtest, Integrationstest und Abnahme, geplant in einem <a href="blog-testkonzept.html" class="inl">Testkonzept</a>. Das Risiko: Wird die Umsetzung knapp, wird die Testphase gekürzt. Agil ist Testen Teil jeder Iteration. Eine Story gilt erst als fertig, wenn sie die Definition of Done erfüllt – inklusive Tests. Damit das bei jedem Sprint funktioniert, braucht es wachsende, idealerweise automatisierte <a href="blog-regressionstests.html" class="inl">Regressionstests</a>. In beiden Welten gilt: Qualitätssicherung muss im Projektplan fest eingeplant sein, nicht als Puffer am Ende.</p>
+
+  <h2>Typische Fehler bei der Methodenwahl</h2>
+  <ul>
+    <li><strong>Methode nach Mode wählen:</strong> „Agil“ ist kein Qualitätsmerkmal an sich. Ein gut geplantes klassisches Projekt ist besser als ein schlecht gelebtes agiles.</li>
+    <li><strong>Agil ohne Product Owner mit Mandat:</strong> Wenn Prioritäten weiterhin in Lenkungsausschüssen entschieden werden, fehlt dem Team die Grundlage für Sprintplanung.</li>
+    <li><strong>Klassisch ohne Änderungsprozess:</strong> Auch stabile Anforderungen ändern sich. Ohne geregeltes Change Management wächst der Umfang unkontrolliert.</li>
+    <li><strong>Eine Methode für alles:</strong> Unterschiedliche Teilprojekte dürfen unterschiedlich gesteuert werden, solange die Schnittstellen klar sind.</li>
+    <li><strong>Risiken ausblenden:</strong> Unabhängig vom Vorgehen braucht jedes Projekt ein aktives <a href="blog-risikomanagement.html" class="inl">Risikomanagement in IT-Projekten</a>.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Die Frage „agil oder klassisch?“ lässt sich nicht pauschal beantworten. Klassisches Projektmanagement spielt seine Stärken bei klaren Anforderungen, festen Vorgaben und vielen Abhängigkeiten aus. Agiles Projektmanagement ist überlegen, wenn das Ziel erst im Lauf des Projekts klar wird und frühes Feedback den Unterschied macht. Häufig ist ein bewusst gestaltetes hybrides Vorgehen die realistischste Lösung. Entscheidend ist, die Methode an Projekt und Organisation anzupassen – nicht umgekehrt. Wie Sie Termine und Budget unabhängig von der Methode im Griff behalten, lesen Sie in <a href="blog-pm.html" class="inl">IT-Projekte im Zeit- und Budgetplan: So geht es wirklich</a>.</p>
+
+  <h2>Häufige Fragen zu agilem und klassischem Projektmanagement</h2>
+  <h3>Ist agiles Projektmanagement besser als klassisches?</h3>
+  <p>Nicht grundsätzlich. Agiles Projektmanagement eignet sich besonders, wenn Anforderungen unklar sind oder sich häufig ändern. Klassisches Projektmanagement ist im Vorteil, wenn Umfang, Vorgaben und Abhängigkeiten früh feststehen. Entscheidend ist, welcher Ansatz zum konkreten Projekt und zur Organisation passt.</p>
+  <h3>Was ist hybrides Projektmanagement?</h3>
+  <p>Hybrides Projektmanagement kombiniert Elemente beider Ansätze, zum Beispiel einen klassischen Rahmenplan mit Meilensteinen und Budget und eine agile Umsetzung der Softwareentwicklung in Sprints. Damit das funktioniert, müssen Entscheidungswege und Schnittstellen zwischen beiden Ebenen klar geregelt sein.</p>
+  <h3>Kann man ein Festpreisprojekt agil umsetzen?</h3>
+  <p>Ja, aber nicht mit einem fest definierten Leistungsumfang. Bewährt haben sich Verträge mit festem Budget- und Zeitrahmen, in denen der Umfang über Priorisierung gesteuert wird. Ein Festpreis mit fixem Umfang und agiler Umsetzung führt dagegen häufig zu Konflikten über Änderungen.</p>
+
+  <div class="cta-box">
+    <h3>Das passende Vorgehen für Ihr IT-Projekt finden</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Vorhaben und zeigen, ob klassisch, agil oder hybrid am besten passt.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="scrum-leadership.html">Scrum Master &amp; Agile Coach in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="projektmanagement.html">Projektmanagement</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
