@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Stakeholder-Management in IT-Projekten | RAIT Solution</title>
+  <meta name="description" content="Stakeholder-Management in IT-Projekten: Stakeholder identifizieren, analysieren und gezielt einbinden – mit Stakeholder-Matrix und Kommunikationsplan.">
+  <link rel="canonical" href="https://raitsolution.de/blog-stakeholder.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-stakeholder.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-stakeholder-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-stakeholder.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Stakeholder-Management in IT-Projekten | RAIT Solution">
+  <meta property="og:description" content="Stakeholder identifizieren, nach Einfluss und Interesse priorisieren und wirksam einbinden: der Praxisleitfaden für IT-Projekte in 5 Schritten.">
+  <meta property="og:url" content="https://raitsolution.de/blog-stakeholder.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stakeholder-Management in IT-Projekten | RAIT Solution">
+  <meta name="twitter:description" content="Stakeholder identifizieren, nach Einfluss und Interesse priorisieren und wirksam einbinden: der Praxisleitfaden für IT-Projekte in 5 Schritten.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Stakeholder-Management in IT-Projekten: So binden Sie alle Beteiligten wirksam ein", "description": "Stakeholder-Management in IT-Projekten: Stakeholder identifizieren, analysieren und gezielt einbinden – mit Stakeholder-Matrix und Kommunikationsplan.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-stakeholder.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-stakeholder.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-25", "dateModified": "2026-10-25", "about": {"@type": "Thing", "name": "Stakeholder-Management"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Stakeholder-Management in IT-Projekten: So binden Sie alle Beteiligten wirksam ein", "item": "https://raitsolution.de/blog-stakeholder.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wann sollte die Stakeholder-Analyse erstellt werden?", "acceptedAnswer": {"@type": "Answer", "text": "So früh wie möglich, idealerweise bereits in der Projektinitiierung, bevor Umfang und Vorgehen festgelegt werden. Danach sollte die Analyse regelmäßig überprüft werden, etwa zu jedem Meilenstein, weil sich Zuständigkeiten und Interessen im Projektverlauf ändern."}}, {"@type": "Question", "name": "Wer ist für das Stakeholder-Management verantwortlich?", "acceptedAnswer": {"@type": "Answer", "text": "In klassischen Projekten liegt die Verantwortung bei der Projektleitung, unterstützt durch Auftraggeber und Teilprojektleiter. In Scrum übernimmt vor allem der Product Owner die Abstimmung mit den Stakeholdern. Einzelne Beziehungen können an Teammitglieder delegiert werden, der Gesamtüberblick sollte aber an einer Stelle liegen."}}, {"@type": "Question", "name": "Was ist der Unterschied zwischen Stakeholder-Management und Kommunikationsmanagement?", "acceptedAnswer": {"@type": "Answer", "text": "Kommunikationsmanagement regelt, wer welche Information wann und über welchen Kanal erhält. Stakeholder-Management ist umfassender: Es analysiert Einfluss, Interessen und Haltung der Beteiligten und legt fest, wie sie in Entscheidungen eingebunden werden. Der Kommunikationsplan ist damit ein Werkzeug des Stakeholder-Managements."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-stakeholder.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-stakeholder-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Projektmanagement · Stakeholder</span>
+  <h1>Stakeholder-Management in IT-Projekten: So binden Sie alle Beteiligten wirksam ein</h1>
+  <p class="meta"><time datetime="2026-10-25">25. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Viele IT-Projekte scheitern nicht an der Technik, sondern an Menschen: Der Fachbereich fühlt sich übergangen, der Betriebsrat wird zu spät gefragt, die IT-Sicherheit legt kurz vor dem Go-live ihr Veto ein. Gutes Stakeholder-Management in IT-Projekten sorgt dafür, dass solche Überraschungen gar nicht erst entstehen. Dieser Artikel zeigt in fünf Schritten, wie Sie Stakeholder identifizieren, bewerten und gezielt einbinden – und welche Fehler Sie vermeiden sollten.</p>
+
+  <h2>Was ist Stakeholder-Management?</h2>
+  <p>Stakeholder sind alle Personen und Gruppen, die ein Projekt beeinflussen können oder von seinem Ergebnis betroffen sind. <strong>Stakeholder-Management</strong> ist der systematische Umgang mit ihnen: herausfinden, wer betroffen ist, verstehen, was diese Gruppen erwarten und befürchten, und die Zusammenarbeit so gestalten, dass das Projekt Unterstützung statt Widerstand erfährt. Der PMBOK Guide des Project Management Institute führt das Thema seit seiner fünften Ausgabe als eigenen Wissensbereich – ein Zeichen dafür, wie stark der Projekterfolg von den Beteiligten abhängt.</p>
+  <p>Wichtig ist die Abgrenzung zur reinen Kommunikation. Ein Statusbericht per E-Mail ist Information. Stakeholder-Management geht weiter: Es fragt, wessen Zustimmung das Projekt braucht, wessen Wissen es nutzen muss und wessen Bedenken ernst genommen werden müssen, bevor sie zum Hindernis werden.</p>
+
+  <h2>Schritt 1: Stakeholder identifizieren</h2>
+  <p>Am Anfang steht eine möglichst vollständige Liste. Sie entsteht am besten im Projektteam und gemeinsam mit dem Auftraggeber, etwa in einem kurzen Workshop während der Projektinitiierung. In IT-Projekten tauchen typischerweise diese Gruppen auf:</p>
+  <ul>
+    <li><strong>Auftraggeber und Sponsor:</strong> verantworten Budget und Ziel, entscheiden bei Konflikten.</li>
+    <li><strong>Fachbereiche und Key User:</strong> liefern Anforderungen, prüfen Ergebnisse und tragen die Einführung in ihre Teams.</li>
+    <li><strong>Endanwender:</strong> arbeiten später täglich mit dem System – ihre Akzeptanz entscheidet über den Nutzen.</li>
+    <li><strong>IT-Betrieb und Architektur:</strong> müssen die Lösung betreiben, integrieren und warten.</li>
+    <li><strong>Informationssicherheit und Datenschutz:</strong> prüfen Risiken und Vorgaben, oft mit Freigabe-Charakter.</li>
+    <li><strong>Betriebsrat:</strong> hat bei technischen Einrichtungen, die zur Überwachung von Verhalten oder Leistung geeignet sind, ein Mitbestimmungsrecht (§ 87 Abs. 1 Nr. 6 BetrVG) – das betrifft viele Software-Einführungen.</li>
+    <li><strong>Externe Partner:</strong> Softwarehersteller, Dienstleister, Einkauf und Rechtsabteilung bei Verträgen.</li>
+  </ul>
+  <p>Eine hilfreiche Kontrollfrage lautet: Wer könnte das Projekt stoppen, verzögern oder entscheidend verbessern? Wer auf diese Frage einfällt, gehört auf die Liste.</p>
+
+  <h2>Schritt 2: Stakeholder analysieren und priorisieren</h2>
+  <p>Nicht jeder Stakeholder braucht die gleiche Aufmerksamkeit. Bewährt hat sich eine <strong>Stakeholder-Matrix</strong>, die Einfluss und Interesse gegenüberstellt. Daraus ergeben sich vier Felder mit unterschiedlicher Strategie:</p>
+  <ul>
+    <li><strong>Hoher Einfluss, hohes Interesse:</strong> eng einbinden – regelmäßig abstimmen, an Entscheidungen beteiligen.</li>
+    <li><strong>Hoher Einfluss, geringes Interesse:</strong> zufriedenstellen – gezielt und knapp informieren, bei wichtigen Weichenstellungen einbeziehen.</li>
+    <li><strong>Geringer Einfluss, hohes Interesse:</strong> informiert halten – transparent über Fortschritt und Auswirkungen berichten.</li>
+    <li><strong>Geringer Einfluss, geringes Interesse:</strong> beobachten – mit geringem Aufwand im Blick behalten.</li>
+  </ul>
+  <p>Zusätzlich lohnt ein Blick auf die Haltung: Wer unterstützt das Projekt, wer ist neutral, wer ist skeptisch – und warum? Halten Sie diese Einschätzung zusammen mit Erwartungen, Befürchtungen und Ansprechpartnern in einem <strong>Stakeholderregister</strong> fest. Da die Haltungsbewertung sensibel ist, sollte das Register nur einem kleinen Kreis im Projekt zugänglich sein.</p>
+
+  <h2>Schritt 3: Strategie und Kommunikationsplan festlegen</h2>
+  <p>Aus der Analyse folgt, wie Sie mit jeder Gruppe arbeiten. Der <strong>Kommunikationsplan</strong> beantwortet für jeden wichtigen Stakeholder fünf Fragen: Welche Information braucht er? In welcher Tiefe? Wie oft? Über welchen Kanal? Und wer im Projekt ist verantwortlich? Die Geschäftsführung braucht einen kompakten Überblick über Termine, Budget und Entscheidungsbedarf. Key User brauchen Details zu Funktionen und Terminen für Tests und Schulungen. Der IT-Betrieb braucht frühzeitig technische Rahmenbedingungen.</p>
+  <p>Planen Sie dabei nicht nur Berichte, sondern auch Entscheidungsformate: Lenkungsausschuss, Abnahmetermine, Review-Meetings. Ein Kommunikationsplan, der nur festlegt, wer welchen Bericht erhält, reicht nicht aus.</p>
+
+  <h2>Schritt 4: Einbinden statt nur informieren</h2>
+  <p>Am meisten Wirkung hat Beteiligung an den Stellen, an denen das Projekt Entscheidungen braucht. Drei Momente sind in IT-Projekten besonders wichtig:</p>
+  <h3>Anforderungen gemeinsam erarbeiten</h3>
+  <p>Wer Anforderungen nur einsammelt, bekommt Wunschlisten. Wer sie mit Fachbereich, Endanwendern und IT gemeinsam erarbeitet und priorisiert, bekommt tragfähige Ergebnisse. Wie das gelingt, beschreibt unser Artikel <a href="blog-anforderungen.html" class="inl">Saubere Anforderungen in IT-Projekten</a>.</p>
+  <h3>Zwischenergebnisse früh zeigen</h3>
+  <p>Prototypen, Demos und Sprint Reviews geben Stakeholdern die Chance, früh zu reagieren. Eine Korrektur nach der ersten Demo ist deutlich günstiger als nach der Abnahme.</p>
+  <h3>Abnahmekriterien vorab vereinbaren</h3>
+  <p>Wenn Fachbereich und Auftraggeber schon zu Projektbeginn festlegen, woran sie ein gutes Ergebnis erkennen, wird die Abnahme zum Abgleich statt zum Streit. Mehr dazu in <a href="blog-abnahmetests.html" class="inl">Abnahmetests: So gelingt die Softwareabnahme sicher</a>.</p>
+
+  <h2>Schritt 5: Laufend überprüfen und nachsteuern</h2>
+  <p>Die Stakeholder-Landschaft verändert sich: Verantwortliche wechseln, Abteilungen werden umorganisiert, ein bisher unbeteiligter Bereich ist plötzlich betroffen. Prüfen Sie das Stakeholderregister deshalb regelmäßig, etwa zu jedem Meilenstein oder alle paar Sprints. Signale wie ausbleibende Rückmeldungen, abgesagte Termine oder Kritik über informelle Kanäle sind Hinweise, dass eine Gruppe nicht mehr mitzieht. Solche Entwicklungen gehören auch ins <a href="blog-risikomanagement.html" class="inl">Risikomanagement in IT-Projekten</a>, denn fehlende Unterstützung ist eines der häufigsten Projektrisiken.</p>
+
+  <h2>Umgang mit Widerstand und Konflikten</h2>
+  <p>Widerstand ist kein Störfaktor, den man wegmoderieren sollte, sondern eine Information. Hinter Ablehnung stecken oft nachvollziehbare Sorgen: mehr Arbeit während der Umstellung, Verlust von Know-how oder Einfluss, Angst vor Überwachung oder schlicht schlechte Erfahrungen mit früheren Projekten. Bewährt hat sich ein direktes Gespräch, in dem Sie die Bedenken konkret erfragen und prüfen, welche davon das Projekt lösen kann – etwa durch Schulungen, eine angepasste Einführungsreihenfolge oder klare Regeln zur Datennutzung. Wo Interessen tatsächlich gegeneinander stehen, braucht es eine Entscheidung durch Auftraggeber oder Lenkungsausschuss. Wichtig ist, dass diese Entscheidung offen getroffen und begründet wird. Wenn ein Projekt Arbeitsweisen grundlegend verändert, lohnt sich zusätzlich ein strukturiertes <a href="change-management.html" class="inl">Change Management</a>.</p>
+
+  <h2>Stakeholder-Management in agilen Projekten</h2>
+  <p>In Scrum ist der Product Owner die zentrale Schnittstelle zu den Stakeholdern: Er sammelt Bedürfnisse, priorisiert das Backlog und lädt Stakeholder zum Sprint Review ein, in dem das Inkrement gemeinsam begutachtet wird. Das macht Stakeholder-Management nicht überflüssig, verlagert es aber. Wenn der Product Owner kein Mandat hat oder wichtige Gruppen nie zu den Reviews erscheinen, entstehen dieselben Probleme wie im klassischen Projekt – nur später sichtbar. In hybriden Projekten kommt hinzu, dass Lenkungsausschuss und Team unterschiedliche Rhythmen haben. Mehr zu den Unterschieden lesen Sie in <a href="blog-agil-klassisch.html" class="inl">Agiles vs. klassisches Projektmanagement</a>.</p>
+
+  <h2>Typische Fehler im Stakeholder-Management</h2>
+  <ul>
+    <li><strong>Zu spät anfangen:</strong> Wer Stakeholder erst bei Problemen einbindet, verhandelt aus der Defensive.</li>
+    <li><strong>Nur nach oben schauen:</strong> Die Unterstützung der Geschäftsführung ist wichtig, ersetzt aber nicht die Akzeptanz der Endanwender.</li>
+    <li><strong>Querschnittsfunktionen vergessen:</strong> Datenschutz, IT-Sicherheit und Betriebsrat brauchen Vorlauf – kurz vor dem Go-live ist es dafür zu spät.</li>
+    <li><strong>Einmal analysieren, nie wieder ansehen:</strong> Ein veraltetes Stakeholderregister gibt falsche Sicherheit.</li>
+    <li><strong>Gleiche Information für alle:</strong> Ein einziger Statusbericht für alle Gruppen ist für die einen zu detailliert und für die anderen zu oberflächlich.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Stakeholder-Management in IT-Projekten ist keine Zusatzaufgabe, sondern Teil der Projektsteuerung. Wer früh klärt, wer betroffen ist, die Gruppen nach Einfluss und Interesse priorisiert, Kommunikation und Beteiligung gezielt plant und das Bild regelmäßig aktualisiert, vermeidet viele Verzögerungen und Konflikte, bevor sie entstehen. Wie Sie darüber hinaus Termine und Budget im Griff behalten, lesen Sie in <a href="blog-pm.html" class="inl">IT-Projekte im Zeit- und Budgetplan: So geht es wirklich</a>.</p>
+
+  <h2>Häufige Fragen zum Stakeholder-Management</h2>
+  <h3>Wann sollte die Stakeholder-Analyse erstellt werden?</h3>
+  <p>So früh wie möglich, idealerweise bereits in der Projektinitiierung, bevor Umfang und Vorgehen festgelegt werden. Danach sollte die Analyse regelmäßig überprüft werden, etwa zu jedem Meilenstein, weil sich Zuständigkeiten und Interessen im Projektverlauf ändern.</p>
+  <h3>Wer ist für das Stakeholder-Management verantwortlich?</h3>
+  <p>In klassischen Projekten liegt die Verantwortung bei der Projektleitung, unterstützt durch Auftraggeber und Teilprojektleiter. In Scrum übernimmt vor allem der Product Owner die Abstimmung mit den Stakeholdern. Einzelne Beziehungen können an Teammitglieder delegiert werden, der Gesamtüberblick sollte aber an einer Stelle liegen.</p>
+  <h3>Was ist der Unterschied zwischen Stakeholder-Management und Kommunikationsmanagement?</h3>
+  <p>Kommunikationsmanagement regelt, wer welche Information wann und über welchen Kanal erhält. Stakeholder-Management ist umfassender: Es analysiert Einfluss, Interessen und Haltung der Beteiligten und legt fest, wie sie in Entscheidungen eingebunden werden. Der Kommunikationsplan ist damit ein Werkzeug des Stakeholder-Managements.</p>
+
+  <div class="cta-box">
+    <h3>Stakeholder von Anfang an ins Boot holen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Vorhaben und zeigen, wie Sie Beteiligte und Entscheider wirksam einbinden.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="change-management.html">Change Management in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="projektmanagement.html">Projektmanagement</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
