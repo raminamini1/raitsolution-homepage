@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>AI in Project Management: Uses and Limits | RAIT Solution</title>
+  <meta name="description" content="AI in project management: where AI helps with planning, minutes, status reports and risks, where its limits are and how to get started.">
+  <link rel="canonical" href="https://raitsolution.de/blog-ki-projektmanagement-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-ki-projektmanagement.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-ki-projektmanagement-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-ki-projektmanagement.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI in Project Management: Uses and Limits | RAIT Solution">
+  <meta property="og:description" content="Where AI takes the load off project managers in documentation, reporting, planning and risk management – and which rules apply to data and approvals.">
+  <meta property="og:url" content="https://raitsolution.de/blog-ki-projektmanagement-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI in Project Management: Uses and Limits | RAIT Solution">
+  <meta name="twitter:description" content="Where AI takes the load off project managers in documentation, reporting, planning and risk management – and which rules apply to data and approvals.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AI in Project Management: Where It Helps, Where Its Limits Are and How to Get Started", "description": "AI in project management: where AI helps with planning, minutes, status reports and risks, where its limits are and how to get started.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-ki-projektmanagement-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-ki-projektmanagement-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-26", "dateModified": "2026-10-26", "about": {"@type": "Thing", "name": "AI in project management"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "AI in Project Management: Where It Helps, Where Its Limits Are and How to Get Started", "item": "https://raitsolution.de/blog-ki-projektmanagement-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will AI replace the project manager?", "acceptedAnswer": {"@type": "Answer", "text": "No. AI takes over sub-tasks such as summaries, drafts and analyses. Decisions, prioritisation, negotiations with stakeholders and leading the team remain the project manager's tasks – as does responsibility for the outcome."}}, {"@type": "Question", "name": "Which project data may I enter into an AI tool?", "acceptedAnswer": {"@type": "Answer", "text": "That depends on the tool and your company's rules. Personal and confidential data should only go into tools whose data processing has been clarified, for example through a data processing agreement and an exclusion from use for model training. An internal usage policy defines what is allowed."}}, {"@type": "Question", "name": "Is AI in project management worthwhile for small teams too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes – small teams in particular benefit when a few people have to handle a lot of documentation and coordination. A sensible start uses features already included in the tools you work with, together with one or two clearly defined use cases."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-ki-projektmanagement.html" class="lang-btn">DE</a>
+    <a href="blog-ki-projektmanagement-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Project Management · AI</span>
+  <h1>AI in Project Management: Where It Helps, Where Its Limits Are and How to Get Started</h1>
+  <p class="meta"><time datetime="2026-10-26">26 October 2026</time> · Ramin Amini</p>
+  <p class="lead">Writing minutes, compiling status reports, collecting risks, analysing tickets: a large part of project work is information processing. This is exactly where AI in project management comes in. Used well, it gives project managers more time for what no software can do – preparing decisions, resolving conflicts and leading people. This article shows where AI helps in day-to-day project work today, where its limits are and how to get started in a controlled way.</p>
+
+  <h2>What does AI in project management mean?</h2>
+  <p>Two quite different approaches come together under this term. The first is <strong>generative AI assistants</strong> based on large language models. They summarise texts, write drafts, structure notes and answer questions about project documents. Many project management and collaboration tools now ship with such features built in.</p>
+  <p>The second is <strong>analytical methods</strong> that look for patterns in project data: which tasks are typically delayed? Where do defects cluster? How is ticket lead time developing? Such analyses are only as good as the data behind them – and in many organisations that data is not available in a usable form.</p>
+  <p>Both approaches have one thing in common: AI supports project management, it does not replace it. Responsibility for the plan, the budget and decisions stays with people.</p>
+
+  <h2>Where AI helps in day-to-day project work</h2>
+  <h3>Documentation and minutes</h3>
+  <p>The most obvious benefit lies in documentation. AI assistants turn notes or – with the participants' consent – meeting recordings into draft minutes with decisions and open items. The project manager reviews and adds to the draft instead of starting from scratch. It is important that decisions and responsibilities are checked by a person before the minutes go out: a wrongly summarised decision can do more damage to a project than missing minutes.</p>
+  <h3>Status reports and communication</h3>
+  <p>Status reports have to be prepared differently for different audiences: the steering committee needs dates, budget and decisions required, the team needs details. AI can draft audience-specific versions from the same information and translate jargon for non-technical readers. This complements a sound communication plan, as described in <a href="blog-stakeholder-en.html" class="inl">Stakeholder Management in IT Projects</a>, but does not replace it.</p>
+  <h3>Planning and effort estimation</h3>
+  <p>In project planning, AI can propose a first work breakdown structure, list typical work packages for a project type or point out forgotten dependencies – such as test environments, data migration or training. Be careful with effort estimates: a language model knows neither your team nor your system landscape. An estimate only becomes reliable when it is based on your own experience and confirmed by the team. Here AI is useful as a cross-check, not as the source of the number.</p>
+  <h3>Risk management</h3>
+  <p>For risk identification, AI is a useful sparring partner. Based on the project description, it suggests possible risks that nobody thought of in the workshop and helps phrase risks concretely as cause, event and effect. Assessment, measures and owners are still decided by the project team. How an effective risk register is built is explained in <a href="blog-risikomanagement-en.html" class="inl">Risk Management in IT Projects</a>.</p>
+  <h3>Requirements and backlog</h3>
+  <p>In agile projects, AI helps write user stories and acceptance criteria, split oversized backlog items and find contradictions and gaps in requirements documents. Clarifying the content with the business department remains essential – AI can only check what was written down, not what was meant.</p>
+  <h3>Quality assurance</h3>
+  <p>The link to quality assurance benefits too: AI can derive draft test cases from requirements, cluster defect reports and highlight conspicuous areas. The possibilities and limits there are described in our article <a href="blog-ki-softwaretest-en.html" class="inl">AI in Software Testing</a>.</p>
+
+  <h2>The limits of AI in project management</h2>
+  <p>As helpful as these tools are, they have clear limits that every project manager should know:</p>
+  <ul>
+    <li><strong>Plausible is not correct:</strong> language models can invent content that sounds convincing. Every figure, date and commitment must be checked against the source.</li>
+    <li><strong>Missing context:</strong> AI knows neither a project's history nor the informal power structures, sensitivities and agreements within the company.</li>
+    <li><strong>Data quality:</strong> analyses and forecasts require well-maintained, consistent project data. Incomplete tickets and outdated plans lead to wrong conclusions.</li>
+    <li><strong>Responsibility stays with people:</strong> prioritisation, escalation and staffing decisions cannot be delegated to a tool – neither professionally nor legally.</li>
+    <li><strong>Leadership cannot be automated:</strong> building trust, understanding resistance and motivating a team remain core tasks of project management.</li>
+  </ul>
+
+  <h2>Data protection, confidentiality and co-determination</h2>
+  <p>Project documents often contain confidential information: contract details, budgets, names, performance assessments. Before such content flows into an AI tool, three questions should be answered. First: where is the data processed, and is it used to train the model? For personal data, the GDPR applies, usually including a data processing agreement with the provider. Second: which information may be entered at all? A short, clear usage policy gives the team certainty. Third: does the works council need to be involved? In Germany, tools that are suitable for monitoring behaviour or performance are subject to co-determination under Section 87(1) No. 6 of the Works Constitution Act (BetrVG) – this applies, for example, to analyses of working hours or ticket handling per person.</p>
+  <p>In addition, there is the European AI Act. Since February 2025, it has required companies that use AI systems, among other things, to ensure their staff have sufficient AI literacy. A short training session on possibilities, limits and rules is therefore part of every rollout.</p>
+
+  <h2>Getting started in five steps</h2>
+  <ul>
+    <li><strong>1. Identify time sinks:</strong> collect with the team which recurring tasks take a lot of time and require little judgement – typically minutes, reports and summaries.</li>
+    <li><strong>2. Set the framework:</strong> define which tools are approved, which data may be entered and who signs off results. Data protection, IT security and, where applicable, the works council belong at the table from the start.</li>
+    <li><strong>3. Start small:</strong> begin with one or two use cases in one project instead of switching the entire project organisation at once.</li>
+    <li><strong>4. Check the effect:</strong> after a few weeks, record whether the results are usable, how much rework is needed and whether the team actually uses the tool.</li>
+    <li><strong>5. Expand and embed:</strong> proven use cases are documented with templates and prompts and transferred to further projects. What does not prove itself is dropped.</li>
+  </ul>
+  <p>This step-by-step approach reflects what has generally proven itself when introducing AI. Our article <a href="blog-ki-en.html" class="inl">AI in Business: Opportunities, Risks and First Steps</a> gives a broader overview.</p>
+
+  <h2>AI in agile and traditional projects</h2>
+  <p>The benefit depends less on the delivery model than on the tasks. In traditional projects it lies mainly in planning, reporting and documentation for the steering committee and the client. In Scrum teams, AI tends to help with backlog refinement, preparing Sprint Reviews or analysing retrospectives across several sprints. In both worlds the tools should fit into existing workflows instead of creating new parallel processes. You can read more about the differences between the approaches in <a href="blog-agil-klassisch-en.html" class="inl">Agile vs. Traditional Project Management</a>.</p>
+
+  <h2>Conclusion</h2>
+  <p>AI in project management pays off when it takes over routine work and gives the project manager more time for steering and communication. The prerequisites are clear rules for data and approvals, a critical review of all results and a gradual start with a few well-chosen use cases. Working this way makes use of the technology's strengths without giving up responsibility.</p>
+
+  <h2>Frequently asked questions about AI in project management</h2>
+  <h3>Will AI replace the project manager?</h3>
+  <p>No. AI takes over sub-tasks such as summaries, drafts and analyses. Decisions, prioritisation, negotiations with stakeholders and leading the team remain the project manager's tasks – as does responsibility for the outcome.</p>
+  <h3>Which project data may I enter into an AI tool?</h3>
+  <p>That depends on the tool and your company's rules. Personal and confidential data should only go into tools whose data processing has been clarified, for example through a data processing agreement and an exclusion from use for model training. An internal usage policy defines what is allowed.</p>
+  <h3>Is AI in project management worthwhile for small teams too?</h3>
+  <p>Yes – small teams in particular benefit when a few people have to handle a lot of documentation and coordination. A sensible start uses features already included in the tools you work with, together with one or two clearly defined use cases.</p>
+
+  <div class="cta-box">
+    <h3>Integrate AI into your project work sensibly</h3>
+    <p>30-minute initial consultation — free and without obligation. Together we look at your project organisation and show where AI really takes the load off your team.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="projektmanagement-en.html">IT Project Management in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="ki-consulting-en.html">AI Consulting in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="projektmanagement-en.html">Project Management</a>
+    <a href="ki-consulting-en.html">AI Consulting</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website uses cookies and similar technologies. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>

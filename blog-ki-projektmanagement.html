@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>KI im Projektmanagement: Einsatz und Grenzen | RAIT Solution</title>
+  <meta name="description" content="KI im Projektmanagement: Wo KI bei Planung, Protokollen, Statusberichten und Risiken hilft, wo ihre Grenzen liegen und wie der Einstieg gelingt.">
+  <link rel="canonical" href="https://raitsolution.de/blog-ki-projektmanagement.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-ki-projektmanagement.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-ki-projektmanagement-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-ki-projektmanagement.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="KI im Projektmanagement: Einsatz und Grenzen | RAIT Solution">
+  <meta property="og:description" content="Wo KI Projektleitungen bei Dokumentation, Berichten, Planung und Risikomanagement entlastet – und welche Regeln für Datenschutz und Freigaben gelten.">
+  <meta property="og:url" content="https://raitsolution.de/blog-ki-projektmanagement.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KI im Projektmanagement: Einsatz und Grenzen | RAIT Solution">
+  <meta name="twitter:description" content="Wo KI Projektleitungen bei Dokumentation, Berichten, Planung und Risikomanagement entlastet – und welche Regeln für Datenschutz und Freigaben gelten.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "KI im Projektmanagement: Wo sie hilft, wo ihre Grenzen liegen und wie der Einstieg gelingt", "description": "KI im Projektmanagement: Wo KI bei Planung, Protokollen, Statusberichten und Risiken hilft, wo ihre Grenzen liegen und wie der Einstieg gelingt.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-ki-projektmanagement.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-ki-projektmanagement.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-26", "dateModified": "2026-10-26", "about": {"@type": "Thing", "name": "KI im Projektmanagement"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "KI im Projektmanagement: Wo sie hilft, wo ihre Grenzen liegen und wie der Einstieg gelingt", "item": "https://raitsolution.de/blog-ki-projektmanagement.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ersetzt KI den Projektmanager?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. KI übernimmt Teilaufgaben wie Zusammenfassungen, Entwürfe und Auswertungen. Entscheidungen, Priorisierung, Verhandlungen mit Stakeholdern und die Führung des Teams bleiben Aufgaben der Projektleitung – ebenso die Verantwortung für das Ergebnis."}}, {"@type": "Question", "name": "Welche Projektdaten darf ich in ein KI-Tool eingeben?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt vom Werkzeug und den Regeln Ihres Unternehmens ab. Personenbezogene und vertrauliche Daten sollten nur in Werkzeuge fließen, deren Datenverarbeitung geklärt ist, etwa über einen Auftragsverarbeitungsvertrag und den Ausschluss der Nutzung zum Modelltraining. Eine interne Nutzungsrichtlinie legt fest, was erlaubt ist."}}, {"@type": "Question", "name": "Lohnt sich KI im Projektmanagement auch für kleine Teams?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, gerade kleine Teams profitieren, wenn wenige Personen viel Dokumentation und Abstimmung leisten müssen. Sinnvoll ist ein Start mit Funktionen, die in bereits genutzten Werkzeugen enthalten sind, und mit ein bis zwei klar umrissenen Anwendungsfällen."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-ki-projektmanagement.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-ki-projektmanagement-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Projektmanagement · KI</span>
+  <h1>KI im Projektmanagement: Wo sie hilft, wo ihre Grenzen liegen und wie der Einstieg gelingt</h1>
+  <p class="meta"><time datetime="2026-10-26">26. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Protokolle schreiben, Statusberichte zusammenstellen, Risiken sammeln, Tickets auswerten: Ein großer Teil der Projektarbeit besteht aus Informationsverarbeitung. Genau hier setzt KI im Projektmanagement an. Richtig eingesetzt, verschafft sie Projektleitungen mehr Zeit für das, was keine Software übernehmen kann – Entscheidungen vorbereiten, Konflikte lösen, Menschen führen. Dieser Artikel zeigt, wo KI im Projektalltag heute konkret hilft, wo ihre Grenzen liegen und wie Sie den Einstieg kontrolliert gestalten.</p>
+
+  <h2>Was bedeutet KI im Projektmanagement?</h2>
+  <p>Unter dem Begriff laufen zwei recht unterschiedliche Ansätze zusammen. Der erste sind <strong>generative KI-Assistenten</strong> auf Basis großer Sprachmodelle. Sie fassen Texte zusammen, formulieren Entwürfe, strukturieren Notizen und beantworten Fragen zu Projektdokumenten. Viele Projektmanagement- und Kollaborationswerkzeuge bringen solche Funktionen inzwischen direkt mit.</p>
+  <p>Der zweite Ansatz sind <strong>analytische Verfahren</strong>, die in Projektdaten nach Mustern suchen: Welche Aufgaben verzögern sich typischerweise? Wo häufen sich Fehler? Wie entwickelt sich die Durchlaufzeit von Tickets? Solche Auswertungen sind nur so gut wie die Daten, auf denen sie beruhen – und die fehlen in vielen Organisationen in auswertbarer Form.</p>
+  <p>Beiden Ansätzen ist gemeinsam: KI unterstützt das Projektmanagement, sie ersetzt es nicht. Die Verantwortung für Plan, Budget und Entscheidungen bleibt bei Menschen.</p>
+
+  <h2>Wo KI im Projektalltag heute hilft</h2>
+  <h3>Dokumentation und Protokolle</h3>
+  <p>Der naheliegendste Nutzen liegt in der Dokumentation. KI-Assistenten erstellen aus Notizen oder – mit Einwilligung der Teilnehmenden – aus Besprechungsmitschnitten einen Protokollentwurf mit Beschlüssen und offenen Punkten. Die Projektleitung prüft und ergänzt, statt bei null anzufangen. Wichtig ist, dass Beschlüsse und Verantwortlichkeiten vor dem Versand von einem Menschen geprüft werden: Ein falsch zusammengefasster Beschluss kann im Projekt mehr Schaden anrichten als ein fehlendes Protokoll.</p>
+  <h3>Statusberichte und Kommunikation</h3>
+  <p>Statusberichte müssen für unterschiedliche Zielgruppen unterschiedlich aufbereitet werden: Der Lenkungsausschuss braucht Termine, Budget und Entscheidungsbedarf, das Team braucht Details. KI kann aus denselben Informationen zielgruppengerechte Fassungen entwerfen und Fachjargon für Nicht-Techniker übersetzen. Das ergänzt einen sauberen Kommunikationsplan, wie er im <a href="blog-stakeholder.html" class="inl">Stakeholder-Management in IT-Projekten</a> beschrieben ist, ersetzt ihn aber nicht.</p>
+  <h3>Planung und Aufwandsschätzung</h3>
+  <p>Bei der Projektplanung kann KI einen ersten Projektstrukturplan vorschlagen, typische Arbeitspakete für einen Projekttyp auflisten oder auf vergessene Abhängigkeiten hinweisen – etwa Testumgebungen, Datenmigration oder Schulungen. Für Aufwandsschätzungen gilt Vorsicht: Ein Sprachmodell kennt weder Ihr Team noch Ihre Systemlandschaft. Belastbar wird eine Schätzung erst, wenn sie auf eigenen Erfahrungswerten beruht und vom Team bestätigt ist. KI eignet sich hier als Gegenprüfung, nicht als Quelle der Zahl.</p>
+  <h3>Risikomanagement</h3>
+  <p>Für die Risikoidentifikation ist KI ein nützlicher Sparringspartner. Auf Basis der Projektbeschreibung schlägt sie mögliche Risiken vor, an die im Workshop niemand gedacht hat, und hilft, Risiken konkret als Ursache-Ereignis-Wirkung zu formulieren. Bewertung, Maßnahmen und Verantwortliche legt weiterhin das Projektteam fest. Wie ein wirksames Risikoregister aufgebaut ist, lesen Sie in <a href="blog-risikomanagement.html" class="inl">Risikomanagement in IT-Projekten</a>.</p>
+  <h3>Anforderungen und Backlog</h3>
+  <p>In agilen Projekten unterstützt KI beim Formulieren von User Stories und Akzeptanzkriterien, beim Aufteilen zu großer Backlog-Einträge oder beim Auffinden von Widersprüchen und Lücken in Anforderungsdokumenten. Die fachliche Klärung mit dem Fachbereich bleibt unverzichtbar – KI kann nur prüfen, was aufgeschrieben wurde, nicht, was gemeint war.</p>
+  <h3>Qualitätssicherung</h3>
+  <p>Auch die Brücke zur Qualitätssicherung profitiert: KI kann Testfallentwürfe aus Anforderungen ableiten, Fehlerberichte clustern und Hinweise auf auffällige Bereiche liefern. Welche Möglichkeiten und Grenzen es dort gibt, beschreibt unser Artikel <a href="blog-ki-softwaretest.html" class="inl">KI im Softwaretest</a>.</p>
+
+  <h2>Die Grenzen von KI im Projektmanagement</h2>
+  <p>So hilfreich die Werkzeuge sind, sie haben klare Grenzen, die jede Projektleitung kennen sollte:</p>
+  <ul>
+    <li><strong>Plausibel ist nicht richtig:</strong> Sprachmodelle können Inhalte erfinden, die überzeugend klingen. Jede Zahl, jeder Termin und jede Zusage muss gegen die Quelle geprüft werden.</li>
+    <li><strong>Fehlender Kontext:</strong> KI kennt weder die Vorgeschichte eines Projekts noch die informellen Machtverhältnisse, Empfindlichkeiten und Absprachen im Unternehmen.</li>
+    <li><strong>Datenqualität:</strong> Analysen und Prognosen setzen gepflegte, konsistente Projektdaten voraus. Unvollständige Tickets und veraltete Pläne führen zu falschen Schlüssen.</li>
+    <li><strong>Verantwortung bleibt beim Menschen:</strong> Priorisierung, Eskalation und Personalentscheidungen lassen sich nicht an ein Werkzeug delegieren – weder fachlich noch rechtlich.</li>
+    <li><strong>Führung ist nicht automatisierbar:</strong> Vertrauen aufbauen, Widerstände verstehen und ein Team motivieren bleiben Kernaufgaben der Projektleitung.</li>
+  </ul>
+
+  <h2>Datenschutz, Vertraulichkeit und Mitbestimmung</h2>
+  <p>Projektunterlagen enthalten häufig vertrauliche Informationen: Vertragsdetails, Budgets, Namen, Leistungsbewertungen. Bevor solche Inhalte in ein KI-Werkzeug fließen, sollten drei Fragen geklärt sein. Erstens: Wo werden die Daten verarbeitet, und werden sie zum Training des Modells verwendet? Bei personenbezogenen Daten gelten die Vorgaben der DSGVO, in der Regel einschließlich eines Auftragsverarbeitungsvertrags mit dem Anbieter. Zweitens: Welche Informationen dürfen überhaupt eingegeben werden? Eine kurze, verständliche Nutzungsrichtlinie schafft hier Klarheit für das Team. Drittens: Ist der Betriebsrat einzubinden? Werkzeuge, die zur Überwachung von Verhalten oder Leistung geeignet sind, unterliegen der Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG – das betrifft etwa Auswertungen von Arbeitszeiten oder Ticketbearbeitung je Person.</p>
+  <p>Hinzu kommt die europäische KI-Verordnung (AI Act). Sie verpflichtet Unternehmen, die KI-Systeme einsetzen, seit Februar 2025 unter anderem dazu, für ausreichende KI-Kompetenz ihrer Mitarbeitenden zu sorgen. Eine kurze Schulung zu Möglichkeiten, Grenzen und Regeln gehört deshalb zu jeder Einführung dazu.</p>
+
+  <h2>Der Einstieg in fünf Schritten</h2>
+  <ul>
+    <li><strong>1. Zeitfresser identifizieren:</strong> Sammeln Sie mit dem Team, welche wiederkehrenden Aufgaben viel Zeit kosten und wenig Urteilsvermögen erfordern – typischerweise Protokolle, Berichte und Zusammenfassungen.</li>
+    <li><strong>2. Rahmen klären:</strong> Legen Sie fest, welche Werkzeuge zugelassen sind, welche Daten eingegeben werden dürfen und wer Ergebnisse freigibt. Datenschutz, IT-Sicherheit und gegebenenfalls Betriebsrat gehören von Anfang an dazu.</li>
+    <li><strong>3. Klein anfangen:</strong> Starten Sie mit einem oder zwei Anwendungsfällen in einem Projekt, statt die gesamte Projektorganisation auf einmal umzustellen.</li>
+    <li><strong>4. Wirkung prüfen:</strong> Halten Sie nach einigen Wochen fest, ob die Ergebnisse brauchbar sind, wie viel Nacharbeit nötig ist und ob das Team das Werkzeug tatsächlich nutzt.</li>
+    <li><strong>5. Ausweiten und verankern:</strong> Bewährte Anwendungsfälle werden mit Vorlagen und Prompts dokumentiert und auf weitere Projekte übertragen. Was sich nicht bewährt, wird eingestellt.</li>
+  </ul>
+  <p>Dieses schrittweise Vorgehen entspricht dem, was sich bei der KI-Einführung allgemein bewährt hat. Einen breiteren Überblick gibt unser Artikel <a href="blog-ki.html" class="inl">KI im Unternehmen: Chancen, Risiken und erste Schritte</a>.</p>
+
+  <h2>KI in agilen und klassischen Projekten</h2>
+  <p>Der Nutzen hängt weniger vom Vorgehensmodell ab als von den Aufgaben. In klassischen Projekten liegt er vor allem bei Planung, Berichtswesen und Dokumentation für Lenkungsausschuss und Auftraggeber. In Scrum-Teams unterstützt KI eher bei Backlog Refinement, beim Vorbereiten von Sprint Reviews oder beim Auswerten von Retrospektiven über mehrere Sprints hinweg. In beiden Welten gilt: Die Werkzeuge sollten in die bestehenden Abläufe passen, statt neue Parallelprozesse zu schaffen. Mehr zu den Unterschieden der Vorgehensmodelle lesen Sie in <a href="blog-agil-klassisch.html" class="inl">Agiles vs. klassisches Projektmanagement</a>.</p>
+
+  <h2>Fazit</h2>
+  <p>KI im Projektmanagement ist dann ein Gewinn, wenn sie Routinearbeit abnimmt und die Projektleitung dadurch mehr Zeit für Steuerung und Kommunikation gewinnt. Voraussetzung sind klare Regeln für Daten und Freigaben, eine kritische Prüfung aller Ergebnisse und ein schrittweiser Einstieg mit wenigen, gut gewählten Anwendungsfällen. Wer so vorgeht, nutzt die Stärken der Technologie, ohne Verantwortung aus der Hand zu geben.</p>
+
+  <h2>Häufige Fragen zu KI im Projektmanagement</h2>
+  <h3>Ersetzt KI den Projektmanager?</h3>
+  <p>Nein. KI übernimmt Teilaufgaben wie Zusammenfassungen, Entwürfe und Auswertungen. Entscheidungen, Priorisierung, Verhandlungen mit Stakeholdern und die Führung des Teams bleiben Aufgaben der Projektleitung – ebenso die Verantwortung für das Ergebnis.</p>
+  <h3>Welche Projektdaten darf ich in ein KI-Tool eingeben?</h3>
+  <p>Das hängt vom Werkzeug und den Regeln Ihres Unternehmens ab. Personenbezogene und vertrauliche Daten sollten nur in Werkzeuge fließen, deren Datenverarbeitung geklärt ist, etwa über einen Auftragsverarbeitungsvertrag und den Ausschluss der Nutzung zum Modelltraining. Eine interne Nutzungsrichtlinie legt fest, was erlaubt ist.</p>
+  <h3>Lohnt sich KI im Projektmanagement auch für kleine Teams?</h3>
+  <p>Ja, gerade kleine Teams profitieren, wenn wenige Personen viel Dokumentation und Abstimmung leisten müssen. Sinnvoll ist ein Start mit Funktionen, die in bereits genutzten Werkzeugen enthalten sind, und mit ein bis zwei klar umrissenen Anwendungsfällen.</p>
+
+  <div class="cta-box">
+    <h3>KI sinnvoll in Ihre Projektarbeit integrieren</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihre Projektorganisation und zeigen, wo KI Ihr Team wirklich entlastet.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="ki-consulting.html">KI-Consulting in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="projektmanagement.html">Projektmanagement</a>
+    <a href="ki-consulting.html">KI-Consulting</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
