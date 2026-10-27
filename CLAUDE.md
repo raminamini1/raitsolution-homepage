@@ -31,6 +31,9 @@
 - Kontaktformular Startseite: Rückmeldung innerhalb von 24 Stunden.
 - Erstgespräch 30 Min. kostenlos; Start meist in 1–2 Wochen; remote/hybrid, vor Ort Hamburg + deutschlandweit. Keine Preise auf der Website.
 
+## Google Search Console = Grundlage (Inhaber, 27.10.2026, verbindlich)
+- Jede SEO-Arbeit startet mit GSC-Daten (Supermetrics, Quelle `GW`, Konto `https://raitsolution.de/`, letzte 28 Tage: query/page × impressions/clicks/position) und richtet sich danach: Begriffe auf Platz 5–20 gezielt verbessern, Impressionen ohne Klicks → Title/Description, Artikelthemen nach echten Suchbegriffen.
+
 ## Validierung vor jedem Push
 - Jede geänderte Seite parst (Python `html.parser`), jedes JSON-LD ist gültiges JSON, genau eine `<h1>`, alle lokalen Links/Dateien existieren, hreflang-Paare zeigen aufeinander.
 - Optik bei Bedarf mit Playwright prüfen (Chromium vorinstalliert, `NODE_PATH=$(npm root -g)`), 390 px und 1280 px, kein horizontales Scrollen.
