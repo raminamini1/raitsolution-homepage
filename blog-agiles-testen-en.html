@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Agile Testing: Quality Assurance in Scrum Teams | RAIT Solution</title>
+  <meta name="description" content="Agile testing in Scrum: how testing belongs in every sprint, what role testers play in the team and how the Definition of Done and automation secure quality.">
+  <link rel="canonical" href="https://raitsolution.de/blog-agiles-testen-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-agiles-testen.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-agiles-testen-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-agiles-testen.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Agile Testing: Quality Assurance in Scrum Teams | RAIT Solution">
+  <meta property="og:description" content="Testing in the sprint instead of a test phase at the end: refinement, Definition of Done, testing quadrants, automation and the role of testers in Scrum.">
+  <meta property="og:url" content="https://raitsolution.de/blog-agiles-testen-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agile Testing: Quality Assurance in Scrum Teams | RAIT Solution">
+  <meta name="twitter:description" content="Testing in the sprint instead of a test phase at the end: refinement, Definition of Done, testing quadrants, automation and the role of testers in Scrum.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Agile Testing: How to Get Quality Assurance Right in Scrum Teams", "description": "Agile testing in Scrum: how testing belongs in every sprint, what role testers play in the team and how the Definition of Done and automation secure quality.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-agiles-testen-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-agiles-testen-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-27", "dateModified": "2026-10-27", "about": {"@type": "Thing", "name": "Agile testing"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "Agile Testing: How to Get Quality Assurance Right in Scrum Teams", "item": "https://raitsolution.de/blog-agiles-testen-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does a Scrum team need a dedicated tester?", "acceptedAnswer": {"@type": "Answer", "text": "The Scrum Guide does not define a separate tester role, but testing expertise in the team is highly recommended. A person with testing experience ensures testable acceptance criteria, suitable test techniques and a sensible automation strategy. Responsibility for quality still lies with the whole team."}}, {"@type": "Question", "name": "How do acceptance tests fit into Scrum?", "acceptedAnswer": {"@type": "Answer", "text": "Business checks take place continuously, for example by the Product Owner and in the Sprint Review. Where contracts or regulations require formal acceptance, it is planned for a release and carried out on the basis of the increments already tested. This keeps acceptance manageable and traceable."}}, {"@type": "Question", "name": "Is agile testing the same as test automation?", "acceptedAnswer": {"@type": "Answer", "text": "No. Test automation is an important building block that keeps regression testing possible at sprint pace. But agile testing also includes testable requirements, exploratory tests, non-functional tests and collaboration within the team. Automation without these foundations does not lead to better quality."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-agiles-testen.html" class="lang-btn">DE</a>
+    <a href="blog-agiles-testen-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Quality Assurance · Agile</span>
+  <h1>Agile Testing: How to Get Quality Assurance Right in Scrum Teams</h1>
+  <p class="meta"><time datetime="2026-10-27">27 October 2026</time> · Ramin Amini</p>
+  <p class="lead">In many Scrum teams, the sprint looks agile on the board – and still runs like a small waterfall: the first eight days are spent developing, the last two testing, and whatever isn’t finished slips into the next sprint. Agile testing means something different. Quality is not created in a test phase at the end, but in every step of the sprint – from refinement to review. This article shows how that works in practice, what role testers play in a Scrum team and which mistakes you should avoid.</p>
+
+  <h2>What agile testing is about</h2>
+  <p><strong>Agile testing</strong> is not a separate test technique but a way of working: tests accompany development from the start, feedback arrives in hours instead of weeks, and the whole team is responsible for quality. Traditional approaches have dedicated test levels and phases that run one after another. In Scrum, every sprint must end with a usable, tested increment. A separate test phase has no place in that rhythm.</p>
+  <p>This leads to three principles that Lisa Crispin and Janet Gregory shaped in their standard work “Agile Testing” and that still apply today:</p>
+  <ul>
+    <li><strong>Testing is an activity, not a phase:</strong> it happens continuously, in parallel with development.</li>
+    <li><strong>Prevent defects rather than only finding them:</strong> good questions in refinement save defect tickets later.</li>
+    <li><strong>Quality is a team responsibility:</strong> developers, testers and the Product Owner are jointly responsible for a story being truly done.</li>
+  </ul>
+  <p>How testing generally differs between both worlds is described in our article <a href="blog-agil-klassisch-en.html" class="inl">Agile vs. Traditional Project Management</a>.</p>
+
+  <h2>Testing in the sprint: from refinement to review</h2>
+  <h3>Refinement: make acceptance criteria testable</h3>
+  <p>Agile testing starts before the first line of code is written. In backlog refinement, testers check together with the Product Owner and developers whether a user story is understandable and testable. The “Three Amigos” format has proven effective: business, development and testing discuss a story from their respective perspectives and capture concrete examples. Written in the Given – When – Then pattern, these examples become directly verifiable acceptance criteria. Vague wording such as “fast” or “user-friendly” stands out immediately. How to describe requirements cleanly from the outset is shown in <a href="blog-anforderungen-en.html" class="inl">Clean Requirements in IT Projects</a>.</p>
+  <h3>Sprint Planning: plan the testing effort too</h3>
+  <p>When the team estimates a story, the testing effort is part of it: preparing test data, automating tests, exploratory checks, adapting regression tests. If only development is estimated, the team systematically takes on too much – and testing becomes the buffer that is missing at the end of the sprint.</p>
+  <h3>During the sprint: test early and in small steps</h3>
+  <p>To avoid a mini-waterfall, the team works on few stories at the same time and finishes them one after another. As soon as a story reaches a testable state, it is checked – not only once all stories have been developed. Deviations are clarified directly in conversation rather than queued as tickets.</p>
+
+  <h2>The Definition of Done as a quality commitment</h2>
+  <p>The Definition of Done (DoD) defines when a story counts as done. According to the Scrum Guide, it is a binding commitment to the quality level of the increment. For testing it is the most important tool, because it prevents “done” from quietly meaning “developed but not yet tested”. A practical DoD contains, for example:</p>
+  <ul>
+    <li>acceptance criteria are met and verified,</li>
+    <li>unit tests are written and pass in the build pipeline,</li>
+    <li>relevant automated regression tests are added or updated,</li>
+    <li>there are no open high-priority defects for this story,</li>
+    <li>necessary documentation, for example for operations or users, is updated.</li>
+  </ul>
+  <p>The DoD should fit team and product and become stricter as the team matures.</p>
+
+  <h2>The agile testing quadrants as a guide</h2>
+  <p>Which tests does an agile team need? A widely used guide is the agile testing quadrants, originally described by Brian Marick and popularised by Crispin and Gregory. They classify tests by two questions: do they support the team during development or critique the finished product? And are they technology-facing or business-facing?</p>
+  <ul>
+    <li><strong>Quadrant 1 – technology-facing, supporting the team:</strong> unit and component tests, usually automated.</li>
+    <li><strong>Quadrant 2 – business-facing, supporting the team:</strong> functional tests based on acceptance criteria and examples, automated where possible.</li>
+    <li><strong>Quadrant 3 – business-facing, critiquing the product:</strong> exploratory tests, usability tests and acceptance tests by users – mostly manual.</li>
+    <li><strong>Quadrant 4 – technology-facing, critiquing the product:</strong> non-functional tests such as load, performance and security tests, mostly tool-supported.</li>
+  </ul>
+  <p>Many teams cover quadrants 1 and 2 well but neglect exploratory testing or postpone performance topics until shortly before go-live. How to tackle the latter in time is shown in our article on <a href="blog-lasttests-en.html" class="inl">load testing</a>.</p>
+
+  <h2>No sustainable agile testing without automation</h2>
+  <p>With every sprint the software grows – and so does the number of functions to recheck after a change. Manually, this soon no longer fits into a sprint. Agile testing therefore depends on test automation: unit tests as a broad base, integration and API tests above them and only a few carefully selected UI tests, as described by the test pyramid. The automated tests run on every change in the CI/CD pipeline and provide feedback while the change is still fresh.</p>
+  <p>Automation is part of the story, not a separate project to be caught up on “at some point”. How to go about it is described in <a href="blog-testautomatisierung-en.html" class="inl">Introducing Test Automation: A 6-Step Guide</a> and <a href="blog-regressionstests-en.html" class="inl">Regression Testing: How to Secure Stable Releases</a>.</p>
+
+  <h2>Exploratory testing: what automation doesn’t find</h2>
+  <p>Automated tests check what someone defined in advance. Many critical defects, however, arise where nobody thought to look: unusual inputs, unexpected sequences, interactions between several functions. This is where exploratory testing comes in. A tester explores the application deliberately with a clear mission, such as “check invoice correction with edge cases”, within a fixed time box. This session-based form makes exploratory testing plannable and fits the sprint rhythm.</p>
+
+  <h2>The role of testers in a Scrum team</h2>
+  <p>The Scrum Guide has no “tester” role. Everyone working on the increment is a Developer – including test specialists. That does not make testing expertise redundant. On the contrary: testers contribute methodological knowledge, for example of test design techniques such as equivalence partitioning or boundary value analysis, ask the uncomfortable questions in refinement and coach the team in testing. Developers, in turn, write unit tests and help with automation when stories pile up in test.</p>
+  <p>When several teams work on one product, cross-team coordination is needed as well: shared test environments, test data, cross-team integration tests and a common view of quality status before a release. These tasks can be captured in a lean <a href="blog-testkonzept-en.html" class="inl">test plan</a>, even in an agile setting.</p>
+
+  <h2>Common mistakes in agile testing</h2>
+  <ul>
+    <li><strong>Mini-waterfall in the sprint:</strong> testing only happens in the last few days, unfinished stories move to the next sprint.</li>
+    <li><strong>Automation always “next sprint”:</strong> the manual regression burden grows until releases are only possible with hardening sprints.</li>
+    <li><strong>Unclear acceptance criteria:</strong> what isn’t described can’t be tested in a targeted way – discussions shift to the review.</li>
+    <li><strong>Forgetting acceptance:</strong> especially in regulated environments, a traceable acceptance is needed despite agile working. How to get it right is shown in <a href="blog-abnahmetests-en.html" class="inl">Acceptance Testing: How to Get Software Sign-Off Right</a>.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Agile testing works when quality is considered from the first conversation about a story: testable acceptance criteria in refinement, realistically planned testing effort, testing in parallel with development, a binding Definition of Done and growing test automation. Testers remain indispensable – as experts in test methods and as drivers for the whole team. Read more about the mindset behind Scrum in <a href="blog-scrum-en.html" class="inl">Agile Transformation: What Scrum Really Means</a>.</p>
+
+  <h2>Frequently asked questions about agile testing</h2>
+  <h3>Does a Scrum team need a dedicated tester?</h3>
+  <p>The Scrum Guide does not define a separate tester role, but testing expertise in the team is highly recommended. A person with testing experience ensures testable acceptance criteria, suitable test techniques and a sensible automation strategy. Responsibility for quality still lies with the whole team.</p>
+  <h3>How do acceptance tests fit into Scrum?</h3>
+  <p>Business checks take place continuously, for example by the Product Owner and in the Sprint Review. Where contracts or regulations require formal acceptance, it is planned for a release and carried out on the basis of the increments already tested. This keeps acceptance manageable and traceable.</p>
+  <h3>Is agile testing the same as test automation?</h3>
+  <p>No. Test automation is an important building block that keeps regression testing possible at sprint pace. But agile testing also includes testable requirements, exploratory tests, non-functional tests and collaboration within the team. Automation without these foundations does not lead to better quality.</p>
+
+  <div class="cta-box">
+    <h3>Quality assurance for your Scrum teams</h3>
+    <p>30-minute initial consultation — free and without obligation. Together we look at your teams and show how testing can be integrated effectively into your sprints.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="qualitaetssicherung-en.html">Software Quality Assurance in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="scrum-leadership-en.html">Scrum Master &amp; Agile Coach in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="qualitaetssicherung-en.html">Quality Assurance</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website uses cookies and similar technologies. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
