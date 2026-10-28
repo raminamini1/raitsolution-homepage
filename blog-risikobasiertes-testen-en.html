@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Risk-Based Testing: Method and Practice | RAIT Solution</title>
+  <meta name="description" content="Risk-based testing in 4 steps: identify risks, rate them by likelihood and impact, derive test depth and order, and make risk-based release decisions.">
+  <link rel="canonical" href="https://raitsolution.de/blog-risikobasiertes-testen-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-risikobasiertes-testen.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-risikobasiertes-testen-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-risikobasiertes-testen.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Risk-Based Testing: Method and Practice | RAIT Solution">
+  <meta property="og:description" content="Test priorities based on risk instead of gut feeling: product and project risks, risk matrix, test depth, reporting and risk-based testing in Scrum.">
+  <meta property="og:url" content="https://raitsolution.de/blog-risikobasiertes-testen-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Risk-Based Testing: Method and Practice | RAIT Solution">
+  <meta name="twitter:description" content="Test priorities based on risk instead of gut feeling: product and project risks, risk matrix, test depth, reporting and risk-based testing in Scrum.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Risk-Based Testing: How to Set the Right Test Priorities", "description": "Risk-based testing in 4 steps: identify risks, rate them by likelihood and impact, derive test depth and order, and make risk-based release decisions.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-risikobasiertes-testen-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-risikobasiertes-testen-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-28", "dateModified": "2026-10-28", "about": {"@type": "Thing", "name": "Risk-based testing"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "Risk-Based Testing: How to Set the Right Test Priorities", "item": "https://raitsolution.de/blog-risikobasiertes-testen-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between risk-based testing and risk management?", "acceptedAnswer": {"@type": "Answer", "text": "Risk management looks at all risks of a project, such as deadlines, budget or staffing. Risk-based testing focuses on product risks, i.e. possible defects in the software, and uses their assessment to determine the scope, depth and order of testing. The two complement each other: project risks influence whether the planned testing can take place."}}, {"@type": "Question", "name": "Who assesses the risks in risk-based testing?", "acceptedAnswer": {"@type": "Answer", "text": "Ideally a mixed team. The business or Product Owner estimates the impact, development and architecture the likelihood. Test management facilitates the assessment and derives the test approach from it."}}, {"@type": "Question", "name": "Is risk-based testing suitable for small projects?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Even a short list of the most important risks with a simple high, medium and low rating helps to distribute the available testing time sensibly. In small projects, the effort is often a single short workshop."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-risikobasiertes-testen.html" class="lang-btn">DE</a>
+    <a href="blog-risikobasiertes-testen-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Quality Assurance · Test Strategy</span>
+  <h1>Risk-Based Testing: How to Set the Right Test Priorities</h1>
+  <p class="meta"><time datetime="2026-10-28">28 October 2026</time> · Ramin Amini</p>
+  <p class="lead">No project has enough time to test everything with the same thoroughness. So the question is not whether to prioritise, but how: by gut feeling and habit – or transparently, by risk. Risk-based testing ensures that scarce testing time is spent where a defect would cause the most damage. This article explains how the method works and how to bring it into your project in four steps.</p>
+
+  <h2>What is risk-based testing?</h2>
+  <p><strong>Risk-based testing</strong> is an approach in which the scope, depth and order of testing are determined by risk. A risk results from two factors: the <strong>likelihood</strong> of a defect and its <strong>impact</strong> if it occurs in production. Functions with a high risk are tested earlier, more intensively and with stronger test techniques; functions with a low risk receive less effort.</p>
+  <p>The approach is not a niche idea but an established part of testing fundamentals: the ISTQB syllabus describes risk-based testing as a central strategy, and the ISO/IEC/IEEE 29119 series of standards also puts risk at the heart of test planning. In practice, however, it is often only half implemented – there is a risk list in the test plan, but it has no influence on what is actually tested.</p>
+
+  <h2>Distinguishing product risks from project risks</h2>
+  <p>For testing, <strong>product risks</strong> matter most: the danger that the software does not do what it should in production. Examples are incorrect calculations, data loss, security vulnerabilities, poor response times under load or a user interface that users do not understand.</p>
+  <p><strong>Project risks</strong>, by contrast, concern execution: late deliveries, missing test environments, limited staff capacity or unclear requirements. They do not determine <em>what</em> is tested, but they do determine whether the planned testing can take place at all. How to manage such risks in a project is described in our article <a href="blog-risikomanagement-en.html" class="inl">Risk Management in IT Projects</a>.</p>
+
+  <h2>Risk-based testing in four steps</h2>
+  <h3>1. Identify risks</h3>
+  <p>The starting point is a collection of possible product risks. It is best created together: business, development, operations and testing each see different dangers. Proven sources are requirements and business processes, the defect history and incident reports of previous releases, architecture and interfaces, and legal or contractual requirements. A short workshop with focused questions – "What must never go wrong?", "Where did we have problems last time?" – usually produces a usable list quickly.</p>
+  <h3>2. Assess risks</h3>
+  <p>Each risk is rated by likelihood and impact, for example on a simple scale from low through medium to high. Likelihood is mainly estimated by the technical team: How complex is the code, how new is the technology, how many changes were made, how error-prone has the area been so far? Impact is mainly assessed by the business: How many users are affected, are there financial or legal consequences, does customer trust suffer?</p>
+  <p>Plotting both values in a <strong>risk matrix</strong> makes the priorities visible. It is important that the assessment is shared by several people. A matrix filled in by one person alone reflects their point of view rather than the actual risk.</p>
+  <h3>3. Derive the test approach from the risk</h3>
+  <p>Only in this step does the assessment turn into a test strategy. Risk influences several levers:</p>
+  <ul>
+    <li><strong>Test depth:</strong> High risks get detailed test cases using systematic techniques such as boundary value analysis, decision tables or state transition testing; low risks are checked by sampling or exploratory testing.</li>
+    <li><strong>Order:</strong> Critical areas are tested first. If time runs short, the less important tests are missing at the end – not the decisive ones.</li>
+    <li><strong>Test levels and test types:</strong> A high performance risk calls for early <a href="blog-lasttests-en.html" class="inl">load testing</a>, a high security risk for targeted security tests, a high business risk for careful acceptance testing.</li>
+    <li><strong>Automation and regression:</strong> Stable, high-risk flows are the first candidates for automated <a href="blog-regressionstests-en.html" class="inl">regression testing</a>.</li>
+    <li><strong>Reviews:</strong> For very high risks, it pays to review requirements and code before testing even starts.</li>
+  </ul>
+  <h3>4. Monitor and reassess risks</h3>
+  <p>A risk assessment is a snapshot. During the project, requirements change, new clusters of defects appear, and some feared problems turn out to be harmless. That is why the risk list should be reviewed regularly – at fixed milestones in traditional projects, in Scrum for example during refinement or before a release. Defect statistics from ongoing testing are a valuable indicator: where defects accumulate, the likelihood is evidently higher than assumed.</p>
+
+  <h2>Risk-based reporting and release decisions</h2>
+  <p>The greatest benefit often shows at the end. Instead of "82 of 100 test cases passed", the test team reports which risks are sufficiently covered and which are not. Project management and the business can use this statement directly for their release decision: they see which residual risk they accept with a go-live. A release with open defects in a peripheral function can be acceptable; an untested core process usually is not.</p>
+  <p>For this to work, the exit criteria in the <a href="blog-testkonzept-en.html" class="inl">test plan</a> should also be risk-based, for example: all test cases for high risks have been executed, and there are no open defects of the highest severity class in those areas.</p>
+
+  <h2>Risk-based testing in agile projects</h2>
+  <p>Risk-based testing makes sense in Scrum too, just at a smaller cadence. During refinement, the team can briefly ask for each user story what could go wrong and how bad that would be. The result feeds into the acceptance criteria, the estimate and the Definition of Done. For the product as a whole, a lean, jointly maintained risk list that is reviewed before releases remains useful. How testing fits into the sprint overall is described in our article <a href="blog-agiles-testen-en.html" class="inl">Agile Testing in Scrum Teams</a>.</p>
+
+  <h2>Common mistakes in risk-based testing</h2>
+  <ul>
+    <li><strong>Assessment without the business:</strong> Only those who know the business processes can judge the impact. Without them, technically interesting topics get overrated.</li>
+    <li><strong>A risk list without consequences:</strong> If all areas end up being tested in the same way, the analysis was a mere formality.</li>
+    <li><strong>One-off assessment:</strong> A matrix from the start of the project rarely matches the situation shortly before go-live.</li>
+    <li><strong>Not testing low risks at all:</strong> Low risk means less test effort, not none. A short exploratory session often uncovers major defects quickly.</li>
+    <li><strong>Overly fine scales:</strong> Ten-level ratings create false precision and long discussions. Three to five levels are usually enough.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Risk-based testing makes test priorities transparent: identify risks together, rate them by likelihood and impact, derive test depth and order from that, and keep the assessment up to date. The result is not additional bureaucracy but a better basis for every decision in testing – right up to the release. Why structured quality assurance decides project success overall is explained in <a href="blog-qa-en.html" class="inl">Why Quality Assurance Decides Project Success</a>.</p>
+
+  <h2>Frequently asked questions about risk-based testing</h2>
+  <h3>What is the difference between risk-based testing and risk management?</h3>
+  <p>Risk management looks at all risks of a project, such as deadlines, budget or staffing. Risk-based testing focuses on product risks, i.e. possible defects in the software, and uses their assessment to determine the scope, depth and order of testing. The two complement each other: project risks influence whether the planned testing can take place.</p>
+  <h3>Who assesses the risks in risk-based testing?</h3>
+  <p>Ideally a mixed team. The business or Product Owner estimates the impact, development and architecture the likelihood. Test management facilitates the assessment and derives the test approach from it.</p>
+  <h3>Is risk-based testing suitable for small projects?</h3>
+  <p>Yes. Even a short list of the most important risks with a simple high, medium and low rating helps to distribute the available testing time sensibly. In small projects, the effort is often a single short workshop.</p>
+
+  <div class="cta-box">
+    <h3>A test strategy with clear priorities</h3>
+    <p>30-minute initial consultation — free and without obligation. Together we look at your project and show where risk-based testing makes your testing time more effective.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="qualitaetssicherung-en.html">Software Quality Assurance in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="projektmanagement-en.html">IT Project Management in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="qualitaetssicherung-en.html">Quality Assurance</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website uses cookies and similar technologies. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>

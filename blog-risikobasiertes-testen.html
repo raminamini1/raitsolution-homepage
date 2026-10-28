@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Risikobasiertes Testen: Methode und Praxis | RAIT Solution</title>
+  <meta name="description" content="Risikobasiertes Testen in 4 Schritten: Risiken identifizieren, nach Wahrscheinlichkeit und Schaden bewerten, Testtiefe ableiten und risikobasiert freigeben.">
+  <link rel="canonical" href="https://raitsolution.de/blog-risikobasiertes-testen.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-risikobasiertes-testen.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-risikobasiertes-testen-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-risikobasiertes-testen.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Risikobasiertes Testen: Methode und Praxis | RAIT Solution">
+  <meta property="og:description" content="Testprioritäten nach Risiko statt Bauchgefühl: Produkt- und Projektrisiken, Risikomatrix, Testtiefe, Reporting und risikobasiertes Testen in Scrum.">
+  <meta property="og:url" content="https://raitsolution.de/blog-risikobasiertes-testen.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Risikobasiertes Testen: Methode und Praxis | RAIT Solution">
+  <meta name="twitter:description" content="Testprioritäten nach Risiko statt Bauchgefühl: Produkt- und Projektrisiken, Risikomatrix, Testtiefe, Reporting und risikobasiertes Testen in Scrum.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Risikobasiertes Testen: So setzen Sie die richtigen Testprioritäten", "description": "Risikobasiertes Testen in 4 Schritten: Risiken identifizieren, nach Wahrscheinlichkeit und Schaden bewerten, Testtiefe ableiten und risikobasiert freigeben.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-risikobasiertes-testen.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-risikobasiertes-testen.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-28", "dateModified": "2026-10-28", "about": {"@type": "Thing", "name": "Risikobasiertes Testen"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Risikobasiertes Testen: So setzen Sie die richtigen Testprioritäten", "item": "https://raitsolution.de/blog-risikobasiertes-testen.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist der Unterschied zwischen risikobasiertem Testen und Risikomanagement?", "acceptedAnswer": {"@type": "Answer", "text": "Risikomanagement betrachtet alle Risiken eines Projekts, etwa Termine, Budget oder Personal. Risikobasiertes Testen konzentriert sich auf Produktrisiken, also mögliche Fehler der Software, und nutzt ihre Bewertung, um Umfang, Tiefe und Reihenfolge der Tests festzulegen. Beide ergänzen sich: Projektrisiken beeinflussen, ob der geplante Test stattfinden kann."}}, {"@type": "Question", "name": "Wer bewertet die Risiken beim risikobasierten Testen?", "acceptedAnswer": {"@type": "Answer", "text": "Am besten ein gemischtes Team. Fachbereich oder Product Owner schätzen das Schadensausmaß ein, Entwicklung und Architektur die Eintrittswahrscheinlichkeit. Das Testmanagement moderiert die Bewertung und leitet daraus das Testvorgehen ab."}}, {"@type": "Question", "name": "Eignet sich risikobasiertes Testen auch für kleine Projekte?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Schon eine kurze Liste der wichtigsten Risiken mit einer einfachen Einstufung in hoch, mittel und niedrig hilft, die verfügbare Testzeit sinnvoll zu verteilen. Der Aufwand dafür liegt bei kleinen Projekten oft bei einem einzigen kurzen Workshop."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-risikobasiertes-testen.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-risikobasiertes-testen-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung · Teststrategie</span>
+  <h1>Risikobasiertes Testen: So setzen Sie die richtigen Testprioritäten</h1>
+  <p class="meta"><time datetime="2026-10-28">28. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Kein Projekt hat genug Zeit, um alles gleich gründlich zu testen. Die Frage ist also nicht, ob priorisiert wird, sondern wie: nach Bauchgefühl und Gewohnheit – oder nachvollziehbar nach Risiko. Risikobasiertes Testen sorgt dafür, dass die knappe Testzeit dort eingesetzt wird, wo ein Fehler den größten Schaden anrichten würde. Dieser Artikel zeigt, wie die Methode funktioniert und wie Sie sie in vier Schritten in Ihr Projekt bringen.</p>
+
+  <h2>Was ist risikobasiertes Testen?</h2>
+  <p><strong>Risikobasiertes Testen</strong> ist ein Vorgehen, bei dem Umfang, Tiefe und Reihenfolge der Tests anhand von Risiken festgelegt werden. Ein Risiko ergibt sich aus zwei Faktoren: der <strong>Eintrittswahrscheinlichkeit</strong> eines Fehlers und dem <strong>Schadensausmaß</strong>, wenn er im Betrieb auftritt. Funktionen mit hohem Risiko werden früher, intensiver und mit stärkeren Testverfahren geprüft; Funktionen mit geringem Risiko bekommen weniger Aufwand.</p>
+  <p>Der Ansatz ist kein Sonderweg, sondern fester Bestandteil anerkannter Testgrundlagen: Der ISTQB-Lehrplan beschreibt risikobasiertes Testen als zentrale Strategie, und auch die Normenreihe ISO/IEC/IEEE 29119 stellt das Risiko in den Mittelpunkt der Testplanung. In der Praxis wird es trotzdem oft nur halb umgesetzt – es gibt eine Risikoliste im Testkonzept, aber sie hat keinen Einfluss darauf, was tatsächlich getestet wird.</p>
+
+  <h2>Produktrisiken und Projektrisiken unterscheiden</h2>
+  <p>Für das Testen sind vor allem <strong>Produktrisiken</strong> relevant: die Gefahr, dass die Software im Betrieb nicht das tut, was sie soll. Beispiele sind falsche Berechnungen, Datenverlust, Sicherheitslücken, schlechte Antwortzeiten unter Last oder eine Oberfläche, die Anwender nicht verstehen.</p>
+  <p><strong>Projektrisiken</strong> betreffen dagegen die Durchführung: verspätete Lieferungen, fehlende Testumgebungen, knappe Personalkapazität oder unklare Anforderungen. Sie bestimmen nicht, <em>was</em> getestet wird, aber sehr wohl, ob der geplante Test überhaupt stattfinden kann. Wie Sie solche Risiken im Projekt steuern, beschreibt unser Artikel <a href="blog-risikomanagement.html" class="inl">Risikomanagement in IT-Projekten</a>.</p>
+
+  <h2>Risikobasiertes Testen in vier Schritten</h2>
+  <h3>1. Risiken identifizieren</h3>
+  <p>Am Anfang steht eine Sammlung möglicher Produktrisiken. Sie entsteht am besten gemeinsam: Fachbereich, Entwicklung, Betrieb und Test sehen jeweils andere Gefahren. Bewährte Quellen sind die Anforderungen und Geschäftsprozesse, Fehlerhistorie und Störungsmeldungen früherer Releases, Architektur und Schnittstellen sowie gesetzliche oder vertragliche Vorgaben. Ein kurzer Workshop mit gezielten Fragen – „Was darf auf keinen Fall schiefgehen?“, „Wo hatten wir zuletzt Probleme?“ – bringt meist schnell eine brauchbare Liste.</p>
+  <h3>2. Risiken bewerten</h3>
+  <p>Jedes Risiko wird nach Eintrittswahrscheinlichkeit und Schadensausmaß eingestuft, etwa auf einer einfachen Skala von niedrig über mittel bis hoch. Die Wahrscheinlichkeit schätzt vor allem das technische Team ein: Wie komplex ist der Code, wie neu die Technologie, wie viele Änderungen gab es, wie fehleranfällig war der Bereich bisher? Das Schadensausmaß bewertet vor allem der Fachbereich: Wie viele Anwender sind betroffen, entstehen finanzielle oder rechtliche Folgen, leidet das Vertrauen der Kunden?</p>
+  <p>Trägt man beide Werte in eine <strong>Risikomatrix</strong> ein, werden die Prioritäten sichtbar. Wichtig ist, dass die Bewertung von mehreren Personen getragen wird. Eine Matrix, die eine einzelne Person allein ausfüllt, spiegelt eher deren Blickwinkel als das tatsächliche Risiko.</p>
+  <h3>3. Testvorgehen aus dem Risiko ableiten</h3>
+  <p>Erst in diesem Schritt wird aus der Bewertung eine Teststrategie. Das Risiko beeinflusst mehrere Stellschrauben:</p>
+  <ul>
+    <li><strong>Testtiefe:</strong> Hohe Risiken bekommen ausführliche Testfälle mit systematischen Verfahren wie Grenzwertanalyse, Entscheidungstabellen oder Zustandsübergangstests; geringe Risiken werden stichprobenartig oder explorativ geprüft.</li>
+    <li><strong>Reihenfolge:</strong> Kritische Bereiche werden zuerst getestet. Wird die Zeit knapp, fehlen am Ende die weniger wichtigen Tests – nicht die entscheidenden.</li>
+    <li><strong>Teststufen und Testarten:</strong> Ein hohes Performancerisiko spricht für frühe <a href="blog-lasttests.html" class="inl">Lasttests</a>, ein hohes Sicherheitsrisiko für gezielte Sicherheitstests, ein hohes fachliches Risiko für eine sorgfältige Abnahme.</li>
+    <li><strong>Automatisierung und Regression:</strong> Stabile Abläufe mit hohem Risiko sind die ersten Kandidaten für automatisierte <a href="blog-regressionstests.html" class="inl">Regressionstests</a>.</li>
+    <li><strong>Reviews:</strong> Bei sehr hohen Risiken lohnt es sich, schon Anforderungen und Code gezielt zu prüfen, bevor überhaupt getestet wird.</li>
+  </ul>
+  <h3>4. Risiken überwachen und neu bewerten</h3>
+  <p>Eine Risikobewertung ist eine Momentaufnahme. Während des Projekts ändern sich Anforderungen, neue Fehlerhäufungen tauchen auf, und manches befürchtete Problem erweist sich als harmlos. Deshalb gehört die Risikoliste regelmäßig auf den Prüfstand – in klassischen Projekten an festen Meilensteinen, in Scrum zum Beispiel im Refinement oder vor einem Release. Fehlerstatistiken aus dem laufenden Test sind dabei ein wertvoller Hinweis: Wo sich Fehler häufen, ist die Wahrscheinlichkeit offenbar höher als angenommen.</p>
+
+  <h2>Risikobasiert berichten und freigeben</h2>
+  <p>Der größte Nutzen zeigt sich oft am Ende. Statt „82 von 100 Testfällen bestanden“ berichtet das Testteam, welche Risiken ausreichend abgesichert sind und welche nicht. Diese Aussage können Projektleitung und Fachbereich direkt für ihre Freigabeentscheidung nutzen: Sie sehen, welches Restrisiko sie mit einem Go-live eingehen. Ein Release mit offenen Fehlern in einer Randfunktion kann vertretbar sein; ein ungetesteter Kernprozess ist es in der Regel nicht.</p>
+  <p>Damit das funktioniert, sollten die Endekriterien im <a href="blog-testkonzept.html" class="inl">Testkonzept</a> ebenfalls risikobasiert formuliert sein, etwa: Alle Testfälle zu hohen Risiken sind ausgeführt, und es gibt dort keine offenen Fehler der höchsten Fehlerklasse.</p>
+
+  <h2>Risikobasiertes Testen in agilen Projekten</h2>
+  <p>Auch in Scrum ist risikobasiertes Testen sinnvoll, nur in kleinerem Takt. Im Refinement lässt sich bei jeder User Story kurz fragen, was schiefgehen kann und wie schlimm das wäre. Das Ergebnis fließt in die Akzeptanzkriterien, die Schätzung und die Definition of Done ein. Für das Gesamtprodukt bleibt eine schlanke, gemeinsam gepflegte Risikoliste sinnvoll, die vor Releases geprüft wird. Wie Tests insgesamt in den Sprint gehören, beschreibt unser Artikel <a href="blog-agiles-testen.html" class="inl">Agiles Testen in Scrum-Teams</a>.</p>
+
+  <h2>Typische Fehler beim risikobasierten Testen</h2>
+  <ul>
+    <li><strong>Bewertung ohne Fachbereich:</strong> Das Schadensausmaß kann nur einschätzen, wer die Geschäftsprozesse kennt. Ohne ihn wird technisch Interessantes überbewertet.</li>
+    <li><strong>Risikoliste ohne Folgen:</strong> Wenn alle Bereiche am Ende gleich getestet werden, war die Analyse reine Formalität.</li>
+    <li><strong>Einmalige Bewertung:</strong> Eine Matrix vom Projektstart passt selten zur Lage kurz vor dem Go-live.</li>
+    <li><strong>Geringe Risiken gar nicht testen:</strong> Geringes Risiko heißt weniger Testaufwand, nicht null. Ein kurzer explorativer Durchgang deckt grobe Fehler oft schnell auf.</li>
+    <li><strong>Zu feine Skalen:</strong> Zehnstufige Bewertungen erzeugen Scheingenauigkeit und lange Diskussionen. Drei bis fünf Stufen reichen in der Regel.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Risikobasiertes Testen macht Testprioritäten nachvollziehbar: Risiken gemeinsam identifizieren, nach Wahrscheinlichkeit und Schadensausmaß bewerten, Testtiefe und Reihenfolge daraus ableiten und die Bewertung laufend aktualisieren. Das Ergebnis ist keine zusätzliche Bürokratie, sondern eine bessere Grundlage für jede Entscheidung im Test – bis zur Freigabe des Releases. Warum eine strukturierte Qualitätssicherung insgesamt über den Projekterfolg entscheidet, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</p>
+
+  <h2>Häufige Fragen zum risikobasierten Testen</h2>
+  <h3>Was ist der Unterschied zwischen risikobasiertem Testen und Risikomanagement?</h3>
+  <p>Risikomanagement betrachtet alle Risiken eines Projekts, etwa Termine, Budget oder Personal. Risikobasiertes Testen konzentriert sich auf Produktrisiken, also mögliche Fehler der Software, und nutzt ihre Bewertung, um Umfang, Tiefe und Reihenfolge der Tests festzulegen. Beide ergänzen sich: Projektrisiken beeinflussen, ob der geplante Test stattfinden kann.</p>
+  <h3>Wer bewertet die Risiken beim risikobasierten Testen?</h3>
+  <p>Am besten ein gemischtes Team. Fachbereich oder Product Owner schätzen das Schadensausmaß ein, Entwicklung und Architektur die Eintrittswahrscheinlichkeit. Das Testmanagement moderiert die Bewertung und leitet daraus das Testvorgehen ab.</p>
+  <h3>Eignet sich risikobasiertes Testen auch für kleine Projekte?</h3>
+  <p>Ja. Schon eine kurze Liste der wichtigsten Risiken mit einer einfachen Einstufung in hoch, mittel und niedrig hilft, die verfügbare Testzeit sinnvoll zu verteilen. Der Aufwand dafür liegt bei kleinen Projekten oft bei einem einzigen kurzen Workshop.</p>
+
+  <div class="cta-box">
+    <h3>Teststrategie mit klaren Prioritäten</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Projekt und zeigen, wo risikobasiertes Testen Ihre Testzeit wirksamer macht.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Qualitätssicherung</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>

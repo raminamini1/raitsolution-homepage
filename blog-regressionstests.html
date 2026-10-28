@@ -4,14 +4,14 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Regressionstests: Strategie für stabile Releases | RAIT Solution</title>
-  <meta name="description" content="Regressionstests gezielt planen: Auswirkungsanalyse, risikobasierte Auswahl, Pflege der Suite und Einbindung in Scrum – für stabile Releases ohne Engpass.">
+  <title>Regressionstests: Definition &amp; Automatisierung | RAIT Solution</title>
+  <meta name="description" content="Was ist ein Regressionstest? Definition, Beispiel, risikobasierte Auswahl und automatisierte Regressionstests in Scrum – Leitfaden für stabile Releases.">
   <link rel="canonical" href="https://raitsolution.de/blog-regressionstests.html">
   <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-regressionstests.html">
   <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-regressionstests-en.html">
   <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-regressionstests.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Regressionstests: Strategie für stabile Releases | RAIT Solution">
+  <meta property="og:title" content="Regressionstests: Definition &amp; Automatisierung | RAIT Solution">
   <meta property="og:description" content="Regressionstests risikobasiert planen: Testumfang festlegen, Suite pflegen, automatisieren und in Scrum integrieren – ein praxisnaher Leitfaden.">
   <meta property="og:url" content="https://raitsolution.de/blog-regressionstests.html">
   <meta property="og:locale" content="de_DE">
@@ -19,7 +19,7 @@
   <meta property="og:image" content="https://raitsolution.de/og-image.png">
   <meta property="og:site_name" content="RAIT Solution">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Regressionstests: Strategie für stabile Releases | RAIT Solution">
+  <meta name="twitter:title" content="Regressionstests: Definition &amp; Automatisierung | RAIT Solution">
   <meta name="twitter:description" content="Regressionstests risikobasiert planen: Testumfang festlegen, Suite pflegen, automatisieren und in Scrum integrieren – ein praxisnaher Leitfaden.">
   <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
   <meta name="robots" content="index, follow">
@@ -56,9 +56,9 @@
     @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
     .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
   </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Regressionstests: So sichern Sie stabile Releases ab", "description": "Regressionstests gezielt planen: Auswirkungsanalyse, risikobasierte Auswahl, Pflege der Suite und Einbindung in Scrum – für stabile Releases ohne Engpass.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-regressionstests.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-regressionstests.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-18", "dateModified": "2026-10-23", "about": {"@type": "Thing", "name": "Regressionstest"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Regressionstests: So sichern Sie stabile Releases ab", "description": "Regressionstests gezielt planen: Auswirkungsanalyse, risikobasierte Auswahl, Pflege der Suite und Einbindung in Scrum – für stabile Releases ohne Engpass.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-regressionstests.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-regressionstests.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-18", "dateModified": "2026-10-28", "about": {"@type": "Thing", "name": "Regressionstest"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Regressionstests: So sichern Sie stabile Releases ab", "item": "https://raitsolution.de/blog-regressionstests.html"}]}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wann sollte ein Regressionstest durchgeführt werden?", "acceptedAnswer": {"@type": "Answer", "text": "Nach jeder Änderung, die bestehende Funktionen beeinflussen kann – also bei neuen Features, Fehlerkorrekturen, Updates von Bibliotheken oder Infrastruktur, Konfigurationsänderungen und Datenmigrationen. Der Umfang richtet sich nach der Auswirkungsanalyse und dem Risiko der Änderung."}}, {"@type": "Question", "name": "Was ist der Unterschied zwischen Regressionstest und Fehlernachtest?", "acceptedAnswer": {"@type": "Answer", "text": "Der Fehlernachtest bestätigt, dass ein konkret gemeldeter Fehler behoben ist. Der Regressionstest prüft, ob die Korrektur oder eine andere Änderung unbeabsichtigt bereits funktionierende Bereiche beschädigt hat. In der Praxis werden beide nacheinander ausgeführt."}}, {"@type": "Question", "name": "Wie wählt man die richtigen Regressionstestfälle aus?", "acceptedAnswer": {"@type": "Answer", "text": "Über eine Kombination aus Auswirkungsanalyse und Risikobewertung: Getestet werden die von der Änderung betroffenen Bereiche sowie alle geschäftskritischen Abläufe mit hoher Priorität. Ergänzt wird die Auswahl um Testfälle zu Fehlern, die früher bereits in Produktion aufgetreten sind."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist ein Beispiel für einen Regressionstest?", "acceptedAnswer": {"@type": "Answer", "text": "Wird in einem Onlineshop die Versandkostenberechnung geändert, prüft der Regressionstest neben der neuen Regel auch Warenkorb, Rabattcodes, Rechnung und Zahlung. Getestet werden also bestehende Funktionen, die von der Änderung unbeabsichtigt betroffen sein könnten."}}, {"@type": "Question", "name": "Wann sollte ein Regressionstest durchgeführt werden?", "acceptedAnswer": {"@type": "Answer", "text": "Nach jeder Änderung, die bestehende Funktionen beeinflussen kann – also bei neuen Features, Fehlerkorrekturen, Updates von Bibliotheken oder Infrastruktur, Konfigurationsänderungen und Datenmigrationen. Der Umfang richtet sich nach der Auswirkungsanalyse und dem Risiko der Änderung."}}, {"@type": "Question", "name": "Was ist der Unterschied zwischen Regressionstest und Fehlernachtest?", "acceptedAnswer": {"@type": "Answer", "text": "Der Fehlernachtest bestätigt, dass ein konkret gemeldeter Fehler behoben ist. Der Regressionstest prüft, ob die Korrektur oder eine andere Änderung unbeabsichtigt bereits funktionierende Bereiche beschädigt hat. In der Praxis werden beide nacheinander ausgeführt."}}, {"@type": "Question", "name": "Wie wählt man die richtigen Regressionstestfälle aus?", "acceptedAnswer": {"@type": "Answer", "text": "Über eine Kombination aus Auswirkungsanalyse und Risikobewertung: Getestet werden die von der Änderung betroffenen Bereiche sowie alle geschäftskritischen Abläufe mit hoher Priorität. Ergänzt wird die Auswahl um Testfälle zu Fehlern, die früher bereits in Produktion aufgetreten sind."}}]}</script>
 </head>
 <body>
 <nav><div class="nav-in">
@@ -86,9 +86,10 @@
   <p class="meta"><time datetime="2026-10-18">18. Oktober 2026</time> · Ramin Amini</p>
   <p class="lead">Eine kleine Änderung an der Rabattberechnung, und plötzlich funktioniert der Rechnungsversand nicht mehr. Genau solche Nebenwirkungen sollen Regressionstests verhindern. In vielen Projekten sind sie aber entweder zu dünn, um echte Sicherheit zu geben, oder so umfangreich, dass sie jedes Release um Tage verzögern. Dieser Artikel zeigt, wie Sie Regressionstests so planen, dass sie beides leisten: Sicherheit und Tempo.</p>
 
-  <h2>Was Regressionstests sind – und was nicht</h2>
+  <h2>Was ist ein Regressionstest? Definition und Abgrenzung</h2>
   <p>Ein Regressionstest prüft, ob bereits funktionierende Software nach einer Änderung weiterhin korrekt arbeitet. Auslöser kann ein neues Feature sein, eine Fehlerkorrektur, ein Update einer Bibliothek, eine geänderte Konfiguration oder eine Migration auf neue Infrastruktur. Das Ziel ist nicht, die Änderung selbst zu testen, sondern ihre unbeabsichtigten Auswirkungen auf den Rest des Systems.</p>
   <p>Davon zu unterscheiden ist der <strong>Fehlernachtest</strong> (Re-Test): Er bestätigt, dass ein konkret gemeldeter Fehler behoben ist. Beides gehört zusammen – ein behobener Fehler ist erst dann wirklich erledigt, wenn der Nachtest grün ist und der Regressionstest zeigt, dass die Korrektur nichts anderes beschädigt hat.</p>
+  <p><strong>Ein Beispiel:</strong> In einem Onlineshop wird die Berechnung der Versandkosten geändert. Der Test der neuen Regel prüft die Änderung selbst. Der Regressionstest prüft zusätzlich, ob Warenkorb, Rabattcodes, Rechnungserstellung und Zahlungsabwicklung weiterhin korrekt arbeiten – also alle Funktionen, die mit der Bestellsumme rechnen und von der Änderung unbeabsichtigt betroffen sein könnten.</p>
 
   <h2>Warum der Regressionstest zum Engpass wird</h2>
   <p>Mit jedem Release wächst die Funktionalität und damit die Zahl der Abläufe, die erneut geprüft werden müssten. Wer bei jeder Änderung „alles“ testen will, braucht immer länger – bis der Regressionstest zur Phase wird, auf die das ganze Team wartet. Unter Zeitdruck wird dann ungeplant gekürzt: Es wird getestet, was gerade vertraut ist, nicht das, was am meisten Risiko trägt.</p>
@@ -99,6 +100,7 @@
   <p>Am Anfang steht die Frage, welche Komponenten, Schnittstellen und Daten von einer Änderung berührt werden. Entwicklung und QA sollten diese Einschätzung gemeinsam treffen – Entwickler kennen die technischen Abhängigkeiten, Tester die fachlichen Abläufe. Hilfreich sind dabei eine Nachverfolgbarkeit von Anforderungen zu Testfällen, die Änderungshistorie im Versionskontrollsystem und das Wissen, welche Module in der Vergangenheit fehleranfällig waren.</p>
   <h3>Risikobewertung: Was wäre ein Ausfall wert?</h3>
   <p>Nicht jede Funktion ist gleich wichtig. Bewerten Sie Ihre Geschäftsprozesse nach zwei Kriterien: Wie wahrscheinlich ist ein Fehler in diesem Bereich, und wie groß wäre der Schaden? Ein Fehler in der Zahlungsabwicklung oder bei gesetzlich vorgeschriebenen Meldungen wiegt schwerer als eine falsch formatierte Statusanzeige. Aus dieser Bewertung ergibt sich eine Priorität für jeden Regressionstestfall.</p>
+  <p>Wie Sie Risiken systematisch bewerten und daraus Testprioritäten für das gesamte Projekt ableiten, beschreibt unser Artikel <a href="blog-risikobasiertes-testen.html" class="inl">Risikobasiertes Testen</a>.</p>
   <h3>Stufen des Regressionstests</h3>
   <p>In der Praxis hat sich eine Staffelung bewährt, statt jedes Mal dieselbe Testmenge auszuführen:</p>
   <ul>
@@ -118,7 +120,7 @@
   </ul>
   <p>Ein Testmanagement-Tool, in dem Testfälle, Prioritäten und Ergebnisse zentral verwaltet werden, erleichtert diese Pflege erheblich – vor allem, wenn mehrere Teams an derselben Anwendung arbeiten.</p>
 
-  <h2>Manuell oder automatisiert?</h2>
+  <h2>Automatisierte Regressionstests: was sich lohnt</h2>
   <p>Regressionstests sind der klassische Kandidat für Testautomatisierung, weil sie immer wieder mit denselben erwarteten Ergebnissen ausgeführt werden. Das heißt aber nicht, dass alles automatisiert werden sollte. Stabile, häufig benötigte Abläufe auf API- und Oberflächenebene profitieren am meisten. Selten genutzte Sonderfälle, Abläufe mit hoher fachlicher Bewertung oder Bereiche, die sich gerade stark verändern, bleiben oft wirtschaftlicher manuell.</p>
   <p>Ein pragmatischer Weg: Beginnen Sie mit den Regressionstests höchster Priorität, die bei jedem Release ausgeführt werden. Wie Sie dabei vorgehen und typische Fallen vermeiden, beschreibt unser Leitfaden <a href="blog-testautomatisierung.html" class="inl">Testautomatisierung einführen in 6 Schritten</a>.</p>
 
@@ -148,6 +150,8 @@
   <p>Gute Regressionstests sind keine Frage der Menge, sondern der Auswahl. Wer Änderungen systematisch analysiert, Testfälle nach Risiko priorisiert, die Suite konsequent pflegt und klare Freigabekriterien definiert, bekommt stabile Releases, ohne dass der Test zum Engpass wird. Warum eine strukturierte Qualitätssicherung insgesamt über den Projekterfolg entscheidet, lesen Sie in <a href="blog-qa.html" class="inl">Warum Qualitätssicherung über den Projekterfolg entscheidet</a>.</p>
 
   <h2>Häufige Fragen zu Regressionstests</h2>
+  <h3>Was ist ein Beispiel für einen Regressionstest?</h3>
+  <p>Wird in einem Onlineshop die Versandkostenberechnung geändert, prüft der Regressionstest neben der neuen Regel auch Warenkorb, Rabattcodes, Rechnung und Zahlung. Getestet werden also bestehende Funktionen, die von der Änderung unbeabsichtigt betroffen sein könnten.</p>
   <h3>Wann sollte ein Regressionstest durchgeführt werden?</h3>
   <p>Nach jeder Änderung, die bestehende Funktionen beeinflussen kann – also bei neuen Features, Fehlerkorrekturen, Updates von Bibliotheken oder Infrastruktur, Konfigurationsänderungen und Datenmigrationen. Der Umfang richtet sich nach der Auswirkungsanalyse und dem Risiko der Änderung.</p>
   <h3>Was ist der Unterschied zwischen Regressionstest und Fehlernachtest?</h3>

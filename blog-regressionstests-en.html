@@ -4,14 +4,14 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Regression Testing for Stable Releases | RAIT Solution</title>
-  <meta name="description" content="Plan regression testing selectively: impact analysis, risk-based test selection, suite maintenance and integration into Scrum – stable releases, no bottleneck.">
+  <title>Regression Testing: Definition and Automation | RAIT Solution</title>
+  <meta name="description" content="What is regression testing? Definition, example, risk-based test selection and automated regression testing in Scrum – a guide to stable releases.">
   <link rel="canonical" href="https://raitsolution.de/blog-regressionstests-en.html">
   <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-regressionstests.html">
   <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-regressionstests-en.html">
   <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-regressionstests.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Regression Testing for Stable Releases | RAIT Solution">
+  <meta property="og:title" content="Regression Testing: Definition and Automation | RAIT Solution">
   <meta property="og:description" content="Plan regression tests risk-based: define the scope, maintain the suite, automate and integrate into Scrum – a practical guide.">
   <meta property="og:url" content="https://raitsolution.de/blog-regressionstests-en.html">
   <meta property="og:locale" content="en_US">
@@ -19,7 +19,7 @@
   <meta property="og:image" content="https://raitsolution.de/og-image.png">
   <meta property="og:site_name" content="RAIT Solution">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Regression Testing for Stable Releases | RAIT Solution">
+  <meta name="twitter:title" content="Regression Testing: Definition and Automation | RAIT Solution">
   <meta name="twitter:description" content="Plan regression tests risk-based: define the scope, maintain the suite, automate and integrate into Scrum – a practical guide.">
   <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
   <meta name="robots" content="index, follow">
@@ -56,9 +56,9 @@
     @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
     .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
   </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Regression Testing: How to Secure Stable Releases", "description": "Plan regression testing selectively: impact analysis, risk-based test selection, suite maintenance and integration into Scrum – stable releases, no bottleneck.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-regressionstests-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-regressionstests-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-18", "dateModified": "2026-10-23", "about": {"@type": "Thing", "name": "Regression testing"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Regression Testing: How to Secure Stable Releases", "description": "Plan regression testing selectively: impact analysis, risk-based test selection, suite maintenance and integration into Scrum – stable releases, no bottleneck.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-regressionstests-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-regressionstests-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-18", "dateModified": "2026-10-28", "about": {"@type": "Thing", "name": "Regression testing"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "Regression Testing: How to Secure Stable Releases", "item": "https://raitsolution.de/blog-regressionstests-en.html"}]}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When should a regression test be performed?", "acceptedAnswer": {"@type": "Answer", "text": "After every change that can affect existing functions – new features, bug fixes, library or infrastructure updates, configuration changes and data migrations. The scope depends on the impact analysis and the risk of the change."}}, {"@type": "Question", "name": "What is the difference between a regression test and a confirmation test?", "acceptedAnswer": {"@type": "Answer", "text": "The confirmation test confirms that a specific reported defect has been fixed. The regression test checks whether the fix or another change has unintentionally broken areas that already worked. In practice, both are carried out one after the other."}}, {"@type": "Question", "name": "How do you select the right regression test cases?", "acceptedAnswer": {"@type": "Answer", "text": "Through a combination of impact analysis and risk assessment: the areas affected by the change are tested, along with all business-critical, high-priority flows. The selection is supplemented by test cases for defects that have already occurred in production."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an example of a regression test?", "acceptedAnswer": {"@type": "Answer", "text": "If the shipping cost calculation in an online shop is changed, the regression test checks not only the new rule but also the shopping cart, discount codes, invoicing and payment. In other words, it tests existing functions that could be unintentionally affected by the change."}}, {"@type": "Question", "name": "When should a regression test be performed?", "acceptedAnswer": {"@type": "Answer", "text": "After every change that can affect existing functions – new features, bug fixes, library or infrastructure updates, configuration changes and data migrations. The scope depends on the impact analysis and the risk of the change."}}, {"@type": "Question", "name": "What is the difference between a regression test and a confirmation test?", "acceptedAnswer": {"@type": "Answer", "text": "The confirmation test confirms that a specific reported defect has been fixed. The regression test checks whether the fix or another change has unintentionally broken areas that already worked. In practice, both are carried out one after the other."}}, {"@type": "Question", "name": "How do you select the right regression test cases?", "acceptedAnswer": {"@type": "Answer", "text": "Through a combination of impact analysis and risk assessment: the areas affected by the change are tested, along with all business-critical, high-priority flows. The selection is supplemented by test cases for defects that have already occurred in production."}}]}</script>
 </head>
 <body>
 <nav><div class="nav-in">
@@ -86,9 +86,10 @@
   <p class="meta"><time datetime="2026-10-18">18 October 2026</time> · Ramin Amini</p>
   <p class="lead">A small change to the discount calculation, and suddenly invoices are no longer sent. Regression tests exist to prevent exactly these side effects. In many projects, however, they are either too thin to provide real confidence or so extensive that they delay every release by days. This article shows how to plan regression testing so that it delivers both: confidence and speed.</p>
 
-  <h2>What regression testing is – and what it is not</h2>
+  <h2>What is regression testing? Definition and scope</h2>
   <p>A regression test checks whether software that already worked still behaves correctly after a change. The trigger may be a new feature, a bug fix, a library update, a configuration change or a migration to new infrastructure. The goal is not to test the change itself, but its unintended effects on the rest of the system.</p>
   <p>This is different from the <strong>confirmation test</strong> (re-test), which confirms that a specific reported defect has been fixed. The two belong together – a fixed defect is only truly done when the re-test passes and the regression test shows that the fix has not broken anything else.</p>
+  <p><strong>An example:</strong> In an online shop, the shipping cost calculation is changed. Testing the new rule checks the change itself. The regression test additionally checks whether the shopping cart, discount codes, invoicing and payment processing still work correctly – that is, all functions that work with the order total and could be unintentionally affected by the change.</p>
 
   <h2>Why regression testing becomes a bottleneck</h2>
   <p>With every release, functionality grows – and with it the number of flows that would need to be checked again. Anyone who wants to test "everything" for every change needs longer and longer, until regression testing becomes the phase the whole team is waiting for. Under time pressure, it is then cut in an unplanned way: people test what is familiar, not what carries the most risk.</p>
@@ -99,6 +100,7 @@
   <p>The starting point is the question of which components, interfaces and data a change touches. Development and QA should make this assessment together – developers know the technical dependencies, testers know the business flows. Helpful inputs are traceability from requirements to test cases, the change history in version control, and knowledge of which modules have been error-prone in the past.</p>
   <h3>Risk assessment: what would a failure cost?</h3>
   <p>Not every function is equally important. Rate your business processes on two criteria: how likely is a defect in this area, and how large would the damage be? A defect in payment processing or in legally required reporting weighs more heavily than a badly formatted status display. This assessment gives every regression test case a priority.</p>
+  <p>How to assess risks systematically and derive test priorities for the whole project is described in our article <a href="blog-risikobasiertes-testen-en.html" class="inl">Risk-Based Testing</a>.</p>
   <h3>Levels of regression testing</h3>
   <p>In practice, a tiered approach works better than running the same set of tests every time:</p>
   <ul>
@@ -118,7 +120,7 @@
   </ul>
   <p>A test management tool that holds test cases, priorities and results in one place makes this maintenance much easier – especially when several teams work on the same application.</p>
 
-  <h2>Manual or automated?</h2>
+  <h2>Automated regression testing: what pays off</h2>
   <p>Regression tests are the classic candidate for test automation because they are executed again and again with the same expected results. That does not mean everything should be automated. Stable, frequently needed flows at API and user-interface level benefit most. Rarely used edge cases, flows that require a lot of business judgement, or areas that are currently changing heavily often remain more economical to test manually.</p>
   <p>A pragmatic approach: start with the highest-priority regression tests that run with every release. How to proceed and avoid common pitfalls is described in our guide <a href="blog-testautomatisierung-en.html" class="inl">Introducing Test Automation: A 6-Step Guide</a>.</p>
 
@@ -148,6 +150,8 @@
   <p>Good regression testing is not a question of quantity, but of selection. If you analyse changes systematically, prioritise test cases by risk, maintain the suite consistently and define clear release criteria, you get stable releases without testing becoming the bottleneck. Read why structured quality assurance decides overall project success in <a href="blog-qa-en.html" class="inl">Why Quality Assurance Decides Project Success</a>.</p>
 
   <h2>Frequently asked questions about regression testing</h2>
+  <h3>What is an example of a regression test?</h3>
+  <p>If the shipping cost calculation in an online shop is changed, the regression test checks not only the new rule but also the shopping cart, discount codes, invoicing and payment. In other words, it tests existing functions that could be unintentionally affected by the change.</p>
   <h3>When should a regression test be performed?</h3>
   <p>After every change that can affect existing functions – new features, bug fixes, library or infrastructure updates, configuration changes and data migrations. The scope depends on the impact analysis and the risk of the change.</p>
   <h3>What is the difference between a regression test and a confirmation test?</h3>

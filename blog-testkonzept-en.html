@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>How to Write a Test Plan: Structure and Contents | RAIT Solution</title>
-  <meta name="description" content="How to write a test plan: what it should contain, how to create it step by step and how to keep the test plan lean in agile projects as well.">
+  <meta name="description" content="How to write a test plan: what a test plan is, which contents belong in it, a practical outline example and a 5-step approach that also works in agile projects.">
   <link rel="canonical" href="https://raitsolution.de/blog-testkonzept-en.html">
   <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-testkonzept.html">
   <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-testkonzept-en.html">
@@ -56,9 +56,9 @@
     @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
     .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
   </style>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Write a Test Plan: Structure, Contents and Practical Approach", "description": "How to write a test plan: what it should contain, how to create it step by step and how to keep the test plan lean in agile projects as well.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-testkonzept-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testkonzept-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-23", "dateModified": "2026-10-23", "about": {"@type": "Thing", "name": "Test plan"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Write a Test Plan: Structure, Contents and Practical Approach", "description": "How to write a test plan: what it should contain, how to create it step by step and how to keep the test plan lean in agile projects as well.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-testkonzept-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testkonzept-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-23", "dateModified": "2026-10-28", "about": {"@type": "Thing", "name": "Test plan"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "How to Write a Test Plan: Structure, Contents and Practical Approach", "item": "https://raitsolution.de/blog-testkonzept-en.html"}]}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a test plan and a test strategy?", "acceptedAnswer": {"@type": "Answer", "text": "The test strategy defines at a higher level how an organisation or programme tests in general. The test plan applies these guidelines to a specific project or release and describes scope, approach, resources, schedule and release criteria."}}, {"@type": "Question", "name": "Who writes the test plan?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the test manager or the person responsible for quality assurance. It is developed together with project management, development, business and operations, and it is reviewed and approved by the stakeholders."}}, {"@type": "Question", "name": "Do you need a test plan in Scrum?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but in a lean form. An overarching test plan covers test levels, environments, automation and quality criteria. The details live in the acceptance criteria of the user stories and in the Definition of Done."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a test plan look like?", "acceptedAnswer": {"@type": "Answer", "text": "A lean test plan usually has seven sections: purpose and scope, test approach, risks and priorities, test environment and test data, roles and schedule, entry and exit criteria, and defect management and reporting. For a single release, each section often fits on a few lines or in a short table."}}, {"@type": "Question", "name": "What is the difference between a test plan and a test strategy?", "acceptedAnswer": {"@type": "Answer", "text": "The test strategy defines at a higher level how an organisation or programme tests in general. The test plan applies these guidelines to a specific project or release and describes scope, approach, resources, schedule and release criteria."}}, {"@type": "Question", "name": "Who writes the test plan?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the test manager or the person responsible for quality assurance. It is developed together with project management, development, business and operations, and it is reviewed and approved by the stakeholders."}}, {"@type": "Question", "name": "Do you need a test plan in Scrum?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but in a lean form. An overarching test plan covers test levels, environments, automation and quality criteria. The details live in the acceptance criteria of the user stories and in the Definition of Done."}}]}</script>
 </head>
 <body>
 <nav><div class="nav-in">
@@ -105,7 +105,7 @@
   <p>Which test levels does the project have – component, integration, system and acceptance testing – and who is responsible for each? Then come the test types: functional tests, regression tests and non-functional tests such as performance, security or usability. For the last level before go-live, see our article <a href="blog-abnahmetests-en.html" class="inl">Acceptance Testing: How to Get Software Sign-Off Right</a>.</p>
 
   <h3>3. Risk-based prioritisation</h3>
-  <p>Not everything can be tested with the same depth. A good test plan rates functions by business criticality and likelihood of failure and derives the test depth from that. Critical core processes are tested intensively, peripheral functions with less effort. The project risks identified through <a href="blog-risikomanagement-en.html" class="inl">risk management in IT projects</a> are a valuable input here.</p>
+  <p>Not everything can be tested with the same depth. A good test plan rates functions by business criticality and likelihood of failure and derives the test depth from that. Critical core processes are tested intensively, peripheral functions with less effort. The project risks identified through <a href="blog-risikomanagement-en.html" class="inl">risk management in IT projects</a> are a valuable input here. How to apply this method systematically is explained in <a href="blog-risikobasiertes-testen-en.html" class="inl">Risk-Based Testing</a>.</p>
 
   <h3>4. Test environment and test data</h3>
   <p>Which environments are used for testing, who provides them, and how close are they to production? Test data is a frequently underestimated bottleneck: will anonymised production data be used or synthetic data generated? Where personal data is involved, data protection must be considered from the start.</p>
@@ -118,6 +118,19 @@
 
   <h3>7. Defect management and reporting</h3>
   <p>How are defects recorded, classified and tracked? Which severity levels exist, and who decides whether they are fixed? Then there is reporting: which metrics – such as test progress, open defects by severity, requirements coverage – are reported to whom and when? The end result is a test summary report with a clear release recommendation.</p>
+
+  <h2>Test plan example: what a lean outline looks like</h2>
+  <p>What does a test plan look like in practice? For a typical release of a business application, an outline like the following is often enough. Each point fits on a few lines or in a short table:</p>
+  <ul>
+    <li><strong>1. Purpose and scope:</strong> which release, which test items, what is explicitly not tested.</li>
+    <li><strong>2. Test approach:</strong> test levels (e.g. integration, system and acceptance testing), test types (functional, regression, load) and the share of automation.</li>
+    <li><strong>3. Risks and priorities:</strong> a short list of critical business processes and the test depth assigned to each.</li>
+    <li><strong>4. Environment and data:</strong> which test environment, where the test data comes from, how personal data is protected.</li>
+    <li><strong>5. Roles and schedule:</strong> who tests, who decides on releases, milestones up to go-live.</li>
+    <li><strong>6. Criteria:</strong> entry, exit and suspension criteria as measurable statements.</li>
+    <li><strong>7. Defects and reporting:</strong> defect classes, workflow, format and frequency of the status report.</li>
+  </ul>
+  <p>This structure follows the contents described above. It can be extended for large or regulated projects, but it rarely needs to be longer for a single release.</p>
 
   <h2>Writing a test plan: five steps</h2>
   <ul>
@@ -144,6 +157,8 @@
   <p>A test plan is not an end in itself but a shared understanding of how quality is demonstrated in the project. Clarifying objectives, scope, priorities, environments, responsibilities and release criteria early avoids debates shortly before go-live and creates a solid basis for the release decision. Why quality assurance as a whole determines project success is explained in <a href="blog-qa-en.html" class="inl">Why Quality Assurance Decides Project Success</a>.</p>
 
   <h2>Frequently asked questions about test plans</h2>
+  <h3>What does a test plan look like?</h3>
+  <p>A lean test plan usually has seven sections: purpose and scope, test approach, risks and priorities, test environment and test data, roles and schedule, entry and exit criteria, and defect management and reporting. For a single release, each section often fits on a few lines or in a short table.</p>
   <h3>What is the difference between a test plan and a test strategy?</h3>
   <p>The test strategy defines at a higher level how an organisation or programme tests in general. The test plan applies these guidelines to a specific project or release and describes scope, approach, resources, schedule and release criteria.</p>
   <h3>Who writes the test plan?</h3>
