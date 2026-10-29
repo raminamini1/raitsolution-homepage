@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Teststrategie: Inhalte, Beispiel und Vorgehen | RAIT Solution</title>
+  <meta name="description" content="Teststrategie erstellen: was hineingehört, wie sie sich vom Testkonzept unterscheidet und wie Sie sie in 5 Schritten mit Beispiel-Gliederung aufbauen.">
+  <link rel="canonical" href="https://raitsolution.de/blog-teststrategie.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-teststrategie.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-teststrategie-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-teststrategie.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Teststrategie: Inhalte, Beispiel und Vorgehen | RAIT Solution">
+  <meta property="og:description" content="Teststrategie in der Softwareentwicklung: Qualitätsziele, Teststufen, Testarten, Automatisierung, Strategieansätze nach ISTQB und Beispiel.">
+  <meta property="og:url" content="https://raitsolution.de/blog-teststrategie.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teststrategie: Inhalte, Beispiel und Vorgehen | RAIT Solution">
+  <meta name="twitter:description" content="Teststrategie in der Softwareentwicklung: Qualitätsziele, Teststufen, Testarten, Automatisierung, Strategieansätze nach ISTQB und Beispiel.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Teststrategie: So legen Sie fest, wie in Ihrem Softwareprojekt getestet wird", "description": "Teststrategie erstellen: was hineingehört, wie sie sich vom Testkonzept unterscheidet und wie Sie sie in 5 Schritten mit Beispiel-Gliederung aufbauen.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-teststrategie.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-teststrategie.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-29", "dateModified": "2026-10-29", "about": {"@type": "Thing", "name": "Teststrategie"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Teststrategie: So legen Sie fest, wie in Ihrem Softwareprojekt getestet wird", "item": "https://raitsolution.de/blog-teststrategie.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wer erstellt die Teststrategie?", "acceptedAnswer": {"@type": "Answer", "text": "In der Regel das Testmanagement oder eine erfahrene Testleitung. Die Inhalte entstehen aber gemeinsam mit Entwicklung, Fachbereich, Betrieb und Projektleitung, denn nur so werden Qualitätsziele und Risiken realistisch eingeschätzt und die Vorgaben später auch eingehalten."}}, {"@type": "Question", "name": "Wie oft sollte eine Teststrategie überarbeitet werden?", "acceptedAnswer": {"@type": "Answer", "text": "Eine feste Regel gibt es nicht. Bewährt hat sich eine Überprüfung etwa einmal im Jahr sowie immer dann, wenn sich Architektur, Teamstruktur, Release-Takt oder regulatorische Vorgaben deutlich ändern."}}, {"@type": "Question", "name": "Braucht jedes Projekt eine eigene Teststrategie?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht unbedingt. Gibt es eine übergreifende Teststrategie im Unternehmen, reicht für ein einzelnes Projekt oft ein Testkonzept, das darauf verweist und die Abweichungen beschreibt. Fehlt eine solche Strategie, sollten ihre Kernaussagen im Testkonzept des Projekts stehen."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-teststrategie.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-teststrategie-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung · Teststrategie</span>
+  <h1>Teststrategie: So legen Sie fest, wie in Ihrem Softwareprojekt getestet wird</h1>
+  <p class="meta"><time datetime="2026-10-29">29. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">Viele Projekte haben Testfälle, Testwerkzeuge und manchmal sogar ein ausführliches Testkonzept – aber keine gemeinsame Vorstellung davon, wie grundsätzlich getestet werden soll. Dann entscheidet jedes Team selbst, was „ausreichend getestet“ bedeutet. Eine Teststrategie schafft diesen gemeinsamen Rahmen. Dieser Artikel zeigt, was eine Teststrategie ist, was hineingehört und wie Sie sie in fünf Schritten entwickeln.</p>
+
+  <h2>Was ist eine Teststrategie?</h2>
+  <p>Eine <strong>Teststrategie</strong> beschreibt den grundsätzlichen Testansatz für eine Organisation, ein Programm oder ein Produkt: welche Qualitätsziele verfolgt werden, welche Teststufen und Testarten Standard sind, wie nach Risiken priorisiert wird, welcher Automatisierungsgrad angestrebt wird und wer wofür verantwortlich ist. Sie beantwortet also die Frage, <em>wie</em> getestet wird – nicht, welcher Testfall wann von wem ausgeführt wird.</p>
+  <p>Eine gute Teststrategie ist kurz genug, dass sie gelesen wird, und konkret genug, dass sich Entscheidungen daraus ableiten lassen. Ein Satz wie „Wir testen gründlich“ ist keine Strategie. „Jede Änderung an der Zahlungsabwicklung durchläuft automatisierte API-Tests und einen fachlichen Abnahmetest“ dagegen schon.</p>
+
+  <h2>Teststrategie und Testkonzept: die Abgrenzung</h2>
+  <p>Die Begriffe werden oft vermischt. Hilfreich ist eine einfache Arbeitsteilung:</p>
+  <ul>
+    <li><strong>Teststrategie:</strong> der übergreifende, eher stabile Rahmen. Sie gilt für mehrere Projekte, Releases oder Teams und ändert sich selten.</li>
+    <li><strong>Testkonzept:</strong> die Umsetzung für ein konkretes Projekt oder Release – mit Testobjekten, Umfang, Testumgebungen, Zeitplan, Rollen und Endekriterien. Wie Sie es aufbauen, beschreibt unser Artikel <a href="blog-testkonzept.html" class="inl">Testkonzept erstellen</a>.</li>
+    <li><strong>Testfälle und Testskripte:</strong> die konkrete Ausführungsebene, abgeleitet aus Anforderungen und Testkonzept.</li>
+  </ul>
+  <p>In kleineren Vorhaben verschmelzen Teststrategie und Testkonzept häufig zu einem Dokument. Das ist in Ordnung, solange klar bleibt, welche Aussagen grundsätzlich gelten und welche nur für dieses eine Projekt.</p>
+
+  <h2>Was in eine Teststrategie gehört</h2>
+  <h3>Qualitätsziele und Geltungsbereich</h3>
+  <p>Am Anfang steht, wofür die Strategie gilt und welche Qualitätsmerkmale besonders wichtig sind. Für ein internes Verwaltungstool stehen vielleicht fachliche Korrektheit und Bedienbarkeit im Vordergrund, für ein Kundenportal zusätzlich Sicherheit, Verfügbarkeit und Antwortzeiten. Diese Gewichtung bestimmt alles Weitere.</p>
+  <h3>Teststufen und Testarten</h3>
+  <p>Die Strategie legt fest, welche Teststufen vorgesehen sind – etwa Komponenten-, Integrations-, System- und Abnahmetest – und wer sie verantwortet. Dazu kommen die Testarten: funktionale Tests, nicht-funktionale Tests wie <a href="blog-lasttests.html" class="inl">Lasttests</a> oder Sicherheitstests, <a href="blog-regressionstests.html" class="inl">Regressionstests</a> und Fehlernachtests. Wichtig ist auch, was bewusst nicht getestet wird.</p>
+  <h3>Risikobasierte Priorisierung</h3>
+  <p>Kein Team kann alles gleich gründlich testen. Die Strategie beschreibt deshalb, wie Risiken bewertet werden und wie sich das auf Testtiefe und Reihenfolge auswirkt. Das Vorgehen im Detail erklärt unser Artikel <a href="blog-risikobasiertes-testen.html" class="inl">Risikobasiertes Testen</a>.</p>
+  <h3>Automatisierung und Testpyramide</h3>
+  <p>Hier wird festgelegt, welche Tests automatisiert werden, auf welcher Ebene und mit welchem Ziel. Ein bewährtes Leitbild ist die Testpyramide: viele schnelle Tests auf Komponenten- und API-Ebene, weniger Tests über die Benutzeroberfläche. Die Strategie sollte auch klären, wie automatisierte Tests in die CI/CD-Pipeline eingebunden werden. Wie der Einstieg gelingt, beschreibt <a href="blog-testautomatisierung.html" class="inl">Testautomatisierung einführen</a>.</p>
+  <h3>Testumgebungen und Testdaten</h3>
+  <p>Welche Umgebungen gibt es, wie nah sind sie an der Produktion, und woher kommen die Testdaten? Gerade bei personenbezogenen Daten muss die Strategie vorgeben, ob anonymisierte Produktionsdaten oder synthetische Daten verwendet werden.</p>
+  <h3>Rollen, Fehlermanagement und Reporting</h3>
+  <p>Zum Rahmen gehören klare Zuständigkeiten (Entwicklung, Test, Fachbereich, Testmanagement), ein einheitlicher Umgang mit Fehlern inklusive Fehlerklassen sowie ein Reporting, das Entscheidungen unterstützt. Ebenfalls hierher gehören die eingesetzten Werkzeuge, etwa für Testmanagement und Fehlerverfolgung.</p>
+
+  <h2>Welche Strategieansätze es gibt</h2>
+  <p>Der ISTQB-Lehrplan unterscheidet mehrere grundlegende Ansätze, die in der Praxis fast immer kombiniert werden:</p>
+  <ul>
+    <li><strong>Analytisch:</strong> Tests werden aus einer Analyse abgeleitet, typischerweise aus Risiken oder Anforderungen.</li>
+    <li><strong>Modellbasiert:</strong> Tests entstehen aus Modellen, etwa Geschäftsprozessen oder Zustandsdiagrammen.</li>
+    <li><strong>Methodisch:</strong> Tests folgen vorab definierten Checklisten oder Qualitätsmerkmalen.</li>
+    <li><strong>Prozess- oder standardkonform:</strong> Tests richten sich nach Normen oder Branchenvorgaben, wichtig in regulierten Umgebungen.</li>
+    <li><strong>Reaktiv:</strong> Tests werden während der Ausführung entworfen, zum Beispiel beim explorativen Testen.</li>
+    <li><strong>Regressionsvermeidend:</strong> Schwerpunkt auf der Wiederverwendung bestehender Tests und hoher Automatisierung.</li>
+    <li><strong>Beratend:</strong> Testumfang und Schwerpunkte werden maßgeblich von Fachexperten oder Stakeholdern bestimmt.</li>
+  </ul>
+  <p>Eine verbreitete Kombination ist ein analytischer, risikobasierter Kern, ergänzt um eine regressionsvermeidende Automatisierung und reaktive, explorative Tests für neue Funktionen.</p>
+
+  <h2>Teststrategie entwickeln in fünf Schritten</h2>
+  <h3>1. Kontext und Qualitätsziele klären</h3>
+  <p>Sprechen Sie mit Fachbereich, Entwicklung, Betrieb und gegebenenfalls Compliance: Welche Qualitätsmerkmale zählen am meisten, welche Vorgaben gibt es, wie oft wird ausgeliefert? Hilfreich ist auch ein ehrlicher Blick auf den Ist-Zustand – wo traten zuletzt Fehler in der Produktion auf, wo kostet der Test heute am meisten Zeit?</p>
+  <h3>2. Risiken und Schwerpunkte festlegen</h3>
+  <p>Leiten Sie aus den Qualitätszielen die wichtigsten Produktrisiken ab. Daraus ergibt sich, welche Bereiche und Qualitätsmerkmale besonders gründlich geprüft werden müssen.</p>
+  <h3>3. Teststufen, Testarten und Automatisierung zuordnen</h3>
+  <p>Legen Sie fest, welche Teststufe welche Risiken abdeckt, welche Testarten Pflicht sind und was automatisiert wird. Achten Sie darauf, dass dieselben Prüfungen nicht unnötig auf mehreren Stufen doppelt laufen.</p>
+  <h3>4. Rahmenbedingungen definieren</h3>
+  <p>Beschreiben Sie Testumgebungen, Testdaten, Werkzeuge, Rollen, Fehlerklassen und Reporting. Formulieren Sie außerdem übergreifende Qualitäts-Gates, etwa: Ein Release geht nur live, wenn alle Tests zu hohen Risiken bestanden sind und keine kritischen Fehler offen sind.</p>
+  <h3>5. Abstimmen, veröffentlichen und überprüfen</h3>
+  <p>Eine Teststrategie wirkt nur, wenn sie von den Beteiligten mitgetragen wird. Stimmen Sie den Entwurf ab, legen Sie ihn gut auffindbar ab und planen Sie eine regelmäßige Überprüfung, zum Beispiel einmal im Jahr oder bei größeren Änderungen an Architektur, Team oder Release-Takt.</p>
+
+  <h2>Beispiel: Gliederung einer schlanken Teststrategie</h2>
+  <p>Für eine Webanwendung mit regelmäßigen Releases kann eine Teststrategie auf wenigen Seiten auskommen:</p>
+  <ul>
+    <li><strong>Geltungsbereich und Qualitätsziele:</strong> Anwendung, Schnittstellen, wichtigste Qualitätsmerkmale.</li>
+    <li><strong>Teststufen und Verantwortung:</strong> Komponententests durch die Entwicklung, Integrations- und Systemtests im Team, Abnahmetest durch den Fachbereich.</li>
+    <li><strong>Testarten:</strong> funktionale Tests, Regressionstests, Last- und Sicherheitstests vor größeren Releases.</li>
+    <li><strong>Priorisierung:</strong> Risikobewertung pro Release mit drei Stufen.</li>
+    <li><strong>Automatisierung:</strong> Komponenten- und API-Tests in der Pipeline, wenige UI-Tests für Kernprozesse.</li>
+    <li><strong>Umgebungen und Daten:</strong> Test- und Abnahmeumgebung, synthetische Testdaten.</li>
+    <li><strong>Fehlermanagement, Reporting und Qualitäts-Gates:</strong> Fehlerklassen, Testbericht, Freigabekriterien.</li>
+  </ul>
+  <p>Das konkrete Testkonzept für ein Release verweist dann auf diese Strategie und beschreibt nur noch, was für dieses Release abweicht oder dazukommt.</p>
+
+  <h2>Teststrategie in agilen Teams</h2>
+  <p>Auch in Scrum braucht es eine Teststrategie – sie sieht nur anders aus. Statt eines umfangreichen Dokuments genügt oft eine kurze, gemeinsam gepflegte Seite im Wiki. Wichtige Teile der Strategie landen direkt in den Arbeitsvereinbarungen des Teams: in der Definition of Done, in Standards für Akzeptanzkriterien und in der Pipeline, die bei jeder Änderung die automatisierten Tests ausführt. Arbeiten mehrere Teams am selben Produkt, sorgt eine gemeinsame Strategie dafür, dass „fertig“ überall dasselbe bedeutet. Wie Testen im Sprint konkret funktioniert, zeigt unser Artikel <a href="blog-agiles-testen.html" class="inl">Agiles Testen in Scrum-Teams</a>.</p>
+
+  <h2>Typische Fehler bei der Teststrategie</h2>
+  <ul>
+    <li><strong>Strategie als Pflichtdokument:</strong> Sie wird einmal geschrieben, abgelegt und nie wieder gelesen. Dann ändert sie nichts.</li>
+    <li><strong>Zu allgemein:</strong> Aussagen wie „hohe Qualität sicherstellen“ lassen jede Interpretation zu. Gute Strategien enthalten überprüfbare Vorgaben.</li>
+    <li><strong>Zu detailliert:</strong> Testfälle, Termine und Namen gehören ins Testkonzept. Eine überladene Strategie veraltet schnell.</li>
+    <li><strong>Fachbereich nicht beteiligt:</strong> Ohne ihn fehlt die Einschätzung, welche Fehler im Betrieb wirklich teuer werden.</li>
+    <li><strong>Automatisierung ohne Ziel:</strong> „Möglichst viel automatisieren“ führt oft zu instabilen UI-Tests mit hohem Wartungsaufwand.</li>
+    <li><strong>Abnahme vergessen:</strong> Wer fachlich freigibt und nach welchen Kriterien, sollte schon in der Strategie stehen. Mehr dazu in <a href="blog-abnahmetests.html" class="inl">Abnahmetests: So gelingt die Softwareabnahme</a>.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Eine Teststrategie legt fest, wie in Ihrem Softwareprojekt grundsätzlich getestet wird: mit welchen Qualitätszielen, Teststufen, Testarten, Prioritäten und welchem Automatisierungsgrad. Sie ist kein Selbstzweck, sondern die gemeinsame Grundlage, auf der Testkonzepte, Testfälle und Freigabeentscheidungen aufbauen. Kurz, konkret und regelmäßig überprüft, sorgt sie dafür, dass die Testzeit dort ankommt, wo sie den größten Nutzen bringt.</p>
+
+  <h2>Häufige Fragen zur Teststrategie</h2>
+  <h3>Wer erstellt die Teststrategie?</h3>
+  <p>In der Regel das Testmanagement oder eine erfahrene Testleitung. Die Inhalte entstehen aber gemeinsam mit Entwicklung, Fachbereich, Betrieb und Projektleitung, denn nur so werden Qualitätsziele und Risiken realistisch eingeschätzt und die Vorgaben später auch eingehalten.</p>
+  <h3>Wie oft sollte eine Teststrategie überarbeitet werden?</h3>
+  <p>Eine feste Regel gibt es nicht. Bewährt hat sich eine Überprüfung etwa einmal im Jahr sowie immer dann, wenn sich Architektur, Teamstruktur, Release-Takt oder regulatorische Vorgaben deutlich ändern.</p>
+  <h3>Braucht jedes Projekt eine eigene Teststrategie?</h3>
+  <p>Nicht unbedingt. Gibt es eine übergreifende Teststrategie im Unternehmen, reicht für ein einzelnes Projekt oft ein Testkonzept, das darauf verweist und die Abweichungen beschreibt. Fehlt eine solche Strategie, sollten ihre Kernaussagen im Testkonzept des Projekts stehen.</p>
+
+  <div class="cta-box">
+    <h3>Teststrategie mit Erfahrung aufsetzen</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Projekt und zeigen, wie eine schlanke Teststrategie Ihre Qualitätssicherung wirksamer macht.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Qualitätssicherung</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website verwendet Cookies und ähnliche Technologien. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
