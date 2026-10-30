@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Test Management: Tasks, Role and Process | RAIT Solution</title>
+  <meta name="description" content="Test management in IT projects: tasks along the test process, the test manager role, useful metrics, test management tools and test management in agile teams.">
+  <link rel="canonical" href="https://raitsolution.de/blog-testmanagement-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-testmanagement.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-testmanagement-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-testmanagement.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Test Management: Tasks, Role and Process | RAIT Solution">
+  <meta property="og:description" content="Test management: test planning, test control, defect management, test reports and release – test manager role, metrics, tools and agile test management.">
+  <meta property="og:url" content="https://raitsolution.de/blog-testmanagement-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Test Management: Tasks, Role and Process | RAIT Solution">
+  <meta name="twitter:description" content="Test management: test planning, test control, defect management, test reports and release – test manager role, metrics, tools and agile test management.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Test Management: Tasks, Role and Process in IT Projects", "description": "Test management in IT projects: tasks along the test process, the test manager role, useful metrics, test management tools and test management in agile teams.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-testmanagement-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testmanagement-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-30", "dateModified": "2026-10-30", "about": {"@type": "Thing", "name": "Test management"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "Test Management: Tasks, Role and Process in IT Projects", "item": "https://raitsolution.de/blog-testmanagement-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does a test manager do?", "acceptedAnswer": {"@type": "Answer", "text": "A test manager plans the testing of a project, prioritises it by risk, coordinates testers and stakeholders, monitors test progress and defect status and reports regularly to project management and the business side. At the end, they give a well-founded release recommendation."}}, {"@type": "Question", "name": "What is the difference between test management and quality assurance?", "acceptedAnswer": {"@type": "Answer", "text": "Quality assurance covers all measures that safeguard software quality, including reviews, guidelines and clear requirements. Test management is part of it and focuses on planning, controlling and evaluating the tests."}}, {"@type": "Question", "name": "Which certification is available for test managers?", "acceptedAnswer": {"@type": "Answer", "text": "The ISTQB scheme is widely used: the Advanced Level Test Management builds on the Foundation Level and specifically covers test planning, test control, risk management and leading test teams. Practical project experience remains at least as important as the certificate."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-testmanagement.html" class="lang-btn">DE</a>
+    <a href="blog-testmanagement-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Quality Assurance · Test Management</span>
+  <h1>Test Management: Tasks, Role and Process in IT Projects</h1>
+  <p class="meta"><time datetime="2026-10-30">30 October 2026</time> · Ramin Amini</p>
+  <p class="lead">Many projects test a lot but steer very little. Test cases are created in different teams, defects sit in several lists, and shortly before go-live nobody knows exactly how well the software has actually been tested. Test management closes this gap. This article explains what test management covers, which tasks a test manager takes on and how to set it up effectively in both traditional and agile projects.</p>
+
+  <h2>What is test management?</h2>
+  <p><strong>Test management</strong> covers the planning, control and monitoring of all test activities in a project or programme. It ensures that the right things are tested at the right time, that results are documented traceably and that release decisions are based on reliable information.</p>
+  <p>It helps to distinguish it from related terms:</p>
+  <ul>
+    <li><strong>Quality assurance</strong> is broader. Besides testing, it includes preventive measures such as reviews, coding guidelines and clear requirements.</li>
+    <li><strong>Test strategy and test plan</strong> are documents. The <a href="blog-teststrategie-en.html" class="inl">test strategy</a> describes how testing is done in principle, the <a href="blog-testkonzept-en.html" class="inl">test plan</a> makes this concrete for one project. Test management is the activity that creates both, puts them into practice and adapts them continuously.</li>
+    <li><strong>Testing</strong> itself, i.e. designing and executing test cases, is the operational work that test management plans and coordinates.</li>
+  </ul>
+
+  <h2>Test management tasks along the test process</h2>
+  <p>The ISTQB test process consists of test planning, test monitoring and control, test analysis, test design, test implementation, test execution and test completion. Test management is primarily responsible for the framework: planning, control and completion.</p>
+  <h3>Test planning</h3>
+  <p>It starts with the question of what will be tested and what deliberately will not. This determines test levels, test types, test environments, test data, roles, dates and exit criteria. Priorities follow risk: areas whose failure would be costly in operation are tested first and most thoroughly. The article <a href="blog-risikobasiertes-testen-en.html" class="inl">Risk-Based Testing</a> shows how this works in practice.</p>
+  <h3>Test control and test monitoring</h3>
+  <p>No test plan survives reality unchanged. Deliveries arrive late, test environments go down, critical defects block entire test areas. Test management continuously compares plan and actual progress, spots deviations early and takes corrective action: shifting priorities, reallocating resources and reporting risks to project management.</p>
+  <h3>Defect management</h3>
+  <p>Defects are only valuable if they are handled reliably. Test management defines how defects are logged, rated by severity and priority, assigned and retested after the fix. A short, regular triage meeting with development and the business side prevents critical defects from getting lost in long lists.</p>
+  <h3>Test reports and release recommendation</h3>
+  <p>Stakeholders do not need lists of test cases but a clear statement: how far along are we, which risks remain, and can we release? A good test report answers exactly these questions and ends with a well-founded release recommendation. The actual decision is made by the project or the business side, for example as part of <a href="blog-abnahmetests-en.html" class="inl">acceptance testing</a>.</p>
+  <h3>Test completion</h3>
+  <p>After the release, testware is archived or handed over for maintenance, open defects are documented and lessons learned are recorded. What worked well, where were there delays? These lessons feed into the next release and improve the test process with every iteration.</p>
+
+  <h2>The role of the test manager</h2>
+  <p>A test manager needs methodological knowledge, but above all overview and strong communication skills. They translate between development, the business side, operations and project management and represent the quality perspective even when schedule pressure rises.</p>
+  <ul>
+    <li><strong>Test manager vs. tester:</strong> Testers design and execute test cases. The test manager plans, prioritises and makes sure the work of all testers fits together.</li>
+    <li><strong>Test manager vs. project manager:</strong> The project manager is responsible for the schedule, budget and scope of the whole project. The test manager provides the quality information on which they base their decisions.</li>
+    <li><strong>Independence:</strong> A test manager should be able to speak openly about risks without their report being tied to project goals they have to meet themselves.</li>
+  </ul>
+  <p>How quality assurance fits sensibly into the project plan is also described on our page on <a href="projektmanagement-en.html" class="inl">IT project management in Hamburg</a>.</p>
+
+  <h2>Test management metrics: few, but meaningful</h2>
+  <p>Metrics should support decisions, not document busyness. A small set of values, reviewed regularly and over time, has proven effective:</p>
+  <ul>
+    <li><strong>Test progress:</strong> planned, executed, passed and failed test cases, ideally split by risk class.</li>
+    <li><strong>Requirements coverage:</strong> which requirements are covered by tests, and which of them have been verified successfully?</li>
+    <li><strong>Defect status:</strong> open defects by severity and status, and the trend over time.</li>
+    <li><strong>Blockers:</strong> defects or environment problems that hold up entire test areas.</li>
+  </ul>
+  <p>Be careful with numbers without context: a high number of executed test cases says little if the critical business processes have not yet been tested. What matters is always what a metric says about the remaining risk.</p>
+
+  <h2>Test management tools: the tool follows the process</h2>
+  <p>Tools such as Jira with Xray or Zephyr, TestRail or Azure Test Plans help manage test cases, test runs and defects and link them to requirements. But they do not replace a process. Before introducing a tool, be clear about which information should end up in the test report. From that you can derive the structure the tool needs. A lean structure that is maintained consistently is worth more than an extensive setup that nobody keeps up to date. Automated tests, such as <a href="blog-regressionstests-en.html" class="inl">automated regression tests</a>, should feed their results into the same overview.</p>
+
+  <h2>Test management in agile projects</h2>
+  <p>Scrum teams have no separate test manager role; responsibility for quality lies with the whole team. The tasks of test management do not disappear, they are distributed: test planning happens in refinement and sprint planning, test control via the daily and the board, test reporting through the Definition of Done and the sprint review. Read more in <a href="blog-agiles-testen-en.html" class="inl">Agile Testing in Scrum Teams</a>.</p>
+  <p>As soon as several teams work on one product, interfaces to other systems exist or releases require formal approval, cross-team coordination is still needed. An agile test manager then works across teams: they ensure a shared test strategy, plan integration and end-to-end tests across team boundaries and support the teams as a coach.</p>
+
+  <h2>Common mistakes in test management</h2>
+  <ul>
+    <li><strong>Planning testing only at the end:</strong> If test management is involved shortly before go-live, test environments, test data and testable requirements are missing.</li>
+    <li><strong>Reports without a message:</strong> Tables full of numbers do not help if they are not followed by an assessment of risks and release readiness.</li>
+    <li><strong>Defects without owners:</strong> A defect without a responsible person and without a priority stays where it is.</li>
+    <li><strong>Plan not adapted:</strong> A test plan that ignores delays creates a false sense of security.</li>
+    <li><strong>Tool instead of process:</strong> A new tool does not resolve unclear responsibilities.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Test management turns many individual test activities into a process that can be steered. It plans based on risk, keeps track of progress and defects, takes corrective action when things deviate and provides a clear basis for the release decision. Whether as a dedicated role in a large project or distributed across agile teams: what matters is that someone keeps the overview and makes quality visible before the software goes live.</p>
+
+  <h2>Frequently asked questions about test management</h2>
+  <h3>What does a test manager do?</h3>
+  <p>A test manager plans the testing of a project, prioritises it by risk, coordinates testers and stakeholders, monitors test progress and defect status and reports regularly to project management and the business side. At the end, they give a well-founded release recommendation.</p>
+  <h3>What is the difference between test management and quality assurance?</h3>
+  <p>Quality assurance covers all measures that safeguard software quality, including reviews, guidelines and clear requirements. Test management is part of it and focuses on planning, controlling and evaluating the tests.</p>
+  <h3>Which certification is available for test managers?</h3>
+  <p>The ISTQB scheme is widely used: the Advanced Level Test Management builds on the Foundation Level and specifically covers test planning, test control, risk management and leading test teams. Practical project experience remains at least as important as the certificate.</p>
+
+  <div class="cta-box">
+    <h3>Test management with experience</h3>
+    <p>30-minute initial consultation — free and without obligation. Together we look at your project and show how structured test management makes your releases more predictable.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="qualitaetssicherung-en.html">Test management and software quality assurance in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="projektmanagement-en.html">IT Project Management in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="qualitaetssicherung-en.html">Quality Assurance</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website sets no cookies and does no profile-based tracking. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>

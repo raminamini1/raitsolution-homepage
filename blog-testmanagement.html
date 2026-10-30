@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Testmanagement: Aufgaben, Rolle und Vorgehen | RAIT Solution</title>
+  <meta name="description" content="Testmanagement in IT-Projekten: Aufgaben entlang des Testprozesses, Rolle des Testmanagers, sinnvolle Kennzahlen, Tools und Testmanagement in agilen Teams.">
+  <link rel="canonical" href="https://raitsolution.de/blog-testmanagement.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-testmanagement.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-testmanagement-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-testmanagement.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Testmanagement: Aufgaben, Rolle und Vorgehen | RAIT Solution">
+  <meta property="og:description" content="Testmanagement: Testplanung, Teststeuerung, Fehlermanagement, Testberichte und Freigabe – Rolle des Testmanagers, Kennzahlen, Tools und agiles Testmanagement.">
+  <meta property="og:url" content="https://raitsolution.de/blog-testmanagement.html">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Testmanagement: Aufgaben, Rolle und Vorgehen | RAIT Solution">
+  <meta name="twitter:description" content="Testmanagement: Testplanung, Teststeuerung, Fehlermanagement, Testberichte und Freigabe – Rolle des Testmanagers, Kennzahlen, Tools und agiles Testmanagement.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Testmanagement: Aufgaben, Rolle und Vorgehen in IT-Projekten", "description": "Testmanagement in IT-Projekten: Aufgaben entlang des Testprozesses, Rolle des Testmanagers, sinnvolle Kennzahlen, Tools und Testmanagement in agilen Teams.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "de", "url": "https://raitsolution.de/blog-testmanagement.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testmanagement.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT-Berater", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-30", "dateModified": "2026-10-30", "about": {"@type": "Thing", "name": "Testmanagement"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://raitsolution.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/#blog"}, {"@type": "ListItem", "position": 3, "name": "Testmanagement: Aufgaben, Rolle und Vorgehen in IT-Projekten", "item": "https://raitsolution.de/blog-testmanagement.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was macht ein Testmanager?", "acceptedAnswer": {"@type": "Answer", "text": "Ein Testmanager plant die Tests eines Projekts, priorisiert sie nach Risiko, koordiniert Tester und Beteiligte, überwacht Testfortschritt und Fehlerlage und berichtet regelmäßig an Projektleitung und Fachbereich. Am Ende gibt er eine begründete Freigabeempfehlung."}}, {"@type": "Question", "name": "Was ist der Unterschied zwischen Testmanagement und Qualitätssicherung?", "acceptedAnswer": {"@type": "Answer", "text": "Qualitätssicherung umfasst alle Maßnahmen, die die Qualität einer Software sichern, also auch Reviews, Richtlinien und saubere Anforderungen. Testmanagement ist ein Teil davon und konzentriert sich auf die Planung, Steuerung und Auswertung der Tests."}}, {"@type": "Question", "name": "Welche Zertifizierung gibt es für Testmanager?", "acceptedAnswer": {"@type": "Answer", "text": "Verbreitet ist das ISTQB-Schema: Auf dem Foundation Level baut das Advanced Level Test Management auf, das gezielt Testplanung, Teststeuerung, Risikomanagement und die Führung von Testteams behandelt. Praxiserfahrung in Projekten bleibt dabei mindestens ebenso wichtig wie das Zertifikat."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#about">Über uns</a></li>
+    <li><a href="index.html#services">Leistungen</a></li>
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#references">Referenzen</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="karriere.html">Karriere</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Erstgespräch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-testmanagement.html" class="lang-btn lang-active">DE</a>
+    <a href="blog-testmanagement-en.html" class="lang-btn">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index.html#blog" class="back">← Zurück zu Insights</a>
+  <span class="tag">Qualitätssicherung · Testmanagement</span>
+  <h1>Testmanagement: Aufgaben, Rolle und Vorgehen in IT-Projekten</h1>
+  <p class="meta"><time datetime="2026-10-30">30. Oktober 2026</time> · Ramin Amini</p>
+  <p class="lead">In vielen Projekten wird viel getestet, aber wenig gesteuert. Testfälle entstehen in verschiedenen Teams, Fehler liegen in mehreren Listen, und kurz vor dem Go-live weiß niemand genau, wie gut die Software tatsächlich geprüft ist. Testmanagement schließt diese Lücke. Dieser Artikel zeigt, was Testmanagement umfasst, welche Aufgaben ein Testmanager übernimmt und wie Sie es in klassischen und agilen Projekten wirksam aufstellen.</p>
+
+  <h2>Was ist Testmanagement?</h2>
+  <p><strong>Testmanagement</strong> umfasst die Planung, Steuerung und Überwachung aller Testaktivitäten in einem Projekt oder Programm. Es sorgt dafür, dass zur richtigen Zeit das Richtige getestet wird, dass Ergebnisse nachvollziehbar dokumentiert sind und dass Entscheidungen über eine Freigabe auf belastbaren Informationen beruhen.</p>
+  <p>Wichtig ist die Abgrenzung zu verwandten Begriffen:</p>
+  <ul>
+    <li><strong>Qualitätssicherung</strong> ist weiter gefasst. Sie umfasst neben dem Testen auch vorbeugende Maßnahmen wie Reviews, Coding-Richtlinien oder saubere Anforderungen.</li>
+    <li><strong>Teststrategie und Testkonzept</strong> sind Dokumente. Die <a href="blog-teststrategie.html" class="inl">Teststrategie</a> beschreibt, wie grundsätzlich getestet wird, das <a href="blog-testkonzept.html" class="inl">Testkonzept</a> konkretisiert das für ein Projekt. Testmanagement ist die Tätigkeit, die beides erstellt, umsetzt und laufend anpasst.</li>
+    <li><strong>Testen</strong> selbst, also das Entwerfen und Ausführen von Testfällen, ist die operative Arbeit, die das Testmanagement plant und koordiniert.</li>
+  </ul>
+
+  <h2>Die Aufgaben im Testmanagement entlang des Testprozesses</h2>
+  <p>Der Testprozess nach ISTQB gliedert sich in Testplanung, Testüberwachung und -steuerung, Testanalyse, Testentwurf, Testrealisierung, Testdurchführung und Testabschluss. Das Testmanagement verantwortet vor allem den Rahmen: Planung, Steuerung und Abschluss.</p>
+  <h3>Testplanung</h3>
+  <p>Am Anfang steht die Frage, was getestet wird und was bewusst nicht. Daraus ergeben sich Teststufen, Testarten, Testumgebungen, Testdaten, Rollen, Termine und Ende-Kriterien. Die Prioritäten richten sich nach dem Risiko: Bereiche, deren Ausfall im Betrieb teuer wäre, werden zuerst und am gründlichsten geprüft. Wie das konkret funktioniert, zeigt der Artikel <a href="blog-risikobasiertes-testen.html" class="inl">Risikobasiertes Testen</a>.</p>
+  <h3>Teststeuerung und Testüberwachung</h3>
+  <p>Kein Testplan übersteht die Realität unverändert. Lieferungen kommen später, Testumgebungen fallen aus, kritische Fehler blockieren ganze Testbereiche. Das Testmanagement vergleicht laufend Plan und Ist, erkennt Abweichungen früh und steuert nach: Prioritäten verschieben, Ressourcen umverteilen, Risiken an die Projektleitung melden.</p>
+  <h3>Fehlermanagement</h3>
+  <p>Gefundene Fehler sind nur dann wertvoll, wenn sie zuverlässig bearbeitet werden. Das Testmanagement legt fest, wie Fehler erfasst, nach Schweregrad und Priorität bewertet, zugewiesen und nach der Korrektur erneut geprüft werden. Ein regelmäßiger, kurzer Abstimmungstermin mit Entwicklung und Fachbereich verhindert, dass kritische Fehler in langen Listen untergehen.</p>
+  <h3>Testberichte und Freigabeempfehlung</h3>
+  <p>Stakeholder brauchen keine Testfalllisten, sondern eine klare Aussage: Wie weit sind wir, welche Risiken bestehen noch, und kann freigegeben werden? Ein guter Testbericht beantwortet genau diese Fragen und schließt mit einer begründeten Freigabeempfehlung. Die eigentliche Entscheidung trifft das Projekt oder der Fachbereich, etwa im Rahmen von <a href="blog-abnahmetests.html" class="inl">Abnahmetests</a>.</p>
+  <h3>Testabschluss</h3>
+  <p>Nach dem Release werden Testmittel archiviert oder für die Wartung übergeben, offene Fehler dokumentiert und Erkenntnisse festgehalten. Was hat gut funktioniert, wo gab es Verzögerungen? Diese Lehren fließen in das nächste Release ein und machen den Testprozess mit jeder Iteration besser.</p>
+
+  <h2>Die Rolle des Testmanagers</h2>
+  <p>Ein Testmanager braucht Methodenwissen, aber vor allem Überblick und Kommunikationsstärke. Er übersetzt zwischen Entwicklung, Fachbereich, Betrieb und Projektleitung und vertritt die Qualitätssicht auch dann, wenn der Termindruck steigt.</p>
+  <ul>
+    <li><strong>Abgrenzung zum Tester:</strong> Tester entwerfen und führen Testfälle aus. Der Testmanager plant, priorisiert und sorgt dafür, dass die Arbeit aller Tester zusammenpasst.</li>
+    <li><strong>Abgrenzung zur Projektleitung:</strong> Die Projektleitung verantwortet Termine, Budget und Umfang des gesamten Projekts. Der Testmanager liefert ihr die Qualitätsinformationen, auf deren Basis sie entscheidet.</li>
+    <li><strong>Unabhängigkeit:</strong> Ein Testmanager sollte offen über Risiken sprechen können, ohne dass sein Bericht an Projektziele gekoppelt ist, die er selbst erreichen muss.</li>
+  </ul>
+  <p>Wie sich die Qualitätssicherung sinnvoll in den Projektplan einfügt, beschreibt auch unsere Seite zum <a href="projektmanagement.html" class="inl">IT-Projektmanagement in Hamburg</a>.</p>
+
+  <h2>Kennzahlen im Testmanagement: wenige, aber aussagekräftige</h2>
+  <p>Kennzahlen sollen Entscheidungen unterstützen, nicht Fleiß dokumentieren. Bewährt haben sich wenige Werte, die regelmäßig und im Verlauf betrachtet werden:</p>
+  <ul>
+    <li><strong>Testfortschritt:</strong> geplante, durchgeführte, bestandene und fehlgeschlagene Testfälle, idealerweise nach Risikoklasse getrennt.</li>
+    <li><strong>Anforderungsabdeckung:</strong> Welche Anforderungen sind durch Tests abgedeckt und welche davon erfolgreich geprüft?</li>
+    <li><strong>Fehlerlage:</strong> offene Fehler nach Schweregrad und Status sowie der Trend über die Zeit.</li>
+    <li><strong>Blocker:</strong> Fehler oder Umgebungsprobleme, die ganze Testbereiche aufhalten.</li>
+  </ul>
+  <p>Vorsicht bei Zahlen ohne Kontext: Eine hohe Zahl ausgeführter Testfälle sagt wenig, wenn die kritischen Geschäftsprozesse noch nicht geprüft sind. Entscheidend ist immer, was eine Kennzahl über das verbleibende Risiko aussagt.</p>
+
+  <h2>Testmanagement-Tools: Das Werkzeug folgt dem Prozess</h2>
+  <p>Werkzeuge wie Jira mit Xray oder Zephyr, TestRail oder Azure Test Plans helfen, Testfälle, Testläufe und Fehler zu verwalten und mit Anforderungen zu verknüpfen. Sie ersetzen aber keinen Prozess. Bevor ein Tool eingeführt wird, sollte klar sein, welche Informationen am Ende im Testbericht stehen sollen. Davon lässt sich ableiten, welche Struktur im Tool nötig ist. Eine schlanke, konsequent gepflegte Struktur ist wertvoller als ein umfangreiches Setup, das niemand aktuell hält. Automatisierte Tests, etwa <a href="blog-regressionstests.html" class="inl">automatisierte Regressionstests</a>, sollten ihre Ergebnisse direkt in dieselbe Übersicht liefern.</p>
+
+  <h2>Testmanagement in agilen Projekten</h2>
+  <p>In Scrum-Teams gibt es keine eigene Testmanager-Rolle; die Verantwortung für Qualität liegt beim ganzen Team. Die Aufgaben des Testmanagements verschwinden dadurch nicht, sie verteilen sich: Testplanung findet im Refinement und Sprint Planning statt, Teststeuerung über Daily und Board, Testberichte in Form der Definition of Done und des Sprint Reviews. Mehr dazu im Artikel <a href="blog-agiles-testen.html" class="inl">Agiles Testen in Scrum-Teams</a>.</p>
+  <p>Sobald mehrere Teams an einem Produkt arbeiten, Schnittstellen zu anderen Systemen bestehen oder Releases formal freigegeben werden müssen, braucht es dennoch eine übergreifende Koordination. Ein agiler Testmanager arbeitet dann teamübergreifend: Er sorgt für eine gemeinsame Teststrategie, plant Integrations- und End-to-End-Tests über Teamgrenzen hinweg und unterstützt die Teams als Coach.</p>
+
+  <h2>Typische Fehler im Testmanagement</h2>
+  <ul>
+    <li><strong>Testen erst am Ende planen:</strong> Wird das Testmanagement erst kurz vor dem Go-live eingebunden, fehlen Testumgebungen, Testdaten und testbare Anforderungen.</li>
+    <li><strong>Berichte ohne Aussage:</strong> Tabellen voller Zahlen helfen nicht, wenn keine Einschätzung zu Risiken und Freigabe folgt.</li>
+    <li><strong>Fehler ohne Verantwortliche:</strong> Ein Fehler ohne zuständige Person und ohne Priorität bleibt liegen.</li>
+    <li><strong>Plan nicht angepasst:</strong> Ein Testplan, der Verzögerungen nicht berücksichtigt, gaukelt Sicherheit vor.</li>
+    <li><strong>Tool statt Prozess:</strong> Ein neues Werkzeug löst keine unklaren Zuständigkeiten.</li>
+  </ul>
+
+  <h2>Fazit</h2>
+  <p>Testmanagement macht aus vielen einzelnen Testaktivitäten einen steuerbaren Prozess. Es plant risikobasiert, behält Fortschritt und Fehlerlage im Blick, steuert bei Abweichungen nach und liefert eine klare Grundlage für die Freigabe. Ob als eigene Rolle in einem großen Projekt oder verteilt auf agile Teams: Entscheidend ist, dass jemand den Überblick hat und Qualität sichtbar macht, bevor die Software in Betrieb geht.</p>
+
+  <h2>Häufige Fragen zum Testmanagement</h2>
+  <h3>Was macht ein Testmanager?</h3>
+  <p>Ein Testmanager plant die Tests eines Projekts, priorisiert sie nach Risiko, koordiniert Tester und Beteiligte, überwacht Testfortschritt und Fehlerlage und berichtet regelmäßig an Projektleitung und Fachbereich. Am Ende gibt er eine begründete Freigabeempfehlung.</p>
+  <h3>Was ist der Unterschied zwischen Testmanagement und Qualitätssicherung?</h3>
+  <p>Qualitätssicherung umfasst alle Maßnahmen, die die Qualität einer Software sichern, also auch Reviews, Richtlinien und saubere Anforderungen. Testmanagement ist ein Teil davon und konzentriert sich auf die Planung, Steuerung und Auswertung der Tests.</p>
+  <h3>Welche Zertifizierung gibt es für Testmanager?</h3>
+  <p>Verbreitet ist das ISTQB-Schema: Auf dem Foundation Level baut das Advanced Level Test Management auf, das gezielt Testplanung, Teststeuerung, Risikomanagement und die Führung von Testteams behandelt. Praxiserfahrung in Projekten bleibt dabei mindestens ebenso wichtig wie das Zertifikat.</p>
+
+  <div class="cta-box">
+    <h3>Testmanagement mit Erfahrung</h3>
+    <p>30 Minuten Erstgespräch — kostenlos und unverbindlich. Wir schauen gemeinsam auf Ihr Projekt und zeigen, wie strukturiertes Testmanagement Ihre Releases planbarer macht.</p>
+    <a href="index.html#contact" class="btn">Jetzt Erstgespräch vereinbaren</a>
+    <p class="svc-more">Mehr zu unserer Leistung: <a href="qualitaetssicherung.html">Testmanagement und Software-Qualitätssicherung in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Passend dazu: <a href="projektmanagement.html">IT-Projektmanagement in Hamburg →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="qualitaetssicherung.html">Qualitätssicherung</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">Diese Website setzt keine Cookies und kein Tracking mit Profilbildung. Weitere Informationen in unserer <a href="datenschutz.html" style="color:#1a1a1a;text-decoration:underline">Datenschutzerklärung</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Ablehnen</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
