@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io https://api.web3forms.com; form-action 'self' https://formspree.io https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>How to Write Test Cases: Structure and Examples | RAIT Solution</title>
+  <meta name="description" content="How to write test cases anyone can run: test case structure, test design techniques like boundary value analysis, a worked example and tips for agile teams.">
+  <link rel="canonical" href="https://raitsolution.de/blog-testfaelle-en.html">
+  <link rel="alternate" hreflang="de" href="https://raitsolution.de/blog-testfaelle.html">
+  <link rel="alternate" hreflang="en" href="https://raitsolution.de/blog-testfaelle-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://raitsolution.de/blog-testfaelle.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Write Test Cases: Structure and Examples | RAIT Solution">
+  <meta property="og:description" content="Writing test cases in 5 steps: structure, equivalence partitioning, boundary value analysis, a test case example and Given-When-Then in Scrum.">
+  <meta property="og:url" content="https://raitsolution.de/blog-testfaelle-en.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:image" content="https://raitsolution.de/og-image.png">
+  <meta property="og:site_name" content="RAIT Solution">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Write Test Cases: Structure and Examples | RAIT Solution">
+  <meta name="twitter:description" content="Writing test cases in 5 steps: structure, equivalence partitioning, boundary value analysis, a test case example and Given-When-Then in Scrum.">
+  <meta name="twitter:image" content="https://raitsolution.de/og-image.png">
+  <meta name="robots" content="index, follow">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="fonts/fonts.css"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{background:#fff;border-bottom:1px solid #ebebeb;position:sticky;top:0;z-index:200;padding:0 60px}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+    .logo{display:flex;align-items:center;gap:12px}.logo-mark{background:#1a1a1a;color:#fff;font-weight:800;font-size:11px;padding:7px 10px;border-radius:4px;letter-spacing:2px}.logo-name{color:#1a1a1a;font-weight:700;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:44px;list-style:none;align-items:center}.nav-links a{color:#aaa;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:#1a1a1a}
+    .nav-cta{color:#1a1a1a !important;font-weight:700 !important}
+    .article{max-width:720px;margin:0 auto;padding:80px 60px}
+    .back{color:#aaa;font-size:13px;margin-bottom:40px;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back:hover{color:#1a1a1a}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:16px;display:block}
+    h1{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:24px;color:#0d0d0d}
+    .lead{font-size:18px;line-height:1.8;color:#444;margin-bottom:40px;border-left:3px solid #1a1a1a;padding-left:20px}
+    h2{font-size:22px;font-weight:700;margin:40px 0 14px;color:#0d0d0d}
+    p{color:#555;font-size:16px;line-height:1.85;margin-bottom:16px}
+    ul{color:#555;font-size:16px;line-height:1.85;margin:12px 0 16px 20px}
+    .cta-box{background:#f8f8f8;border:1px solid #ebebeb;border-radius:4px;padding:40px;margin-top:60px;text-align:center}
+    .cta-box h3{font-size:20px;font-weight:700;margin-bottom:10px}
+    .cta-box p{color:#666;margin-bottom:24px}
+    .meta{font-size:13px;color:#999;margin:-8px 0 28px}.cta-box .svc-more{margin:20px 0 0;font-size:14px}.svc-more a{color:#1a1a1a;font-weight:600;text-decoration:underline}
+    .btn{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:14px;display:inline-block;transition:opacity .2s}.btn:hover{opacity:.85}
+    footer{background:#0d0d0d;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:80px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,0.3);font-size:13px}.footer-links a:hover{color:rgba(255,255,255,0.6)}
+    .footer-copy{color:rgba(255,255,255,0.2);font-size:12px}
+    .lang-sw{display:flex;align-items:center;margin-left:20px;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;flex-shrink:0}
+    .lang-btn{font-size:10px;font-weight:700;letter-spacing:1px;padding:5px 9px;color:#aaa;text-transform:uppercase;transition:all .2s;line-height:1}
+    .lang-btn:hover{color:#1a1a1a}
+    .lang-active{background:#1a1a1a;color:#fff !important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:10px;align-items:center}.nav-toggle span{display:block;width:22px;height:2px;background:#1a1a1a;border-radius:2px}
+    @media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.lang-sw{margin-left:auto;margin-right:8px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ebebeb;box-shadow:0 8px 24px rgba(0,0,0,.08);gap:0;z-index:100}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 0;border-bottom:1px solid #f5f5f5}.nav-links li:last-child a{border-bottom:none}.nav-toggle{display:flex !important}}
+    @media(max-width:700px){.article{padding:48px 24px}h1{font-size:28px}}
+    .article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#0d0d0d}.inl{color:#1a1a1a;font-weight:600;text-decoration:underline}
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Write Test Cases: Structure, Test Design Techniques and Examples", "description": "How to write test cases anyone can run: test case structure, test design techniques like boundary value analysis, a worked example and tips for agile teams.", "image": "https://raitsolution.de/og-image.png", "inLanguage": "en", "url": "https://raitsolution.de/blog-testfaelle-en.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://raitsolution.de/blog-testfaelle-en.html"}, "author": {"@type": "Person", "name": "Ramin Amini", "jobTitle": "IT Consultant", "worksFor": {"@id": "https://raitsolution.de/#organization"}}, "publisher": {"@type": "Organization", "name": "RAIT Solution", "url": "https://raitsolution.de", "logo": "https://raitsolution.de/favicon-512.png"}, "datePublished": "2026-10-31", "dateModified": "2026-10-31", "about": {"@type": "Thing", "name": "Writing test cases"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://raitsolution.de/index-en.html"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://raitsolution.de/index-en.html#blog"}, {"@type": "ListItem", "position": 3, "name": "How to Write Test Cases: Structure, Test Design Techniques and Examples", "item": "https://raitsolution.de/blog-testfaelle-en.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you write a good test case?", "acceptedAnswer": {"@type": "Answer", "text": "A good test case has a meaningful title, a link to the requirement, clear preconditions, concrete test data, short numbered steps and a precise, verifiable expected result. It checks exactly one test objective and can be executed independently of other test cases."}}, {"@type": "Question", "name": "What is the difference between a test case and a test scenario?", "acceptedAnswer": {"@type": "Answer", "text": "A test scenario roughly describes what should be checked, such as \"customer orders as a guest\". A test case makes this concrete with preconditions, test data, steps and an expected result. One test scenario usually leads to several test cases."}}, {"@type": "Question", "name": "How many test cases does a requirement need?", "acceptedAnswer": {"@type": "Answer", "text": "That depends on risk and complexity. Every requirement should have at least one test case for the happy path; invalid inputs, boundary values and special cases are added depending on their importance. Test design techniques such as equivalence partitioning and boundary value analysis keep the number manageable."}}]}</script>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="index-en.html" class="logo"><div class="logo-mark">RA</div><div class="logo-name">IT SOLUTION</div></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index-en.html#about">About</a></li>
+    <li><a href="index-en.html#services">Services</a></li>
+    <li><a href="index-en.html#team">Team</a></li>
+    <li><a href="index-en.html#references">References</a></li>
+    <li><a href="index-en.html#blog">Blog</a></li>
+    <li><a href="karriere-en.html">Careers</a></li>
+    <li><a href="index-en.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="lang-sw">
+    <a href="blog-testfaelle.html" class="lang-btn">DE</a>
+    <a href="blog-testfaelle-en.html" class="lang-btn lang-active">EN</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<div class="article">
+  <a href="index-en.html#blog" class="back">← Back to Insights</a>
+  <span class="tag">Quality Assurance · Test Cases</span>
+  <h1>How to Write Test Cases: Structure, Test Design Techniques and Examples</h1>
+  <p class="meta"><time datetime="2026-10-31">31 October 2026</time> · Ramin Amini</p>
+  <p class="lead">A test case is only as good as its description. If it just says "check login", everyone tests something different, and a defect can hardly be reproduced later. Well-written test cases, on the other hand, are unambiguous, repeatable and can be automated when needed. This article shows how to write test cases: which structure has proven itself, which techniques help you find the right test cases and what matters in agile teams.</p>
+
+  <h2>What is a test case?</h2>
+  <p>A <strong>test case</strong> describes under which preconditions, with which inputs and in which steps a specific behaviour of the software is checked, and which result is expected. The decisive part is the expected result: only the comparison between expected and actual behaviour turns using the software into a test.</p>
+  <p>Test cases do not stand alone. Which areas are tested at all, and how thoroughly, is defined in the <a href="blog-teststrategie-en.html" class="inl">test strategy</a> and the <a href="blog-testkonzept-en.html" class="inl">test plan</a>. Test cases put these decisions into practice at the operational level.</p>
+
+  <h2>Test case structure: the building blocks</h2>
+  <p>Whether in Jira, a test management tool or a spreadsheet, a good test case always contains the same building blocks.</p>
+  <ul>
+    <li><strong>ID and title:</strong> a unique identifier and a title that names the behaviour under test, such as "Login with a locked user account is rejected".</li>
+    <li><strong>Link to the requirement:</strong> a reference to the user story, requirement or acceptance criterion, so it stays traceable which requirements are covered.</li>
+    <li><strong>Preconditions:</strong> what must be in place before the test, for example a specific user, role or data state.</li>
+    <li><strong>Test data:</strong> concrete input values instead of "valid data".</li>
+    <li><strong>Test steps:</strong> numbered, short steps, one action per step.</li>
+    <li><strong>Expected result:</strong> precise and verifiable, per step where needed.</li>
+    <li><strong>Priority:</strong> derived from the risk of the area under test.</li>
+  </ul>
+  <p>More fields are possible but rarely necessary. Every additional mandatory field costs time in maintenance, and fields that are only partly filled in confuse more than they help.</p>
+
+  <h2>How to write test cases in five steps</h2>
+  <h3>1. Understand the requirement and clarify the test basis</h3>
+  <p>Test cases are derived from requirements, user stories, process descriptions or interface specifications. Unclear or contradictory requirements surface particularly early when you write test cases. Clarify these questions before you continue. The article <a href="blog-anforderungen-en.html" class="inl">Clean requirements in IT projects</a> explains why this matters so much.</p>
+  <h3>2. Derive test conditions</h3>
+  <p>First note <em>what</em> should be checked before deciding <em>how</em>. For a login, these could be: successful login, wrong password, locked account, lockout after several failed attempts, empty mandatory fields. This list quickly shows whether important cases are missing.</p>
+  <h3>3. Apply test design techniques</h3>
+  <p>For each test condition, choose suitable input values. Proven techniques for this are described in the next section. They help you find as many defects as possible with few test cases.</p>
+  <h3>4. Write out the test case</h3>
+  <p>Write preconditions, steps and expected results so that a knowledgeable person can test without asking questions. One action per step, concrete values, no room for interpretation.</p>
+  <h3>5. Review and prioritise</h3>
+  <p>Have test cases reviewed by a second person, ideally from the business side. Give each test case a priority based on risk, so that you know what to test first when time is short. The article <a href="blog-risikobasiertes-testen-en.html" class="inl">Risk-based testing</a> describes how.</p>
+
+  <h2>Test design techniques: finding the right test cases</h2>
+  <p>Testing every conceivable combination is practically never possible. Test design techniques help you systematically pick a small but meaningful selection.</p>
+  <ul>
+    <li><strong>Equivalence partitioning:</strong> inputs that should behave the same are grouped into classes. One representative per class is enough.</li>
+    <li><strong>Boundary value analysis:</strong> defects often occur at the edges of value ranges, so the values directly at and next to each boundary are tested.</li>
+    <li><strong>Decision tables:</strong> when several conditions jointly determine a result, such as discount or tariff rules, a table makes all relevant combinations visible.</li>
+    <li><strong>State transition testing:</strong> for processes with a status, for example order created, approved, cancelled, you check allowed and disallowed transitions.</li>
+    <li><strong>Experience-based testing:</strong> knowledge of typical sources of defects complements the systematic techniques, such as special characters, empty inputs or concurrent editing.</li>
+  </ul>
+
+  <h2>Test case example with boundary value analysis</h2>
+  <p>Suppose the requirement reads: "After three consecutive wrong password entries, the account is locked." The boundary is three failed attempts. Useful test cases therefore cover two, three and, as confirmation, four failed attempts. One of these test cases could look like this:</p>
+  <ul>
+    <li><strong>Title:</strong> Account is locked after the third wrong password</li>
+    <li><strong>Requirement:</strong> story "Account lockout after failed attempts"</li>
+    <li><strong>Precondition:</strong> test user "test.customer" is active, failed-attempt counter is 0</li>
+    <li><strong>Steps:</strong> 1. Open the login page. 2. Log in as "test.customer" with a wrong password. 3. Repeat step 2 two more times. 4. Try to log in with the correct password.</li>
+    <li><strong>Expected result:</strong> after step 3, a message states that the account is locked. In step 4, the login is rejected despite the correct password.</li>
+    <li><strong>Priority:</strong> high (security-relevant)</li>
+  </ul>
+  <p>The test case for two failed attempts checks the counterpart: after the second failed attempt, logging in with the correct password must still be possible.</p>
+
+  <h2>What makes a good test case</h2>
+  <ul>
+    <li><strong>Unambiguous:</strong> two people execute the test case the same way and reach the same verdict.</li>
+    <li><strong>Independent:</strong> a test case does not assume that another one has run before. This makes prioritisation and automation easier.</li>
+    <li><strong>Focused:</strong> one test objective per test case. If it fails, it is immediately clear what does not work.</li>
+    <li><strong>Traceable:</strong> the link to the requirement is documented.</li>
+    <li><strong>Maintainable:</strong> recurring flows such as logging in are described as preconditions, not repeated in every test case.</li>
+  </ul>
+
+  <h2>Writing test cases in agile teams</h2>
+  <p>In Scrum teams, test cases are not written in a separate phase but together with the user story. Acceptance criteria are the most important test basis. The <strong>Given-When-Then</strong> format has proven itself: "Given an active account, when a wrong password is entered three times, then the account is locked." Criteria written this way are equally clear to the business, developers and testers and can be turned directly into automated tests. The article <a href="blog-agiles-testen-en.html" class="inl">Agile testing in Scrum</a> shows how testing works within the sprint as a whole.</p>
+  <p>Agile does not mean undocumented. Test cases for critical flows that are checked before every release belong in a maintained <a href="blog-regressionstests-en.html" class="inl">regression test suite</a>. Many of them are good candidates for <a href="blog-testautomatisierung-en.html" class="inl">test automation</a>.</p>
+
+  <h2>Common mistakes when writing test cases</h2>
+  <ul>
+    <li><strong>Missing or vague expected result:</strong> "works correctly" is not a verifiable result.</li>
+    <li><strong>Only the happy path is tested:</strong> invalid inputs, boundary values and cancellations often find the more important defects.</li>
+    <li><strong>Too much in one test case:</strong> long test cases with many objectives are hard to evaluate and maintain.</li>
+    <li><strong>Unclear test data:</strong> without concrete values, a test case cannot be repeated.</li>
+    <li><strong>No maintenance:</strong> test cases for changed functions are not updated and deliver wrong results.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>Good test cases are not a form to fill in but the result of clear thinking: what should be checked, with which values, and how do you recognise success? If you derive test conditions carefully, use test design techniques and write every test case unambiguously, you find more defects with less effort and create a solid basis for regression testing and automation.</p>
+
+  <h2>Frequently asked questions about writing test cases</h2>
+  <h3>How do you write a good test case?</h3>
+  <p>A good test case has a meaningful title, a link to the requirement, clear preconditions, concrete test data, short numbered steps and a precise, verifiable expected result. It checks exactly one test objective and can be executed independently of other test cases.</p>
+  <h3>What is the difference between a test case and a test scenario?</h3>
+  <p>A test scenario roughly describes what should be checked, such as "customer orders as a guest". A test case makes this concrete with preconditions, test data, steps and an expected result. One test scenario usually leads to several test cases.</p>
+  <h3>How many test cases does a requirement need?</h3>
+  <p>That depends on risk and complexity. Every requirement should have at least one test case for the happy path; invalid inputs, boundary values and special cases are added depending on their importance. Test design techniques such as equivalence partitioning and boundary value analysis keep the number manageable.</p>
+
+  <div class="cta-box">
+    <h3>Test cases and test strategy from one source</h3>
+    <p>30-minute initial consultation — free and without obligation. We look at your test cases together and show how to find more defects with less effort.</p>
+    <a href="index-en.html#contact" class="btn">Book a Free Initial Consultation</a>
+    <p class="svc-more">More about our service: <a href="qualitaetssicherung-en.html">Software quality assurance and test management in Hamburg →</a></p>
+    <p class="svc-more" style="margin-top:8px">Related: <a href="blog-testmanagement-en.html">Test Management: Tasks, Role and Process →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index-en.html">Home</a>
+    <a href="qualitaetssicherung-en.html">Quality Assurance</a>
+    <a href="impressum-en.html">Imprint</a>
+    <a href="datenschutz-en.html">Privacy Policy</a>
+    <a href="agb-en.html">T&amp;Cs</a>
+  </div>
+  <span class="footer-copy">© 2026 RAIT Solution</span>
+</footer>
+<script>
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open')}));
+</script>
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#fff;border-top:1px solid #e0e0e0;padding:20px 60px;box-shadow:0 -4px 24px rgba(0,0,0,0.07)">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <p style="color:#555;font-size:14px;line-height:1.6;margin:0;flex:1;min-width:260px">This website sets no cookies and does no profile-based tracking. More information in our <a href="datenschutz-en.html" style="color:#1a1a1a;text-decoration:underline">Privacy Policy</a>.</p>
+      <div style="display:flex;gap:12px;flex-shrink:0">
+        <button id="cookieDecline" style="border:1px solid #ddd;background:#fff;padding:10px 20px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;color:#555;font-family:inherit">Decline</button>
+        <button id="cookieAccept" style="background:#1a1a1a;color:#fff;border:none;padding:10px 22px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){var cb=document.getElementById('cookieBanner');if(!localStorage.getItem('cookieConsent')){cb.style.display='block';}document.getElementById('cookieAccept').addEventListener('click',function(){localStorage.setItem('cookieConsent','accepted');cb.style.display='none';});document.getElementById('cookieDecline').addEventListener('click',function(){localStorage.setItem('cookieConsent','declined');cb.style.display='none';});})();
+  </script>
+
+</body>
+</html>
